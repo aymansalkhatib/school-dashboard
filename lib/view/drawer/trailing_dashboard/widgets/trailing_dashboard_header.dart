@@ -9,14 +9,13 @@ class TrailingDashboardHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double scale = MediaQuery.sizeOf(context).width / 1920;
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        SizedBox(width: 32 * scale),
+        SizedBox(width: 32 * getScaleFactor(context)),
         Container(
-          width: 60 * scale,
-          height: 60 * scale,
+          width: 60 * getScaleFactor(context),
+          height: 60 * getScaleFactor(context),
           padding: const EdgeInsets.all(9),
           decoration: BoxDecoration(
             color: AppColors.backgroundWhite,
@@ -27,10 +26,10 @@ class TrailingDashboardHeader extends StatelessWidget {
             colorFilter: const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
           ),
         ),
-        SizedBox(width: 14 * scale),
+        SizedBox(width: 14 * getScaleFactor(context)),
         Container(
-          width: 60 * scale,
-          height: 60 * scale,
+          width: 60 * getScaleFactor(context),
+          height: 60 * getScaleFactor(context),
           padding: const EdgeInsets.all(9),
           decoration: BoxDecoration(
             color: AppColors.backgroundWhite,
@@ -41,7 +40,7 @@ class TrailingDashboardHeader extends StatelessWidget {
             colorFilter: const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
           ),
         ),
-        SizedBox(width: 20 * scale),
+        SizedBox(width: 20 * getScaleFactor(context)),
         Flexible(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -62,21 +61,26 @@ class TrailingDashboardHeader extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(width: 20 * scale),
+        SizedBox(width: 20 * getScaleFactor(context)),
         Container(
-          width: 55 * scale,
-          height: 55 * scale,
-          padding: const EdgeInsets.all(10),
+          width: 55 * getScaleFactor(context),
+          height: 55 * getScaleFactor(context),
+          // padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: AppColors.primaryPurple,
+            // color: AppColors.primaryPurple,
             borderRadius: BorderRadius.circular(100),
           ),
-          child: SvgPicture.asset(
-            Assets.iconsUser,
-            colorFilter: const ColorFilter.mode(AppColors.backgroundWhite, BlendMode.srcIn),
+          // child: SvgPicture.asset(
+          //   Assets.iconsUser,
+          //   colorFilter: const ColorFilter.mode(AppColors.backgroundWhite, BlendMode.srcIn),
+          // ),
+
+          child: Image.asset(
+            Assets.imagesLogo,
+            color: AppColors.primaryPurple,
           ),
         ),
-        SizedBox(width: 35 * scale),
+        SizedBox(width: getScaleFactor(context) * 35),
       ],
     );
   }

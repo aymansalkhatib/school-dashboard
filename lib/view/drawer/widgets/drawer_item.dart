@@ -11,8 +11,7 @@ class DrawerItem extends StatelessWidget {
   const DrawerItem({super.key, required this.drawerItemModel, required this.isActive});
   @override
   Widget build(BuildContext context) {
-    final double scale = MediaQuery.sizeOf(context).width / 1920;
-    return Container(
+     return Container(
       // height: 64,
       padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
