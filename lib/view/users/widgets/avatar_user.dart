@@ -16,15 +16,18 @@ class AvatarUser extends StatelessWidget {
         borderRadius: BorderRadius.circular(100),
         color: Colors.white,
       ),
-      child: MaterialButton(
-        padding: EdgeInsets.zero,
-        onPressed: () {},
+      child: GestureDetector(
+        onTap: () {},
         child: Container(
-          width: 164 * getScaleFactor(context) - 10,
-          height: 164 * getScaleFactor(context) - 10,
+          margin: const EdgeInsets.all(6),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            color: AppColors.lightBlue,
+            color: const Color.fromARGB(255, 221, 223, 248),
+          ),
+          child: Icon(
+            Icons.admin_panel_settings_outlined,
+            color: AppColors.primaryPurple,
+            size: 80 * getScaleFactor(context),
           ),
         ),
       ),

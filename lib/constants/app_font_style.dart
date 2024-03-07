@@ -88,6 +88,15 @@ class AppFontStyle {
   }
 
   //* [ Bold ]
+  static TextStyle styleBold32(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 32),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w700,
+    );
+  }
+
   static TextStyle styleBold36(BuildContext context) {
     return TextStyle(
       color: AppColors.textBlack,
