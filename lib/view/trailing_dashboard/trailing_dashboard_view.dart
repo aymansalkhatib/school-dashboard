@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sama/constants/app_colors.dart';
 import 'package:sama/constants/app_font_style.dart';
 import 'package:sama/constants/assets.dart';
-import 'package:sama/view/drawer/trailing_dashboard/widgets/trailing_dashboard_header.dart';
-import 'package:sama/view/drawer/trailing_dashboard/widgets/trailing_dashboard_section_student.dart';
-import 'package:sama/view/drawer/trailing_dashboard/widgets/trailing_dashboard_students.dart';
+import 'package:sama/view/trailing_dashboard/widgets/trailing_dashboard_header.dart';
+import 'package:sama/view/trailing_dashboard/widgets/trailing_dashboard_section_student.dart';
+import 'package:sama/view/trailing_dashboard/widgets/trailing_dashboard_students.dart';
 
 class TrailingDashBoard extends StatelessWidget {
   const TrailingDashBoard({super.key});

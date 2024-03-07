@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sama/constants/app_colors.dart';
@@ -11,8 +13,8 @@ class DrawerItem extends StatelessWidget {
   const DrawerItem({super.key, required this.drawerItemModel, required this.isActive});
   @override
   Widget build(BuildContext context) {
-     return Container(
-      // height: 64,
+    return Container(
+      height: 55,
       padding: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         color: isActive ? AppColors.lightPurple : null,
@@ -24,7 +26,7 @@ class DrawerItem extends StatelessWidget {
             width: 24,
           ),
           SvgPicture.asset(
-            width: 36 * getScaleFactor(context),
+            width: max(28, 38 * getScaleFactor(context)),
             drawerItemModel.icon,
             colorFilter:
                 ColorFilter.mode(isActive ? AppColors.primaryPurple : AppColors.lightBlue, BlendMode.srcIn),
