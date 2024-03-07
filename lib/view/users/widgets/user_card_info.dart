@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sama/view/users/widgets/avatar_with_background.dart';
-import 'package:sama/view/users/widgets/user_info.dart';
+import 'package:sama/view/users/widgets/user_stack_widget.dart';
 
 class UserCardInfo extends StatelessWidget {
   const UserCardInfo({
@@ -9,14 +8,19 @@ class UserCardInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AspectRatio(
+    return AspectRatio(
       aspectRatio: 1000 / 400,
-      child: Column(
-        children: [
-          Expanded(child: AvatarWithBackground()),
-          Expanded(flex: 2, child: UserInfo()),
-        ],
-      ),
+      child: LayoutBuilder(builder: (context, constraints) {
+        return Container(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(16),
+            ),
+          ),
+          child: UserStackWidget(constraints: constraints),
+        );
+      }),
     );
   }
 }
