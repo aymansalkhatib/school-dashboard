@@ -22,6 +22,15 @@ class AppFontStyle {
     );
   }
 
+  static TextStyle styleRegular20(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w400,
+    );
+  }
+
   static TextStyle styleRegular49(BuildContext context) {
     return TextStyle(
       color: AppColors.textBlack,
