@@ -27,14 +27,12 @@ class DrawerTitle extends StatelessWidget {
                 color: AppColors.accentOrange,
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: Flexible(
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    "S",
-                    style: AppFontStyle.styleBold36(context).copyWith(
-                      color: AppColors.backgroundWhite,
-                    ),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  "S",
+                  style: AppFontStyle.styleBold36(context).copyWith(
+                    color: AppColors.backgroundWhite,
                   ),
                 ),
               ),

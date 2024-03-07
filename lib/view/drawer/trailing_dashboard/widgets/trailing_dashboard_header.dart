@@ -12,10 +12,9 @@ class TrailingDashboardHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        SizedBox(width: 32 * getScaleFactor(context)),
         Container(
-          width: 60 * getScaleFactor(context),
-          height: 60 * getScaleFactor(context),
+          width: 56 * getScaleFactor(context),
+          height: 56 * getScaleFactor(context),
           padding: const EdgeInsets.all(9),
           decoration: BoxDecoration(
             color: AppColors.backgroundWhite,
@@ -28,8 +27,8 @@ class TrailingDashboardHeader extends StatelessWidget {
         ),
         SizedBox(width: 14 * getScaleFactor(context)),
         Container(
-          width: 60 * getScaleFactor(context),
-          height: 60 * getScaleFactor(context),
+          width: 56 * getScaleFactor(context),
+          height: 56 * getScaleFactor(context),
           padding: const EdgeInsets.all(9),
           decoration: BoxDecoration(
             color: AppColors.backgroundWhite,
@@ -40,13 +39,15 @@ class TrailingDashboardHeader extends StatelessWidget {
             colorFilter: const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
           ),
         ),
-        SizedBox(width: 20 * getScaleFactor(context)),
+        // SizedBox(width: 20 * getScaleFactor(context)),
+        const Spacer(flex: 1),
         Flexible(
+          flex: 3,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                "Ayman Al-Katib",
+                "Ayman Al-Katib1111111111111111",
                 style: AppFontStyle.styleSemiBold14(context).copyWith(
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -80,7 +81,6 @@ class TrailingDashboardHeader extends StatelessWidget {
             color: AppColors.primaryPurple,
           ),
         ),
-        SizedBox(width: getScaleFactor(context) * 35),
       ],
     );
   }
