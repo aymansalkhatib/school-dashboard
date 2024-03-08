@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sama/constants/app_colors.dart';
-import 'package:sama/constants/assets.dart';
 
 class AvatarWithBackground extends StatelessWidget {
   const AvatarWithBackground({
     super.key,
     required this.constraints,
+    required this.mask,
   });
   final BoxConstraints constraints;
+  final String mask;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +22,7 @@ class AvatarWithBackground extends StatelessWidget {
         child: Align(
           alignment: Alignment.bottomRight,
           child: Image.asset(
-            Assets.imagesMasking,
+            mask,
           ),
         ));
   }

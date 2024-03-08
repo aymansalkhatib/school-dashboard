@@ -12,7 +12,7 @@ class TrailingDashboardSectionStudent extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-         Flexible(
+        Flexible(
           child: FittedBox(
             fit: BoxFit.scaleDown,
             child: Column(
@@ -52,7 +52,7 @@ class TrailingDashboardSectionStudent extends StatelessWidget {
             size: 22,
           )),
         ),
-       ],
+      ],
     );
   }
 }

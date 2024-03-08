@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:sama/model/item_card_user.dart';
 import 'package:sama/view/users/widgets/user_stack_widget.dart';
 
 class UserCardInfo extends StatelessWidget {
   const UserCardInfo({
     super.key,
+    required this.name,
+    required this.mask,
+    required this.informations,
   });
+  final String name;
+
+  final String mask;
+  final List<ItemCardUserModel> informations;
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +20,16 @@ class UserCardInfo extends StatelessWidget {
       aspectRatio: 1000 / 400,
       child: LayoutBuilder(builder: (context, constraints) {
         return Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(16),
-            ),
+            borderRadius: BorderRadius.circular(16),
           ),
-          child: UserStackWidget(constraints: constraints),
+          child: UserStackWidget(
+            constraints: constraints,
+            mask: mask,
+            inforations: informations,
+            name: name,
+          ),
         );
       }),
     );

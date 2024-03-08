@@ -1,6 +1,6 @@
 class Assets {
   Assets._();
-
+  
   /// Assets for fontsCairoCairoBlack
   /// assets/fonts/Cairo/Cairo-Black.ttf
   static const String fontsCairoCairoBlack = "assets/fonts/Cairo/Cairo-Black.ttf";
@@ -55,8 +55,7 @@ class Assets {
 
   /// Assets for fontsDMSansDMSans18ptExtraBoldItalic
   /// assets/fonts/DM_Sans/DMSans_18pt-ExtraBoldItalic.ttf
-  static const String fontsDMSansDMSans18ptExtraBoldItalic =
-      "assets/fonts/DM_Sans/DMSans_18pt-ExtraBoldItalic.ttf";
+  static const String fontsDMSansDMSans18ptExtraBoldItalic = "assets/fonts/DM_Sans/DMSans_18pt-ExtraBoldItalic.ttf";
 
   /// Assets for fontsDMSansDMSans18ptExtraLight
   /// assets/fonts/DM_Sans/DMSans_18pt-ExtraLight.ttf
@@ -64,8 +63,7 @@ class Assets {
 
   /// Assets for fontsDMSansDMSans18ptExtraLightItalic
   /// assets/fonts/DM_Sans/DMSans_18pt-ExtraLightItalic.ttf
-  static const String fontsDMSansDMSans18ptExtraLightItalic =
-      "assets/fonts/DM_Sans/DMSans_18pt-ExtraLightItalic.ttf";
+  static const String fontsDMSansDMSans18ptExtraLightItalic = "assets/fonts/DM_Sans/DMSans_18pt-ExtraLightItalic.ttf";
 
   /// Assets for fontsDMSansDMSans18ptItalic
   /// assets/fonts/DM_Sans/DMSans_18pt-Italic.ttf
@@ -97,8 +95,7 @@ class Assets {
 
   /// Assets for fontsDMSansDMSans18ptSemiBoldItalic
   /// assets/fonts/DM_Sans/DMSans_18pt-SemiBoldItalic.ttf
-  static const String fontsDMSansDMSans18ptSemiBoldItalic =
-      "assets/fonts/DM_Sans/DMSans_18pt-SemiBoldItalic.ttf";
+  static const String fontsDMSansDMSans18ptSemiBoldItalic = "assets/fonts/DM_Sans/DMSans_18pt-SemiBoldItalic.ttf";
 
   /// Assets for fontsDMSansDMSans18ptThin
   /// assets/fonts/DM_Sans/DMSans_18pt-Thin.ttf
@@ -130,8 +127,7 @@ class Assets {
 
   /// Assets for fontsDMSansDMSans24ptExtraBoldItalic
   /// assets/fonts/DM_Sans/DMSans_24pt-ExtraBoldItalic.ttf
-  static const String fontsDMSansDMSans24ptExtraBoldItalic =
-      "assets/fonts/DM_Sans/DMSans_24pt-ExtraBoldItalic.ttf";
+  static const String fontsDMSansDMSans24ptExtraBoldItalic = "assets/fonts/DM_Sans/DMSans_24pt-ExtraBoldItalic.ttf";
 
   /// Assets for fontsDMSansDMSans24ptExtraLight
   /// assets/fonts/DM_Sans/DMSans_24pt-ExtraLight.ttf
@@ -139,8 +135,7 @@ class Assets {
 
   /// Assets for fontsDMSansDMSans24ptExtraLightItalic
   /// assets/fonts/DM_Sans/DMSans_24pt-ExtraLightItalic.ttf
-  static const String fontsDMSansDMSans24ptExtraLightItalic =
-      "assets/fonts/DM_Sans/DMSans_24pt-ExtraLightItalic.ttf";
+  static const String fontsDMSansDMSans24ptExtraLightItalic = "assets/fonts/DM_Sans/DMSans_24pt-ExtraLightItalic.ttf";
 
   /// Assets for fontsDMSansDMSans24ptItalic
   /// assets/fonts/DM_Sans/DMSans_24pt-Italic.ttf
@@ -172,8 +167,7 @@ class Assets {
 
   /// Assets for fontsDMSansDMSans24ptSemiBoldItalic
   /// assets/fonts/DM_Sans/DMSans_24pt-SemiBoldItalic.ttf
-  static const String fontsDMSansDMSans24ptSemiBoldItalic =
-      "assets/fonts/DM_Sans/DMSans_24pt-SemiBoldItalic.ttf";
+  static const String fontsDMSansDMSans24ptSemiBoldItalic = "assets/fonts/DM_Sans/DMSans_24pt-SemiBoldItalic.ttf";
 
   /// Assets for fontsDMSansDMSans24ptThin
   /// assets/fonts/DM_Sans/DMSans_24pt-Thin.ttf
@@ -205,8 +199,7 @@ class Assets {
 
   /// Assets for fontsDMSansDMSans36ptExtraBoldItalic
   /// assets/fonts/DM_Sans/DMSans_36pt-ExtraBoldItalic.ttf
-  static const String fontsDMSansDMSans36ptExtraBoldItalic =
-      "assets/fonts/DM_Sans/DMSans_36pt-ExtraBoldItalic.ttf";
+  static const String fontsDMSansDMSans36ptExtraBoldItalic = "assets/fonts/DM_Sans/DMSans_36pt-ExtraBoldItalic.ttf";
 
   /// Assets for fontsDMSansDMSans36ptExtraLight
   /// assets/fonts/DM_Sans/DMSans_36pt-ExtraLight.ttf
@@ -214,8 +207,7 @@ class Assets {
 
   /// Assets for fontsDMSansDMSans36ptExtraLightItalic
   /// assets/fonts/DM_Sans/DMSans_36pt-ExtraLightItalic.ttf
-  static const String fontsDMSansDMSans36ptExtraLightItalic =
-      "assets/fonts/DM_Sans/DMSans_36pt-ExtraLightItalic.ttf";
+  static const String fontsDMSansDMSans36ptExtraLightItalic = "assets/fonts/DM_Sans/DMSans_36pt-ExtraLightItalic.ttf";
 
   /// Assets for fontsDMSansDMSans36ptItalic
   /// assets/fonts/DM_Sans/DMSans_36pt-Italic.ttf
@@ -247,8 +239,7 @@ class Assets {
 
   /// Assets for fontsDMSansDMSans36ptSemiBoldItalic
   /// assets/fonts/DM_Sans/DMSans_36pt-SemiBoldItalic.ttf
-  static const String fontsDMSansDMSans36ptSemiBoldItalic =
-      "assets/fonts/DM_Sans/DMSans_36pt-SemiBoldItalic.ttf";
+  static const String fontsDMSansDMSans36ptSemiBoldItalic = "assets/fonts/DM_Sans/DMSans_36pt-SemiBoldItalic.ttf";
 
   /// Assets for fontsDMSansDMSans36ptThin
   /// assets/fonts/DM_Sans/DMSans_36pt-Thin.ttf
@@ -360,8 +351,7 @@ class Assets {
 
   /// Assets for fontsPoppinsPoppinsExtraLightItalic
   /// assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf
-  static const String fontsPoppinsPoppinsExtraLightItalic =
-      "assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf";
+  static const String fontsPoppinsPoppinsExtraLightItalic = "assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf";
 
   /// Assets for fontsPoppinsPoppinsItalic
   /// assets/fonts/Poppins/Poppins-Italic.ttf
@@ -447,6 +437,10 @@ class Assets {
   /// assets/icons/Email.svg
   static const String iconsEmail = "assets/icons/Email.svg";
 
+  /// Assets for iconsFalse
+  /// assets/icons/false.png
+  static const String iconsFalse = "assets/icons/false.png";
+
   /// Assets for iconsFamily
   /// assets/icons/family.svg
   static const String iconsFamily = "assets/icons/family.svg";
@@ -471,6 +465,14 @@ class Assets {
   /// assets/icons/Location.svg
   static const String iconsLocation = "assets/icons/Location.svg";
 
+  /// Assets for iconsMarks
+  /// assets/icons/marks.png
+  static const String iconsMarks = "assets/icons/marks.png";
+
+  /// Assets for iconsMarks2
+  /// assets/icons/marks2.png
+  static const String iconsMarks2 = "assets/icons/marks2.png";
+
   /// Assets for iconsPrint
   /// assets/icons/print.svg
   static const String iconsPrint = "assets/icons/print.svg";
@@ -483,6 +485,10 @@ class Assets {
   /// assets/icons/Search.svg
   static const String iconsSearch = "assets/icons/Search.svg";
 
+  /// Assets for iconsSell
+  /// assets/icons/sell.png
+  static const String iconsSell = "assets/icons/sell.png";
+
   /// Assets for iconsSent
   /// assets/icons/sent.svg
   static const String iconsSent = "assets/icons/sent.svg";
@@ -490,6 +496,14 @@ class Assets {
   /// Assets for iconsStudent
   /// assets/icons/student.svg
   static const String iconsStudent = "assets/icons/student.svg";
+
+  /// Assets for iconsStudent2
+  /// assets/icons/student2.png
+  static const String iconsStudent2 = "assets/icons/student2.png";
+
+  /// Assets for iconsStudentPng
+  /// assets/icons/studentPng.png
+  static const String iconsStudentPng = "assets/icons/studentPng.png";
 
   /// Assets for iconsTeacher
   /// assets/icons/teacher.svg
@@ -499,6 +513,10 @@ class Assets {
   /// assets/icons/trending.svg
   static const String iconsTrending = "assets/icons/trending.svg";
 
+  /// Assets for iconsTrue
+  /// assets/icons/true.png
+  static const String iconsTrue = "assets/icons/true.png";
+
   /// Assets for iconsUser
   /// assets/icons/User.svg
   static const String iconsUser = "assets/icons/User.svg";
@@ -506,14 +524,6 @@ class Assets {
   /// Assets for iconsVideo
   /// assets/icons/Video.svg
   static const String iconsVideo = "assets/icons/Video.svg";
-
-  /// Assets for imagesCover
-  /// assets/images/cover.svg
-  static const String imagesCover = "assets/images/cover.svg";
-
-  /// Assets for imagesCover
-  /// assets/images/cover.png
-  static const String imagesCoverPng = "assets/images/cover.png";
 
   /// Assets for imagesLogo
   /// assets/images/logo.png
@@ -523,3 +533,4 @@ class Assets {
   /// assets/images/Masking.png
   static const String imagesMasking = "assets/images/Masking.png";
 }
+

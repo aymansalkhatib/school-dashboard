@@ -13,6 +13,15 @@ class AppFontStyle {
     );
   }
 
+  static TextStyle styleRegular16(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w400,
+    );
+  }
+
   static TextStyle styleRegular18(BuildContext context) {
     return TextStyle(
       color: AppColors.textBlack,
@@ -50,6 +59,15 @@ class AppFontStyle {
     );
   }
 
+  static TextStyle styleMedium16(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w500,
+    );
+  }
+
   static TextStyle styleMedium18(BuildContext context) {
     return TextStyle(
       color: AppColors.textBlack,
@@ -73,6 +91,15 @@ class AppFontStyle {
     return TextStyle(
       color: AppColors.textBlack,
       fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle styleSemiBold15_5(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 15.5),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w600,
     );

@@ -4,11 +4,18 @@ import 'package:sama/constants/app_colors.dart';
 import 'package:sama/constants/app_font_style.dart';
 import 'package:sama/constants/assets.dart';
 import 'package:sama/model/item_card_user.dart';
-import 'package:sama/view/users/widgets/user_item_card.dart';
+import 'package:sama/view/users/widgets/user_row_info.dart';
 
 class UserInfo extends StatelessWidget {
-  const UserInfo({super.key, required this.constraints});
+  const UserInfo({
+    super.key,
+    required this.constraints,
+    required this.inforamtions,
+    required this.name,
+  });
   final BoxConstraints constraints;
+  final List<ItemCardUserModel> inforamtions;
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,31 +43,13 @@ class UserInfo extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
-                "Nabila Azalea",
+                name,
                 style: AppFontStyle.styleBold32(context),
               ),
             ),
           ),
           const Spacer(flex: 2),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              ...List.generate(
-                itemCardUserModel.length,
-                (index) => Flexible(
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
-                      child: UserItemCard(
-                        itemCardUserModel: itemCardUserModel[index],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          )
+          UserRowInfo(inforamtions: inforamtions)
         ],
       ),
     );
