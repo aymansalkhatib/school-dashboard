@@ -1,9 +1,12 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sama/constants/app_colors.dart';
 import 'package:sama/constants/app_font_style.dart';
 import 'package:sama/constants/assets.dart';
 import 'package:sama/model/item_card_user.dart';
+import 'package:sama/view/users/widgets/user_item_card.dart';
 import 'package:sama/view/users/widgets/user_row_info.dart';
 
 class UserInfo extends StatelessWidget {
@@ -38,15 +41,10 @@ class UserInfo extends StatelessWidget {
             ),
           ),
           const Spacer(flex: 1),
-          Flexible(
-            flex: 4,
-            child: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                name,
-                style: AppFontStyle.styleBold32(context),
-              ),
-            ),
+          Text(
+            name,
+            style: AppFontStyle.styleBold32(context)
+                .copyWith(fontSize: 32 * MediaQuery.sizeOf(context).width / 1700),
           ),
           const Spacer(flex: 2),
           UserRowInfo(inforamtions: inforamtions)
