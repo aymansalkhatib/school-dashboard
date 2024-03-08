@@ -4,17 +4,18 @@ import 'package:sama/constants/app_colors.dart';
 class AvatarWithBackground extends StatelessWidget {
   const AvatarWithBackground({
     super.key,
-    required this.constraints,
+    required this.height,
     required this.mask,
   });
-  final BoxConstraints constraints;
+  final double height;
   final String mask;
   @override
   Widget build(BuildContext context) {
+    double top = 32 * MediaQuery.sizeOf(context).width / 1700;
     return Container(
-        padding: const EdgeInsets.only(left: 32, top: 32, right: 32),
+        padding: EdgeInsets.only(left: 32, top: top, right: top),
         width: double.infinity,
-        height: constraints.maxHeight / 3,
+        height: height,
         decoration: const BoxDecoration(
           color: AppColors.primaryPurple,
           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),

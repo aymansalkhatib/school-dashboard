@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:sama/constants/app_colors.dart';
 import 'package:sama/constants/app_font_style.dart';
 
-class AvatarUser extends StatelessWidget {
-  const AvatarUser({
+class CircleButtonWithBorder extends StatelessWidget {
+  const CircleButtonWithBorder({
     super.key,
+    required this.icon,
   });
-
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +26,7 @@ class AvatarUser extends StatelessWidget {
             color: const Color.fromARGB(255, 221, 223, 248),
           ),
           child: Icon(
-            Icons.admin_panel_settings_outlined,
+            icon,
             color: AppColors.primaryPurple,
             size: 80 * getScaleFactor(context),
           ),

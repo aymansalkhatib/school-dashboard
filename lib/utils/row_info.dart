@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sama/model/item_card_user.dart';
 import 'package:sama/view/users/widgets/user_item_card.dart';
 
-class UserRowInfo extends StatelessWidget {
-  const UserRowInfo({
+class RowInfo extends StatelessWidget {
+  const RowInfo({
     super.key,
     required this.inforamtions,
   });
@@ -22,8 +22,8 @@ class UserRowInfo extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: index != inforamtions.length - 1 ? 12 : 0,
+                padding: EdgeInsets.only(
+                  right: index != inforamtions.length - 1 ? 24 : 0,
                 ),
                 child: UserItemCard(
                   itemCardUserModel: inforamtions[index],

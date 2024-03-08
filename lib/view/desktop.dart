@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sama/view/drawer/drawer_view.dart';
+import 'package:sama/view/teacher/teacher_with_trailing.dart';
 import 'package:sama/view/users/users_with_trailing.dart';
 
 class Desktop extends StatelessWidget {
@@ -12,7 +13,7 @@ class Desktop extends StatelessWidget {
         Expanded(flex: 345, child: CustomDrawer()),
         Expanded(
           flex: 1180 + 395,
-          child: UsersWithTrailing(),
+          child: TeachersWithTrailing(),
         ),
       ],
     );
