@@ -10,7 +10,7 @@ class ItemCardUserModel {
 
 List<ItemCardUserModel> itemCardUserModel = [
   ItemCardUserModel(title: "Location", icon: Assets.iconsLocation, body: "Damascuse,Arbin"),
-  ItemCardUserModel(title: "Location", icon: Assets.iconsLocation, body: "Damascuse,Arbin"),
+  // ItemCardUserModel(title: "Location", icon: Assets.iconsLocation, body: "Damascuse,Arbin"),
   ItemCardUserModel(title: "Phone", icon: Assets.iconsCall, body: "+963968381625"),
   ItemCardUserModel(title: "Email", icon: Assets.iconsEmail, body: "ayman@gmail.com"),
 ];

@@ -5,19 +5,19 @@ import 'package:sama/constants/app_font_style.dart';
 import 'package:sama/constants/assets.dart';
 
 class TrailingDashboardHeader extends StatelessWidget {
-  const TrailingDashboardHeader({super.key});
-
+  const TrailingDashboardHeader({super.key, this.colorCircle});
+  final Color? colorCircle;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
-          width: 56 * getScaleFactor(context),
-          height: 56 * getScaleFactor(context),
-          padding: const EdgeInsets.all(9),
+          width: 60 * getScaleFactor(context),
+          height: 60 * getScaleFactor(context),
+          padding: EdgeInsets.all(13 * getScaleFactor(context)),
           decoration: BoxDecoration(
-            color: AppColors.backgroundWhite,
+            color: colorCircle ?? AppColors.backgroundWhite,
             borderRadius: BorderRadius.circular(100),
           ),
           child: SvgPicture.asset(
@@ -27,11 +27,11 @@ class TrailingDashboardHeader extends StatelessWidget {
         ),
         SizedBox(width: 14 * getScaleFactor(context)),
         Container(
-          width: 56 * getScaleFactor(context),
-          height: 56 * getScaleFactor(context),
-          padding: const EdgeInsets.all(9),
+          width: 60 * getScaleFactor(context),
+          height: 60 * getScaleFactor(context),
+          padding: EdgeInsets.all(12 * getScaleFactor(context)),
           decoration: BoxDecoration(
-            color: AppColors.backgroundWhite,
+            color: colorCircle ?? AppColors.backgroundWhite,
             borderRadius: BorderRadius.circular(100),
           ),
           child: SvgPicture.asset(
@@ -47,7 +47,7 @@ class TrailingDashboardHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                "Ayman Al-Katib1111111111111111",
+                "Ayman Al-Katib",
                 style: AppFontStyle.styleSemiBold14(context).copyWith(
                   overflow: TextOverflow.ellipsis,
                 ),

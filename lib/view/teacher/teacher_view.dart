@@ -9,14 +9,47 @@ class Teachers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.sizeOf(context).width * (1180 / 1920) - 80;
     return Padding(
-      padding: const EdgeInsets.all(40),
-      child: AspectRatio(
+        padding: const EdgeInsets.only(right: 40),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Column(
+            children: [
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  AvatarWithBackground(
+                    height: width / 3 / (1000 / 400),
+                    mask: Assets.imagesMaskingTeacher,
+                  ),
+                  const Positioned(
+                    top: 30,
+                    left: 32,
+                    child: CircleButtonWithBorder(
+                      icon: Icons.assignment_ind_rounded,
+                    ),
+                  ),
+                ],
+              ),
+              const TeachersInfo(),
+            ],
+          ),
+        ));
+  }
+}
+
+/*
+
+ AspectRatio(
         aspectRatio: 1,
         child: LayoutBuilder(
           builder: (context, constraints) {
             return Container(
-              width: constraints.maxWidth,
+              width: 800,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
@@ -24,9 +57,9 @@ class Teachers extends StatelessWidget {
               child: Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  //* in user aspectRatio => 1000/400
-                  //* here aspectRatio 1
-                  //* height / 3 / (1000 / 400)
+                  // in user aspectRatio => 1000/400
+                  // here aspectRatio 1
+                  // height / 3 / (1000 / 400)
                   // ** result same Height
                   AvatarWithBackground(
                     height: constraints.maxWidth / 3 / (1000 / 400),
@@ -49,6 +82,4 @@ class Teachers extends StatelessWidget {
           },
         ),
       ),
-    );
-  }
-}
+*/
