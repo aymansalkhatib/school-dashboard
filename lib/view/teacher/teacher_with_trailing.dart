@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sama/view/teacher/teacher_view.dart';
 import 'package:sama/view/teacher/widgets/teacher_header_with_search.dart';
-import 'package:sama/view/trailing_dashboard/trailing_dashboard_view.dart';
+import 'package:sama/view/trailing_teacher/trailing_teacher.dart';
 
 class TeachersWithTrailing extends StatelessWidget {
   const TeachersWithTrailing({
@@ -24,7 +24,7 @@ class TeachersWithTrailing extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(flex: 1180, child: Teachers()),
-                    Expanded(flex: 395, child: TrailingDashBoard()),
+                    Expanded(flex: 395, child: TrailingTeacher()),
                   ],
                 ),
               ],
