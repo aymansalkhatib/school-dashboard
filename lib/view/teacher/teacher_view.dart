@@ -11,36 +11,44 @@ class Teachers extends StatelessWidget {
   Widget build(BuildContext context) {
     final double width = MediaQuery.sizeOf(context).width * (1180 / 1920) - 80;
     return Padding(
-        padding: const EdgeInsets.only(right: 40),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-          ),
-          child: Column(
-            children: [
-              Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  AvatarWithBackground(
-                    height: width / 3 / (1000 / 400),
-                    mask: Assets.imagesMaskingTeacher,
+      padding: const EdgeInsets.only(right: 40),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          children: [
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                AvatarWithBackground(
+                  height: width / 3 / (1000 / 400),
+                  mask: Assets.imagesMaskingTeacher,
+                ),
+                const Positioned(
+                  top: 30,
+                  left: 32,
+                  child: CircleButtonWithBorder(
+                    icon: Icons.assignment_ind_rounded,
                   ),
-                  const Positioned(
-                    top: 30,
-                    left: 32,
-                    child: CircleButtonWithBorder(
-                      icon: Icons.assignment_ind_rounded,
-                    ),
-                  ),
-                ],
-              ),
-              const TeachersInfo(),
-            ],
-          ),
-        ));
+                ),
+              ],
+            ),
+            const TeachersInfo(),
+          ],
+        ),
+      ),
+    );
   }
 }
+
+
+
+
+
+
+
 
 /*
 

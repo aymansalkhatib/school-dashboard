@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
- import 'package:sama/utils/adaptive_layout_widget.dart';
+import 'package:sama/utils/adaptive_layout_widget.dart';
 import 'package:sama/view/desktop.dart';
 
 class SAMA extends StatelessWidget {

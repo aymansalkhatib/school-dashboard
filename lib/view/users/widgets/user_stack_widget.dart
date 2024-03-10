@@ -11,11 +11,13 @@ class UserStackWidget extends StatelessWidget {
     required this.mask,
     required this.inforations,
     required this.name,
+    required this.isFoundSibTitle,
   });
   final BoxConstraints constraints;
   final String mask;
   final List<ItemCardUserModel> inforations;
   final String name;
+  final bool isFoundSibTitle;
   @override
   Widget build(BuildContext context) {
     double top = 32 * MediaQuery.sizeOf(context).width / 1700;
@@ -30,6 +32,7 @@ class UserStackWidget extends StatelessWidget {
             constraints: constraints,
             inforamtions: inforations,
             name: name,
+            isFoundSibTitle: isFoundSibTitle,
           ),
         ),
         Positioned(

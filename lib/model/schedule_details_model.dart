@@ -45,11 +45,5 @@ List<ScheduleDetailsModel> scheduleDetailsModel = [
     date: "March 20, 2021",
     time: "09.00 - 10.00 AMq",
   ),
-  ScheduleDetailsModel(
-    prefixColor: AppColors.textBlack,
-    title: "World History",
-    subtitle: "Class VII-C",
-    date: "March 20, 2021",
-    time: "09.00 - 10.00 AMq",
-  ),
+  
 ];

@@ -33,7 +33,7 @@ class ListUserPagination extends StatelessWidget {
           const SizedBox(height: 8),
           ...List.generate(3, (index) => const ItemRecentStudents()),
           const SizedBox(height: 24),
-          const Pahination(length: 3)
+          const MyPaginations(length: 3)
         ],
       ),
     );

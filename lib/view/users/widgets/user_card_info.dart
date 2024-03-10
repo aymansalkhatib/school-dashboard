@@ -8,16 +8,17 @@ class UserCardInfo extends StatelessWidget {
     required this.name,
     required this.mask,
     required this.informations,
+    this.aspectRatioP1000 = 400,
   });
   final String name;
-
+  final double aspectRatioP1000;
   final String mask;
   final List<ItemCardUserModel> informations;
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1000 / 400,
+      aspectRatio: 1000 / aspectRatioP1000,
       child: LayoutBuilder(builder: (context, constraints) {
         return Container(
           decoration: BoxDecoration(
@@ -29,6 +30,7 @@ class UserCardInfo extends StatelessWidget {
             mask: mask,
             inforations: informations,
             name: name,
+            isFoundSibTitle: aspectRatioP1000!=400
           ),
         );
       }),

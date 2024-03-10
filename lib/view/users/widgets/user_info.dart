@@ -12,10 +12,12 @@ class UserInfo extends StatelessWidget {
     required this.constraints,
     required this.inforamtions,
     required this.name,
+    required this.isFoundSibTitle,
   });
   final BoxConstraints constraints;
   final List<ItemCardUserModel> inforamtions;
   final String name;
+  final bool isFoundSibTitle;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -37,13 +39,20 @@ class UserInfo extends StatelessWidget {
               ),
             ),
           ),
-          const Spacer(flex: 1),
           Text(
             name,
             style: AppFontStyle.styleBold32(context)
                 .copyWith(fontSize: 32 * MediaQuery.sizeOf(context).width / 1700),
           ),
-          const Spacer(flex: 2),
+          const Spacer(flex: 1),
+          isFoundSibTitle
+              ? Text(
+                  "Student",
+                  style: AppFontStyle.styleMedium16(context).copyWith(
+                      fontSize: 16 * MediaQuery.sizeOf(context).width / 1700, color: AppColors.darkGray),
+                )
+              : const SizedBox.shrink(),
+          const Spacer(flex: 10),
           RowInfo(inforamtions: inforamtions)
         ],
       ),

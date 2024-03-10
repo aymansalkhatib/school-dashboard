@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sama/view/teacher/teacher_view.dart';
-import 'package:sama/view/teacher/widgets/teacher_header_with_search.dart';
+import 'package:sama/utils/header_with_search.dart';
 import 'package:sama/view/trailing_teacher/trailing_teacher.dart';
 
 class TeachersWithTrailing extends StatelessWidget {
@@ -18,7 +18,7 @@ class TeachersWithTrailing extends StatelessWidget {
             padding: EdgeInsets.all(40),
             child: Column(
               children: [
-                TeacherHeaderWithSearch(),
+                HeaderWithSearch(title: "Teacher Details"),
                 SizedBox(height: 28),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,

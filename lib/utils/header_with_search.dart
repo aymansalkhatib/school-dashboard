@@ -3,11 +3,12 @@ import 'package:sama/constants/app_font_style.dart';
 import 'package:sama/utils/custom_search.dart';
 import 'package:sama/view/trailing_dashboard/widgets/trailing_dashboard_header.dart';
 
-class TeacherHeaderWithSearch extends StatelessWidget {
-  const TeacherHeaderWithSearch({
+class HeaderWithSearch extends StatelessWidget {
+  const HeaderWithSearch({
     super.key,
+    required this.title,
   });
-
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -16,7 +17,7 @@ class TeacherHeaderWithSearch extends StatelessWidget {
           child: FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              "Teacher Details",
+              title,
               style: AppFontStyle.styleBold36(context),
             ),
           ),
