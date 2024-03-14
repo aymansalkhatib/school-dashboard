@@ -22,10 +22,10 @@ class AppFontStyle {
     );
   }
 
-  static TextStyle styleRegular18(BuildContext context) {
+  static TextStyle styleRegular18(BuildContext context, {double? lower}) {
     return TextStyle(
       color: AppColors.textBlack,
-      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontSize: getResponsiveFontSize(context, fontSize: 18, lower: lower),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w400,
     );
@@ -114,10 +114,10 @@ class AppFontStyle {
     );
   }
 
-  static TextStyle styleBold24(BuildContext context) {
+  static TextStyle styleBold24(BuildContext context, {double? lower}) {
     return TextStyle(
       color: AppColors.textBlack,
-      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontSize: getResponsiveFontSize(context, fontSize: 24, lower: lower),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w700,
     );
@@ -133,10 +133,10 @@ class AppFontStyle {
     );
   }
 
-  static TextStyle styleBold36(BuildContext context) {
+  static TextStyle styleBold36(BuildContext context, {double? lower}) {
     return TextStyle(
       color: AppColors.textBlack,
-      fontSize: getResponsiveFontSize(context, fontSize: 36),
+      fontSize: getResponsiveFontSize(context, fontSize: 36, lower: lower),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w700,
     );
@@ -173,10 +173,8 @@ class AppFontStyle {
 double getResponsiveFontSize(context, {required double fontSize, double? lower, double? upper}) {
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = fontSize * scaleFactor;
-
-  double lowerLimit = lower ?? fontSize * .8;
-  double upperLimit = upper ?? fontSize * 1.2;
-
+  double lowerLimit = lower != null ? fontSize * lower : fontSize * .8;
+  double upperLimit = upper != null ? fontSize * upper : fontSize * 1.2;
   return responsiveFontSize.clamp(lowerLimit, upperLimit);
 }
 

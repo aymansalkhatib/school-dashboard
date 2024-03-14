@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/view/trailing_dashboard/widgets/trailing_dashboard_header.dart';
-import 'package:sama/view/trailing_dashboard/widgets/trailing_dashboard_section_student.dart';
-import 'package:sama/view/trailing_dashboard/widgets/trailing_dashboard_students.dart';
+import 'package:sama/view/trailing_Dashboard/widgets/trailing_Dashboard_header.dart';
+import 'package:sama/view/trailing_Dashboard/widgets/trailing_Dashboard_section_student.dart';
+import 'package:sama/view/trailing_Dashboard/widgets/trailing_Dashboard_students.dart';
 
-class TrailingDashBoard extends StatelessWidget {
-  const TrailingDashBoard({super.key});
+class TrailingDashboard extends StatelessWidget {
+  const TrailingDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {

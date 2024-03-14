@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sama/view/trailing_dashboard/trailing_dashboard_view.dart';
-import 'package:sama/view/users/users_view.dart';
+ import 'package:sama/view/users/users_view.dart';
 
 class UsersWithTrailing extends StatelessWidget {
   const UsersWithTrailing({
@@ -16,7 +16,7 @@ class UsersWithTrailing extends StatelessWidget {
           child: Row(
             children: [
               Expanded(flex: 1180, child: Users()),
-              Expanded(flex: 395, child: TrailingDashBoard()),
+              Expanded(flex: 395, child: TrailingDashboard()),
             ],
           ),
         )

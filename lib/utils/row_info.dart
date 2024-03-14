@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sama/model/item_card_user.dart';
+import 'package:sama/model/item_card_user_model.dart';
 import 'package:sama/view/users/widgets/user_item_card.dart';
 
 class RowInfo extends StatelessWidget {

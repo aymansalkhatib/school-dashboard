@@ -38,6 +38,7 @@ dependencies:
   svg_clip: ^0.0.2
   flutter_svg: ^2.0.10+1
   get: ^4.6.6
+  fl_chart: ^0.66.2
 
 dev_dependencies:
   flutter_test:

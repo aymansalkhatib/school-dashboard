@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sama/model/item_card_user.dart';
+import 'package:sama/model/item_card_user_model.dart';
 import 'package:sama/view/users/widgets/user_stack_widget.dart';
 
 class UserCardInfo extends StatelessWidget {
@@ -8,7 +8,7 @@ class UserCardInfo extends StatelessWidget {
     required this.name,
     required this.mask,
     required this.informations,
-    this.aspectRatioP1000 = 400,
+    this.aspectRatioP1000 = 390,
   });
   final String name;
   final double aspectRatioP1000;
@@ -26,12 +26,11 @@ class UserCardInfo extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
           child: UserStackWidget(
-            constraints: constraints,
-            mask: mask,
-            inforations: informations,
-            name: name,
-            isFoundSibTitle: aspectRatioP1000!=400
-          ),
+              constraints: constraints,
+              mask: mask,
+              inforations: informations,
+              name: name,
+              isFoundSibTitle: aspectRatioP1000 != 390),
         );
       }),
     );

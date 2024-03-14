@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sama/constants/app_font_style.dart';
 import 'package:sama/utils/pagination.dart';
-import 'package:sama/view/trailing_dashboard/widgets/item_recent_students.dart';
+import 'package:sama/view/trailing_Dashboard/widgets/item_recent_students.dart';
 
 import '../../../constants/app_colors.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:sama/view/trailing_dashboard/widgets/item_recent_students.dart';
+import 'package:sama/view/trailing_Dashboard/widgets/item_recent_students.dart';
 
 class TrailingDashboadRecentStudents extends StatelessWidget {
   const TrailingDashboadRecentStudents({super.key});
