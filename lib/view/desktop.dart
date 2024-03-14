@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sama/view/Dashboard/widgets/Dashboard_with_trailing.dart';
+import 'package:sama/view/dashboard/dashboard_with_trailing.dart';
 import 'package:sama/view/drawer/drawer_view.dart';
 
 class Desktop extends StatelessWidget {

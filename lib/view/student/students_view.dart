@@ -62,29 +62,7 @@ class StudentPayments extends StatelessWidget {
                         studentPaymentModel: studentsPaymentModel[index],
                       )),
               const SizedBox(height: 25),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                            text: 'Showing ',
-                            style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
-                        TextSpan(text: '1-5 ', style: AppFontStyle.styleRegular14(context)),
-                        TextSpan(
-                            text: 'from ',
-                            style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
-                        TextSpan(text: '100 ', style: AppFontStyle.styleRegular14(context)),
-                        TextSpan(
-                            text: 'data',
-                            style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
-                      ],
-                    ),
-                  ),
-                  const MyPaginations(length: 3)
-                ],
-              )
+              const MyPaginations(length: 3)
             ],
           )
         ],

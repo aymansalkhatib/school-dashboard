@@ -12,7 +12,7 @@ class RowInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
@@ -29,8 +29,8 @@ class RowInfo extends StatelessWidget {
                   itemCardUserModel: inforamtions[index],
                 ),
               ),
-        ),
-        ),
+            ),
+          ),
         ),
       ],
     );

@@ -19,12 +19,21 @@ class ItemInsideHeaderFlchar extends StatelessWidget {
       children: [
         Row(
           children: [
-            CircleAvatar(
-              radius: 6 * getScaleFactor(context),
-              backgroundColor: colorCircle,
-              child: CircleAvatar(
-                radius: 3 * getScaleFactor(context),
-                backgroundColor: Colors.white,
+            Container(
+              width: 12 * getScaleFactor(context),
+              height: 12 * getScaleFactor(context),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: colorCircle,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(2),
+                child: Container(
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
             SizedBox(width: 8 * getScaleFactor(context)),
