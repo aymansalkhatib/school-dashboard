@@ -2,17 +2,20 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:sama/constants/app_colors.dart';
 import 'package:sama/constants/app_font_style.dart';
+import 'package:sama/helper/color_extention.dart';
+import 'package:sama/helper/custom_grid_painter.dart';
+import 'package:sama/view/dashboard/widgets/header_flchar.dart';
 
-class BarChartSample2 extends StatefulWidget {
-  BarChartSample2({super.key});
+class FlChar extends StatefulWidget {
+  FlChar({super.key});
   final Color leftBarColor = AppColors.highlightYellow;
   final Color rightBarColor = AppColors.errorRed;
   final Color avgColor = AppColors.accentOrange.avg(AppColors.errorRed);
   @override
-  State<StatefulWidget> createState() => BarChartSample2State();
+  State<StatefulWidget> createState() => FlCharState();
 }
 
-class BarChartSample2State extends State<BarChartSample2> {
+class FlCharState extends State<FlChar> {
   double width = 10;
 
   late List<BarChartGroupData> rawBarGroups;
@@ -220,200 +223,5 @@ class BarChartSample2State extends State<BarChartSample2> {
         ),
       ],
     );
-  }
-
-  Widget makeTransactionsIcon() {
-    const width = 4.5;
-    const space = 3.5;
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Container(
-          width: width,
-          height: 10,
-          color: AppColors.primaryPurple.withOpacity(0.4),
-        ),
-        const SizedBox(
-          width: space,
-        ),
-        Container(
-          width: width,
-          height: 28,
-          color: AppColors.primaryPurple.withOpacity(0.8),
-        ),
-        const SizedBox(
-          width: space,
-        ),
-        Container(
-          width: width,
-          height: 42,
-          color: AppColors.primaryPurple.withOpacity(1),
-        ),
-        const SizedBox(
-          width: space,
-        ),
-        Container(
-          width: width,
-          height: 28,
-          color: AppColors.primaryPurple.withOpacity(0.8),
-        ),
-        const SizedBox(
-          width: space,
-        ),
-        Container(
-          width: width,
-          height: 10,
-          color: AppColors.primaryPurple.withOpacity(0.4),
-        ),
-      ],
-    );
-  }
-}
-
-class HeaderFlChar extends StatelessWidget {
-  const HeaderFlChar({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "School Finance",
-          style: AppFontStyle.styleBold24(context).copyWith(fontSize: 24 * getScaleFactor(context)),
-        ),
-        SizedBox(width: 20 * getScaleFactor(context)),
-        const Row(
-          children: [
-            ItemInsideHeaderFlchar(
-              colorCircle: AppColors.highlightYellow,
-              number: 1.245,
-              text: "This Week",
-            ),
-            SizedBox(width: 16),
-            ItemInsideHeaderFlchar(
-              colorCircle: AppColors.errorRed,
-              number: 1.356,
-              text: "Last Week",
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
-
-class ItemInsideHeaderFlchar extends StatelessWidget {
-  const ItemInsideHeaderFlchar({
-    super.key,
-    required this.text,
-    required this.number,
-    required this.colorCircle,
-  });
-  final String text;
-  final double number;
-  final Color colorCircle;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            CircleAvatar(
-              radius: 6 * getScaleFactor(context),
-              backgroundColor: colorCircle,
-              child: CircleAvatar(
-                radius: 3 * getScaleFactor(context),
-                backgroundColor: Colors.white,
-              ),
-            ),
-            SizedBox(width: 8 * getScaleFactor(context)),
-            Text(
-              text,
-              style: AppFontStyle.styleRegular14(context)
-                  .copyWith(color: AppColors.darkGray, fontSize: 14 * getScaleFactor(context)),
-            ),
-          ],
-        ),
-        Text(
-          number.toString(),
-          style: AppFontStyle.styleBold18(context).copyWith(fontSize: 18 * getScaleFactor(context)),
-        ),
-      ],
-    );
-  }
-}
-
-extension ColorExtension on Color {
-  Color darken([int percent = 40]) {
-    assert(1 <= percent && percent <= 100);
-    final value = 1 - percent / 100;
-    return Color.fromARGB(
-      alpha,
-      (red * value).round(),
-      (green * value).round(),
-      (blue * value).round(),
-    );
-  }
-
-  Color lighten([int percent = 40]) {
-    assert(1 <= percent && percent <= 100);
-    final value = percent / 100;
-    return Color.fromARGB(
-      alpha,
-      (red + ((255 - red) * value)).round(),
-      (green + ((255 - green) * value)).round(),
-      (blue + ((255 - blue) * value)).round(),
-    );
-  }
-
-  Color avg(Color other) {
-    final red = (this.red + other.red) ~/ 2;
-    final green = (this.green + other.green) ~/ 2;
-    final blue = (this.blue + other.blue) ~/ 2;
-    final alpha = (this.alpha + other.alpha) ~/ 2;
-    return Color.fromARGB(alpha, red, green, blue);
-  }
-}
-
-class CustomGridLinePainter extends CustomPainter {
-  final int numberVerticalLines;
-  final int numberHorizontalLines;
-  final double strokeWidth;
-  final Color color;
-
-  CustomGridLinePainter(
-      {this.numberVerticalLines = 2,
-      this.numberHorizontalLines = 2,
-      this.strokeWidth = 1.0,
-      this.color = Colors.grey});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final double cellWidth = size.width / (numberVerticalLines - 1);
-    final double cellHeight = size.height / (numberHorizontalLines - 1);
-
-    final Paint paint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth;
-
-    for (int i = 0; i < numberHorizontalLines; i++) {
-      double y = i * cellHeight;
-      canvas.drawLine(Offset(0, y), Offset(size.width, y), paint);
-    }
-
-    for (int i = 0; i < numberVerticalLines; i++) {
-      double x = i * cellWidth;
-      canvas.drawLine(Offset(x, 0), Offset(x, size.height), paint);
-    }
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
   }
 }

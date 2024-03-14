@@ -21,7 +21,7 @@ class Dashboard extends StatelessWidget {
               ),
               SizedBox(width: 40 * getScaleFactor(context)),
               Expanded(
-                child: BarChartSample2(),
+                child: FlChar(),
               )
             ],
           ),
