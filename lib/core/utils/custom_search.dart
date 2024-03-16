@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sama/core/constants/app_colors.dart';
@@ -12,24 +14,24 @@ class CustomSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60 * getScaleFactor(context),
+      height: max(60 * getScaleFactor(context), 45),
       child: TextFormField(
         style: AppFontStyle.styleRegular18(context),
         decoration: InputDecoration(
           hoverColor: Colors.white,
           filled: true,
           fillColor: Colors.white,
-          hintText: "Search here ...",
+          hintText: " Search here ...",
           contentPadding: const EdgeInsets.all(0),
           hintStyle: AppFontStyle.styleRegular18(context).copyWith(
             color: AppColors.darkGray,
           ),
           prefixIcon: Padding(
-            padding: const EdgeInsets.only(left: 18),
+            padding: const EdgeInsets.only(left: 12),
             child: SvgPicture.asset(
               Assets.iconsSearch,
-              width: 32 * getScaleFactor(context),
-              height: 32 * getScaleFactor(context),
+              width: 20 * getScaleFactor(context),
+              height: 20 * getScaleFactor(context),
             ),
           ),
           border: OutlineInputBorder(

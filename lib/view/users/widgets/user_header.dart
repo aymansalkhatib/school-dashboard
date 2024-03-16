@@ -16,10 +16,13 @@ class UsersHeader extends StatelessWidget {
           "User Dashboard",
           style: AppFontStyle.styleBold36(context).copyWith(height: 1),
         ),
-        SizedBox(
-          width: 350 * getScaleFactor(context),
-          child: const CustomSearch(),
-        )
+        Padding(
+          padding: const EdgeInsets.only(right: 16),
+          child: SizedBox(
+            width: 350 * getScaleFactor(context),
+            child: const CustomSearch(),
+          ),
+        ),
       ],
     );
   }

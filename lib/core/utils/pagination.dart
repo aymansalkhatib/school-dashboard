@@ -21,19 +21,19 @@ class MyPaginations extends StatelessWidget {
             children: [
               TextSpan(
                   text: 'Showing ',
-                  style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
-              TextSpan(text: '1-5 ', style: AppFontStyle.styleRegular14(context)),
+                  style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray)),
+              TextSpan(text: '1-5 ', style: AppFontStyle.styleRegular16(context)),
               TextSpan(
                   text: 'from ',
-                  style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
-              TextSpan(text: '100 ', style: AppFontStyle.styleRegular14(context)),
+                  style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray)),
+              TextSpan(text: '100 ', style: AppFontStyle.styleRegular16(context)),
               TextSpan(
                   text: 'data',
-                  style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
+                  style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray)),
             ],
           ),
         ),
-        SizedBox(width: 30 * getScaleFactor(context)),
+        SizedBox(width: 120 * getScaleFactor(context)),
         Row(
           children: [
             const Dropdown(angle: 22 / 7 / 2),

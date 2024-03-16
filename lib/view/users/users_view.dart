@@ -11,7 +11,7 @@ class Users extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 40, top: 40,left: 40),
+      padding: const EdgeInsets.only(right: 40, top: 40, left: 40, bottom: 40),
       child: Column(
         children: [
           const UsersHeader(),
@@ -20,7 +20,6 @@ class Users extends StatelessWidget {
             informations: itemCardUserModel,
             mask: Assets.imagesMasking,
             name: "Nabila Azalea",
-            
           ),
           const SizedBox(height: 40),
           const Spacer(),

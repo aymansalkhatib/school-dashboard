@@ -15,22 +15,34 @@ class HeaderWithSearch extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
-          child: FittedBox(
-            alignment: Alignment.topLeft,
-            fit: BoxFit.scaleDown,
-            child: Text(
-              title,
-              style: AppFontStyle.styleBold36(context).copyWith(height: 1),
-            ),
+          flex: 1180,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              FittedBox(
+                alignment: Alignment.topLeft,
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  title,
+                  style: AppFontStyle.styleBold36(context).copyWith(height: 1),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: SizedBox(
+                  width: 350 * getScaleFactor(context),
+                  child: const CustomSearch(),
+                ),
+              ),
+            ],
           ),
         ),
-        const Spacer(),
-        const Expanded(child: CustomSearch()),
-        const SizedBox(width: 50),
+        const SizedBox(width: 27),
         const Expanded(
+            flex: 395,
             child: TrailingDashboardHeader(
-          colorCircle: Colors.white,
-        )),
+              colorCircle: Colors.white,
+            )),
       ],
     );
   }
