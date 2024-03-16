@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sama/constants/app_colors.dart';
-import 'package:sama/constants/app_font_style.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/controller/drawer_controller.dart';
 import 'package:sama/view/drawer/widgets/drawer_header.dart';
 import 'package:sama/view/drawer/widgets/drawer_list_item.dart';

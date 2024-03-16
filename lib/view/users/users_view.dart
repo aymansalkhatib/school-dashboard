@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/assets.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/constants/assets.dart';
 import 'package:sama/model/item_card_user_model.dart';
 import 'package:sama/view/users/widgets/user_header.dart';
 import 'package:sama/view/users/widgets/user_card_info.dart';
@@ -15,7 +16,7 @@ class Users extends StatelessWidget {
       child: Column(
         children: [
           const UsersHeader(),
-          const SizedBox(height: 40),
+          const SizedBox(height: 28),
           UserCardInfo(
             informations: itemCardUserModel,
             mask: Assets.imagesMasking,

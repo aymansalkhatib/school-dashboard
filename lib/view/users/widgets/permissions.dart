@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/constants/assets.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/constants/assets.dart';
 import 'package:sama/view/users/widgets/permissions_item.dart';
 import 'package:sama/view/users/widgets/row_active_not_active.dart';
 

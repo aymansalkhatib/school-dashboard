@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sama/constants/app_colors.dart';
-import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/constants/assets.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/constants/assets.dart';
 import 'package:sama/model/item_card_user_model.dart';
 import 'package:sama/model/student_payment_model.dart';
-import 'package:sama/utils/pagination.dart';
+import 'package:sama/core/utils/pagination.dart';
 import 'package:sama/view/users/widgets/user_card_info.dart';
 
 class Students extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_colors.dart';
+import 'package:sama/core/constants/app_colors.dart';
 
 class ScheduleDetailsModel {
   final Color prefixColor;
@@ -45,5 +45,4 @@ List<ScheduleDetailsModel> scheduleDetailsModel = [
     date: "March 20, 2021",
     time: "09.00 - 10.00 AMq",
   ),
-  
 ];

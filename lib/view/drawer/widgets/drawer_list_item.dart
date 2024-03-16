@@ -20,7 +20,7 @@ class DrawerListItem extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8.0),
                   child: GetBuilder<DrawerControllerImp>(builder: (controller) {
                     return GestureDetector(
-                      onTap: () => controller.toggleItemDrawer(index),
+                      onTap: () => controller.toggleItemDrawer(index, drawerItem[index].destination),
                       child: DrawerItem(
                         drawerItemModel: drawerItem[index],
                         isActive: controller.drawerItemIsActive == index,

@@ -172,5 +172,53 @@ class Assets {
   /// Assets for imagesMaskingTeacher
   /// assets/images/MaskingTeacher.png
   static const String imagesMaskingTeacher = "assets/images/MaskingTeacher.png";
+
+  /// Assets for numbers1
+  /// assets/numbers/1.png
+  static const String numbers1 = "assets/numbers/1.png";
+
+  /// Assets for numbers10
+  /// assets/numbers/10.png
+  static const String numbers10 = "assets/numbers/10.png";
+
+  /// Assets for numbers11
+  /// assets/numbers/11.png
+  static const String numbers11 = "assets/numbers/11.png";
+
+  /// Assets for numbers12
+  /// assets/numbers/12.png
+  static const String numbers12 = "assets/numbers/12.png";
+
+  /// Assets for numbers2
+  /// assets/numbers/2.png
+  static const String numbers2 = "assets/numbers/2.png";
+
+  /// Assets for numbers3
+  /// assets/numbers/3.png
+  static const String numbers3 = "assets/numbers/3.png";
+
+  /// Assets for numbers4
+  /// assets/numbers/4.png
+  static const String numbers4 = "assets/numbers/4.png";
+
+  /// Assets for numbers5
+  /// assets/numbers/5.png
+  static const String numbers5 = "assets/numbers/5.png";
+
+  /// Assets for numbers6
+  /// assets/numbers/6.png
+  static const String numbers6 = "assets/numbers/6.png";
+
+  /// Assets for numbers7
+  /// assets/numbers/7.png
+  static const String numbers7 = "assets/numbers/7.png";
+
+  /// Assets for numbers8
+  /// assets/numbers/8.png
+  static const String numbers8 = "assets/numbers/8.png";
+
+  /// Assets for numbers9
+  /// assets/numbers/9.png
+  static const String numbers9 = "assets/numbers/9.png";
 }
 

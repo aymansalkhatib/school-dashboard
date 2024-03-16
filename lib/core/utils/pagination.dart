@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sama/constants/app_colors.dart';
-import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/constants/assets.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/constants/assets.dart';
 
 class MyPaginations extends StatelessWidget {
   const MyPaginations({
@@ -14,30 +14,27 @@ class MyPaginations extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 12),
-          child: RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                    text: 'Showing ',
-                    style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
-                TextSpan(text: '1-5 ', style: AppFontStyle.styleRegular14(context)),
-                TextSpan(
-                    text: 'from ',
-                    style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
-                TextSpan(text: '100 ', style: AppFontStyle.styleRegular14(context)),
-                TextSpan(
-                    text: 'data',
-                    style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
-              ],
-            ),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                  text: 'Showing ',
+                  style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
+              TextSpan(text: '1-5 ', style: AppFontStyle.styleRegular14(context)),
+              TextSpan(
+                  text: 'from ',
+                  style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
+              TextSpan(text: '100 ', style: AppFontStyle.styleRegular14(context)),
+              TextSpan(
+                  text: 'data',
+                  style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray)),
+            ],
           ),
         ),
+        SizedBox(width: 30 * getScaleFactor(context)),
         Row(
-          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             const Dropdown(angle: 22 / 7 / 2),
             ...List.generate(length, (index) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/constants/assets.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/constants/assets.dart';
 
 class TitleWithMonth extends StatelessWidget {
   const TitleWithMonth({

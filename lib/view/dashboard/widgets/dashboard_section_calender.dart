@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_font_style.dart';
+import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/view/dashboard/widgets/row_days.dart';
 import 'package:sama/view/dashboard/widgets/table_calander.dart';
 import 'package:sama/view/dashboard/widgets/title_with_month.dart';

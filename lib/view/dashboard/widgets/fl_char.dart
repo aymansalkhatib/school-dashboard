@@ -1,9 +1,9 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_colors.dart';
-import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/helper/color_extention.dart';
-import 'package:sama/helper/custom_grid_painter.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/helper/color_extention.dart';
+import 'package:sama/core/helper/custom_grid_painter.dart';
 import 'package:sama/view/dashboard/widgets/header_flchar.dart';
 
 class FlChar extends StatefulWidget {

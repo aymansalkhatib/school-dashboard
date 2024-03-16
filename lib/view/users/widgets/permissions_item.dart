@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_colors.dart';
-import 'package:sama/constants/app_font_style.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/constants/app_font_style.dart';
 
 class PermissionsItem extends StatelessWidget {
   const PermissionsItem({

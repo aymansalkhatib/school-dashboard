@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/utils/pagination.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/utils/pagination.dart';
 import 'package:sama/view/trailing_Dashboard/widgets/item_recent_students.dart';
-
-import '../../../constants/app_colors.dart';
 
 class ListUserPagination extends StatelessWidget {
   const ListUserPagination({
@@ -33,7 +32,7 @@ class ListUserPagination extends StatelessWidget {
           const SizedBox(height: 8),
           ...List.generate(3, (index) => const ItemRecentStudents()),
           const SizedBox(height: 24),
-          const MyPaginations(length: 3)
+          const FittedBox(fit: BoxFit.scaleDown, child: MyPaginations(length: 3))
         ],
       ),
     );

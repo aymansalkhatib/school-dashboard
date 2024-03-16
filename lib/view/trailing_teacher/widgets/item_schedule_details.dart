@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_colors.dart';
-import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/constants/assets.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/constants/assets.dart';
 import 'package:sama/model/schedule_details_model.dart';
 import 'package:sama/view/trailing_teacher/widgets/icon_with_text_inside_item_schedule_details.dart';
- 
+
 class ItemScheduleDetails extends StatelessWidget {
   const ItemScheduleDetails({
     super.key,

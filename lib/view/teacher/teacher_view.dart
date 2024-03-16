@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/assets.dart';
-import 'package:sama/utils/circle_button_with_border.dart';
+import 'package:sama/core/constants/assets.dart';
+import 'package:sama/core/utils/circle_button_with_border.dart';
 import 'package:sama/view/teacher/widgets/teachers_info.dart';
 import 'package:sama/view/users/widgets/avatar_with_background.dart';
 

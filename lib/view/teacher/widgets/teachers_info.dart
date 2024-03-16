@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_colors.dart';
-import 'package:sama/constants/app_font_style.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/model/item_card_user_model.dart';
-import 'package:sama/utils/row_info.dart';
+import 'package:sama/core/utils/row_info.dart';
 import 'package:sama/view/teacher/widgets/education_item.dart';
 
 class TeachersInfo extends StatelessWidget {

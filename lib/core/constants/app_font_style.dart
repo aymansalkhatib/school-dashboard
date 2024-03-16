@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_colors.dart';
-import 'package:sama/utils/size_config.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/utils/size_config.dart';
 
 class AppFontStyle {
   //* [ Regular ]
@@ -8,6 +8,15 @@ class AppFontStyle {
     return TextStyle(
       color: AppColors.textBlack,
       fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w400,
+    );
+  }
+
+  static TextStyle styleRegular15(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 15),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w400,
     );
@@ -91,6 +100,15 @@ class AppFontStyle {
     return TextStyle(
       color: AppColors.textBlack,
       fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle styleSemiBold20(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 20),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w600,
     );

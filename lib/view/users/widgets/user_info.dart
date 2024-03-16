@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sama/constants/app_colors.dart';
-import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/constants/assets.dart';
+import 'package:sama/core/constants/app_colors.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/constants/assets.dart';
 import 'package:sama/model/item_card_user_model.dart';
-import 'package:sama/utils/row_info.dart';
+import 'package:sama/core/utils/row_info.dart';
 
 class UserInfo extends StatelessWidget {
   const UserInfo({

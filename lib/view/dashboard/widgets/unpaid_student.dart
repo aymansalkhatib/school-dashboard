@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sama/constants/app_font_style.dart';
-import 'package:sama/utils/pagination.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/utils/pagination.dart';
 import 'package:sama/view/dashboard/widgets/row_unpaid_student.dart';
 
 class UnpaidStudent extends StatelessWidget {

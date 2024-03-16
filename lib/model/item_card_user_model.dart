@@ -1,4 +1,4 @@
-import 'package:sama/constants/assets.dart';
+import 'package:sama/core/constants/assets.dart';
 
 class ItemCardUserModel {
   final String title;
