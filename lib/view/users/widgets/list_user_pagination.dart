@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/utils/pagination.dart';
-import 'package:sama/view/trailing_Dashboard/widgets/item_recent_students.dart';
-
+import 'package:sama/view/trailing_dashboard/widgets/item_recent_students.dart';
+ 
 class ListUserPagination extends StatelessWidget {
   const ListUserPagination({
     super.key,

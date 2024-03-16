@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sama/view/trailing_dashboard/trailing_dashboard_view.dart';
+ import 'package:sama/view/trailing_dashboard/trailing_dashboard_view.dart';
 import 'package:sama/view/users/users_view.dart';
 
 class UsersWithTrailing extends StatelessWidget {

@@ -10,7 +10,7 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 40),
+      padding: const EdgeInsets.only(right: 40, left: 40, bottom: 40),
       child: Column(
         children: [
           const DashboardSectionDetails(),

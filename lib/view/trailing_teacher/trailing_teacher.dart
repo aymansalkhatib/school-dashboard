@@ -7,12 +7,15 @@ class TrailingTeacher extends StatelessWidget {
   const TrailingTeacher({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        HeaderTrailingTeacher(),
-        SizedBox(height: 30),
-        ListItemScheduleDetails(),
-      ],
+    return const Padding(
+      padding: EdgeInsets.only(right: 40),
+      child: Column(
+        children: [
+          HeaderTrailingTeacher(),
+          SizedBox(height: 30),
+          ListItemScheduleDetails(),
+        ],
+      ),
     );
   }
 }

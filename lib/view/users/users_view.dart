@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/constants/assets.dart';
 import 'package:sama/model/item_card_user_model.dart';
 import 'package:sama/view/users/widgets/user_header.dart';
@@ -12,7 +11,7 @@ class Users extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(40),
+      padding: const EdgeInsets.only(right: 40, top: 40,left: 40),
       child: Column(
         children: [
           const UsersHeader(),
@@ -21,6 +20,7 @@ class Users extends StatelessWidget {
             informations: itemCardUserModel,
             mask: Assets.imagesMasking,
             name: "Nabila Azalea",
+            
           ),
           const SizedBox(height: 40),
           const Spacer(),

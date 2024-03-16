@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:sama/core/enum/navigations_enum.dart';
 import 'package:sama/view/classes/classes_with_trailing.dart';
 import 'package:sama/view/dashboard/dashboard_with_trailing.dart';
-import 'package:sama/view/student/widgets/student_with_triling.dart';
+import 'package:sama/view/student/student_with_triling.dart';
 import 'package:sama/view/teacher/teacher_with_trailing.dart';
 import 'package:sama/view/users/users_with_trailing.dart';
 

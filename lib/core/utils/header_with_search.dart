@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/utils/custom_search.dart';
-import 'package:sama/view/trailing_Dashboard/widgets/trailing_Dashboard_header.dart';
+import 'package:sama/view/trailing_dashboard/widgets/trailing_dashboard_header.dart';
 
 class HeaderWithSearch extends StatelessWidget {
   const HeaderWithSearch({

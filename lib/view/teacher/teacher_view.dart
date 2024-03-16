@@ -10,8 +10,10 @@ class Teachers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.sizeOf(context).width * (1180 / 1920) - 80;
+    double top = 32 * MediaQuery.sizeOf(context).width / 1700;
+
     return Padding(
-      padding: const EdgeInsets.only(right: 40),
+      padding: const EdgeInsets.only(left: 40, right: 40, bottom: 28),
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
@@ -23,13 +25,13 @@ class Teachers extends StatelessWidget {
               clipBehavior: Clip.none,
               children: [
                 AvatarWithBackground(
-                  height: width / 3 / (1000 / 400),
+                  height: width / 3 / (1000 / 415),
                   mask: Assets.imagesMaskingTeacher,
                 ),
-                const Positioned(
-                  top: 30,
-                  left: 32,
-                  child: CircleButtonWithBorder(
+                Positioned(
+                  top: top,
+                  left: top,
+                  child: const CircleButtonWithBorder(
                     icon: Icons.assignment_ind_rounded,
                   ),
                 ),

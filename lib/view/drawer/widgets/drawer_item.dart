@@ -14,8 +14,7 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 17 * getScaleFactor(context)),
       decoration: BoxDecoration(
         color: isActive ? AppColors.lightPurple : null,
         borderRadius: const BorderRadius.horizontal(left: Radius.circular(100)),

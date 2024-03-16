@@ -19,17 +19,17 @@ class IconWithTextInsideItemScheduleDetails extends StatelessWidget {
       children: [
         SvgPicture.asset(
           icon,
-          width: 28 * getScaleFactor(context),
-          height: 28 * getScaleFactor(context),
+          width: 24 * getScaleFactor(context),
+          height: 24 * getScaleFactor(context),
           colorFilter: ColorFilter.mode(
             iconColor,
             BlendMode.srcIn,
           ),
         ),
-        const SizedBox(width: 12),
+        const SizedBox(width: 8),
         Text(
           text,
-          style: AppFontStyle.styleRegular14(context).copyWith(
+          style: AppFontStyle.styleRegular14(context, lower: 0.7).copyWith(
             color: AppColors.darkGray,
           ),
         ),

@@ -15,7 +15,7 @@ class UserItemCard extends StatelessWidget {
       children: [
         Text(
           itemCardUserModel.title,
-          style: AppFontStyle.styleRegular18(context).copyWith(
+          style: AppFontStyle.styleRegular18(context, lower: 0.7).copyWith(
             color: AppColors.darkGray,
           ),
         ),
@@ -38,7 +38,8 @@ class UserItemCard extends StatelessWidget {
             const SizedBox(width: 12),
             FittedBox(
                 fit: BoxFit.scaleDown,
-                child: Text(itemCardUserModel.body, style: AppFontStyle.styleSemiBold18(context))),
+                child:
+                    Text(itemCardUserModel.body, style: AppFontStyle.styleSemiBold18(context, lower: 0.7))),
           ],
         )
       ],

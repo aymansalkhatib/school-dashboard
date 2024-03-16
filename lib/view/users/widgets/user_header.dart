@@ -14,7 +14,7 @@ class UsersHeader extends StatelessWidget {
       children: [
         Text(
           "User Dashboard",
-          style: AppFontStyle.styleBold36(context),
+          style: AppFontStyle.styleBold36(context).copyWith(height: 1),
         ),
         SizedBox(
           width: 350 * getScaleFactor(context),

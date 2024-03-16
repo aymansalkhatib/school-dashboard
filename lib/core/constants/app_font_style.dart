@@ -4,10 +4,10 @@ import 'package:sama/core/utils/size_config.dart';
 
 class AppFontStyle {
   //* [ Regular ]
-  static TextStyle styleRegular14(BuildContext context) {
+  static TextStyle styleRegular14(BuildContext context, {double? lower}) {
     return TextStyle(
       color: AppColors.textBlack,
-      fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontSize: getResponsiveFontSize(context, fontSize: 14, lower: lower),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w400,
     );
@@ -77,10 +77,10 @@ class AppFontStyle {
     );
   }
 
-  static TextStyle styleMedium18(BuildContext context) {
+  static TextStyle styleMedium18(BuildContext context,{double ?lower}) {
     return TextStyle(
       color: AppColors.textBlack,
-      fontSize: getResponsiveFontSize(context, fontSize: 18),
+      fontSize: getResponsiveFontSize(context, fontSize: 18,lower: lower),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w500,
     );

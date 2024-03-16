@@ -21,7 +21,7 @@ class EducationItem extends StatelessWidget {
             const SizedBox(width: 10),
             Text(
               title,
-              style: AppFontStyle.styleMedium18(context),
+              style: AppFontStyle.styleMedium18(context, lower: 0.7),
             ),
           ],
         ),
@@ -30,7 +30,7 @@ class EducationItem extends StatelessWidget {
             const SizedBox(width: 22 + radius * 2),
             Text(
               body,
-              style: AppFontStyle.styleRegular18(context).copyWith(
+              style: AppFontStyle.styleRegular18(context, lower: 0.7).copyWith(
                 color: AppColors.darkGray,
               ),
             ),

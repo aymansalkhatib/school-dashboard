@@ -19,7 +19,7 @@ class ItemScheduleDetails extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 24,
+            width: 26 * getScaleFactor(context),
             decoration: BoxDecoration(
               color: scheduleDetailsModel.prefixColor,
               borderRadius: const BorderRadius.horizontal(
@@ -29,7 +29,7 @@ class ItemScheduleDetails extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(24 * getScaleFactor(context)),
+              padding: EdgeInsets.all(20 * getScaleFactor(context)),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.horizontal(
@@ -37,24 +37,14 @@ class ItemScheduleDetails extends StatelessWidget {
                 ),
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      scheduleDetailsModel.title,
-                      style: AppFontStyle.styleSemiBold18(context),
-                    ),
-                  ),
-                  FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Text(
-                      scheduleDetailsModel.subtitle,
-                      style: AppFontStyle.styleRegular14(context).copyWith(
-                        color: AppColors.darkGray,
-                      ),
-                    ),
+                  Text(scheduleDetailsModel.title, style: AppFontStyle.styleSemiBold18(context, lower: 0.7)),
+                  Text(
+                    scheduleDetailsModel.subtitle,
+                    style:
+                        AppFontStyle.styleRegular14(context, lower: 0.7).copyWith(color: AppColors.darkGray),
                   ),
                   const Spacer(),
                   IconWithTextInsideItemScheduleDetails(

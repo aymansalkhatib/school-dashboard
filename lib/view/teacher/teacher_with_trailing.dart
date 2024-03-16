@@ -14,21 +14,20 @@ class TeachersWithTrailing extends StatelessWidget {
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
-          child: Padding(
-            padding: EdgeInsets.all(40),
-            child: Column(
-              children: [
-                HeaderWithSearch(title: "Teacher Details"),
-                SizedBox(height: 28),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(flex: 1180, child: Teachers()),
-                    Expanded(flex: 395, child: TrailingTeacher()),
-                  ],
-                ),
-              ],
-            ),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 40, right: 40, top: 40, bottom: 28),
+                child: HeaderWithSearch(title: "Teacher Details"),
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(flex: 1180, child: Teachers()),
+                  Expanded(flex: 395, child: TrailingTeacher()),
+                ],
+              ),
+            ],
           ),
         )
       ],

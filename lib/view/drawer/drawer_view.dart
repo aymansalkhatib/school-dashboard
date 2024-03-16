@@ -22,7 +22,7 @@ class CustomDrawer extends StatelessWidget {
         child: Container(
           color: AppColors.primaryPurple,
           child: Padding(
-            padding: EdgeInsets.only(left: max(28, 40 * getScaleFactor(context)), top: 40),
+            padding: EdgeInsets.only(left: max(24, 40 * getScaleFactor(context)), top: 40),
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
