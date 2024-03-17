@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sama/controller/navigations_controller.dart';
- import 'package:sama/view/drawer/drawer_view.dart';
+import 'package:sama/view/drawer/drawer_view.dart';
 
 class Desktop extends StatelessWidget {
   const Desktop({super.key});

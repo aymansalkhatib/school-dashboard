@@ -77,10 +77,10 @@ class AppFontStyle {
     );
   }
 
-  static TextStyle styleMedium18(BuildContext context,{double ?lower}) {
+  static TextStyle styleMedium18(BuildContext context, {double? lower}) {
     return TextStyle(
       color: AppColors.textBlack,
-      fontSize: getResponsiveFontSize(context, fontSize: 18,lower: lower),
+      fontSize: getResponsiveFontSize(context, fontSize: 18, lower: lower),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w500,
     );
@@ -206,7 +206,7 @@ double getScaleFactor(context) {
   if (width < SizeConfig.tablet) {
     return width / 550;
   } else if (width < SizeConfig.desktop) {
-    return width / 1000;
+    return width / 1200;
   } else {
     return width / 1920;
   }

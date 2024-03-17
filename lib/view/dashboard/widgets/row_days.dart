@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sama/controller/dashboard_controller.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 
 class RowDays extends StatelessWidget {
@@ -8,17 +10,17 @@ class RowDays extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const List<String> days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-    return Row(children: [
-      for (int i = 0; i < days.length; i++)
-        Expanded(
-            child: Center(
-          child: Text(
-            days[i],
-            style: AppFontStyle.styleRegular18(context).copyWith(fontSize: 18 * getScaleFactor(context)),
-          ),
-        )),
-    ]);
+    return GetBuilder<DashboardControllerImp>(builder: (controller) {
+      return Row(children: [
+        for (int i = 0; i < 7; i++)
+          Expanded(
+              child: Center(
+            child: Text(
+              controller.dateTableModel.titleTable[i].substring(0, 3),
+              style: AppFontStyle.styleRegular18(context).copyWith(fontSize: 18 * getScaleFactor(context)),
+            ),
+          )),
+      ]);
+    });
   }
 }
