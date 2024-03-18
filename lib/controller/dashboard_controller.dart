@@ -75,7 +75,6 @@ class DashboardControllerImp extends DashboardController {
   @override
   void onInit() {
     fillTableDate(DateTime.now().year, DateTime.now().month);
-
     super.onInit();
   }
 }
