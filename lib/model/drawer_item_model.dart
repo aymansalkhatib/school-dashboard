@@ -15,7 +15,12 @@ List<DrawerItemModel> drawerItem = [
   // DrawerItemModel(title: 'Event', icon: Assets.iconsCalendar, NavigationEnum.Event),
   // DrawerItemModel(title: 'Finance', icon: Assets.iconsFinance, NavigationEnum.Finance),
   // DrawerItemModel(title: 'Food', icon: Assets.iconsFood, NavigationEnum.Food),
-  DrawerItemModel(title: 'User', icon: Assets.iconsUser, NavigationEnum.User),
-  // DrawerItemModel(title: 'Chat', icon: Assets.iconsChat, NavigationEnum.Chat),
+  DrawerItemModel(title: 'Users', icon: Assets.iconsUser, NavigationEnum.Users),
+  DrawerItemModel(title: 'Classes', icon: Assets.iconsClasses, NavigationEnum.Classes),
+  DrawerItemModel(
+    title: 'Chat',
+    icon: Assets.iconsChat,
+    NavigationEnum.NewStudent,
+  ),
   // DrawerItemModel(title: 'Lastest Activity', icon: Assets.iconsActivity, NavigationEnum.Lastest),
 ];

@@ -47,7 +47,7 @@ class TrailingDashboardHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                "Ayman Al-Katib",
+                "Omar Ayman",
                 style: AppFontStyle.styleSemiBold14(context).copyWith(
                   overflow: TextOverflow.ellipsis,
                 ),

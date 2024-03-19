@@ -1,0 +1,46 @@
+import 'package:flutter/material.dart';
+import 'package:sama/core/constants/app_font_style.dart';
+import 'package:sama/core/shared/custom_text_from_feild.dart';
+
+class TitleWithTextField extends StatelessWidget {
+  const TitleWithTextField({
+    super.key,
+    required this.hint,
+    required this.title,
+    this.maxLines = 1,
+  });
+  final List<String> hint;
+  final String title;
+  final int maxLines;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: AppFontStyle.styleBold18(context),
+        ),
+        SizedBox(
+          height: 16 * getScaleFactor(context),
+        ),
+        Row(
+          children: [
+            ...List.generate(
+                hint.length,
+                (index) => Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            right: index != hint.length - 1 ? 24 * getScaleFactor(context) : 0),
+                        child: CustomTextFromFeild(
+                          hint: hint[index],
+                          maxLines: maxLines,
+                        ),
+                      ),
+                    ))
+          ],
+        ),
+      ],
+    );
+  }
+}

@@ -53,6 +53,10 @@ class Assets {
   /// assets/icons/chat.svg
   static const String iconsChat = "assets/icons/chat.svg";
 
+  /// Assets for iconsClasses
+  /// assets/icons/classes.svg
+  static const String iconsClasses = "assets/icons/classes.svg";
+
   /// Assets for iconsClock
   /// assets/icons/clock.svg
   static const String iconsClock = "assets/icons/clock.svg";

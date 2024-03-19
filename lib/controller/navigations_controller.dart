@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sama/core/enum/navigations_enum.dart';
+import 'package:sama/view/add_new_student/add_new_student.dart';
 import 'package:sama/view/classes/classes_with_trailing.dart';
 import 'package:sama/view/dashboard/dashboard_with_trailing.dart';
 import 'package:sama/view/student/student_with_triling.dart';
@@ -76,7 +77,9 @@ class NavigationControllerImp extends NavigationController {
     } else if (widget is StudentWithTrailing) {
       return NavigationEnum.Students;
     } else if (widget is UsersWithTrailing) {
-      return NavigationEnum.User;
+      return NavigationEnum.Users;
+    } else if (widget is AddNewStudent) {
+      return NavigationEnum.NewStudent;
     }
 
     return null;
@@ -95,8 +98,10 @@ class NavigationControllerImp extends NavigationController {
         return const TeachersWithTrailing();
       case NavigationEnum.Students:
         return const StudentWithTrailing();
-      case NavigationEnum.User:
+      case NavigationEnum.Users:
         return const UsersWithTrailing();
+      case NavigationEnum.NewStudent:
+        return const AddNewStudent();
     }
   }
 

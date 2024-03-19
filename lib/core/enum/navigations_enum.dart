@@ -2,6 +2,7 @@ enum NavigationEnum {
   Dashboard,
   Students,
   Teachers,
-  User,
+  Users,
   Classes,
+  NewStudent
 }

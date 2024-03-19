@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/utils/custom_search.dart';
 import 'package:sama/view/trailing_dashboard/widgets/trailing_dashboard_header.dart';
@@ -7,8 +8,10 @@ class HeaderWithSearch extends StatelessWidget {
   const HeaderWithSearch({
     super.key,
     required this.title,
+    this.showSearch = true,
   });
   final String title;
+  final bool showSearch;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -27,11 +30,14 @@ class HeaderWithSearch extends StatelessWidget {
                   style: AppFontStyle.styleBold36(context).copyWith(height: 1),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 16),
-                child: SizedBox(
-                  width: 350 * getScaleFactor(context),
-                  child: const CustomSearch(),
+              Visibility(
+                visible: showSearch,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: SizedBox(
+                    width: 350 * getScaleFactor(context),
+                    child: const CustomSearch(),
+                  ),
                 ),
               ),
             ],
