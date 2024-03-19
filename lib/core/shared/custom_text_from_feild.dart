@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
@@ -12,7 +10,7 @@ class CustomTextFromFeild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: min(60 * getScaleFactor(context) * maxLines, 135 * getScaleFactor(context)),
+      height: maxLines > 1 ? null : 45,
       child: TextFormField(
         maxLines: maxLines,
         style: AppFontStyle.styleRegular18(context).copyWith(color: AppColors.textBlack),
@@ -24,11 +22,8 @@ class CustomTextFromFeild extends StatelessWidget {
               gapPadding: 0,
               borderRadius: BorderRadius.circular(5),
             ),
-            enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(
-              color: Color(0xffC1BBEB),
-              width: 1.5
-            ))),
+            enabledBorder:
+                const OutlineInputBorder(borderSide: BorderSide(color: Color(0xffC1BBEB), width: 1.5))),
       ),
     );
   }

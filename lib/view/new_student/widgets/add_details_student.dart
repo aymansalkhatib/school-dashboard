@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sama/core/constants/app_font_style.dart';
-import 'package:sama/view/add_new_student/widgets/container_header_with_radius_and_color_with_text.dart';
-import 'package:sama/view/add_new_student/widgets/create_column.dart';
-import 'package:sama/view/add_new_student/widgets/image_with_title_inside_details_student.dart';
+import 'package:sama/core/shared/container_header_with_radius_and_color_with_text.dart';
+import 'package:sama/core/shared/create_column.dart';
+import 'package:sama/view/new_teatcher/widgets/image_with_title_inside_details_student.dart';
+ 
 
 class AddDetailsStudnet extends StatelessWidget {
   const AddDetailsStudnet({super.key});
@@ -36,7 +37,8 @@ class AddDetailsStudnet extends StatelessWidget {
                     child: CreateColumn(
                       title: titleC1,
                       hint: hintC1,
-                      maxLinesForLastField: 4,
+                      maxLinesForField: 5,
+                      maxLinesIndexField: 3,
                     ),
                   ),
                   SizedBox(

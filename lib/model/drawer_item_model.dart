@@ -14,7 +14,7 @@ List<DrawerItemModel> drawerItem = [
   DrawerItemModel(title: 'Teachers', icon: Assets.iconsTeacher, NavigationEnum.Teachers),
   // DrawerItemModel(title: 'Event', icon: Assets.iconsCalendar, NavigationEnum.Event),
   // DrawerItemModel(title: 'Finance', icon: Assets.iconsFinance, NavigationEnum.Finance),
-  // DrawerItemModel(title: 'Food', icon: Assets.iconsFood, NavigationEnum.Food),
+  DrawerItemModel(title: 'Teacher', icon: Assets.iconsTeacher, NavigationEnum.NewTeacher),
   DrawerItemModel(title: 'Users', icon: Assets.iconsUser, NavigationEnum.Users),
   DrawerItemModel(title: 'Classes', icon: Assets.iconsClasses, NavigationEnum.Classes),
   DrawerItemModel(

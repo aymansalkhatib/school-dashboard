@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class DashedRectPainter extends CustomPainter {
@@ -15,7 +14,7 @@ class DashedRectPainter extends CustomPainter {
     required this.dashSpace,
     required this.strokeWidth,
     this.cornerRadius = 8.0,
-  });
+  }) : assert(dashWidth > 0 && dashSpace > 0 && strokeWidth > 0, 'Values must be greater than 0');
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -24,40 +23,25 @@ class DashedRectPainter extends CustomPainter {
       ..strokeWidth = strokeWidth
       ..style = PaintingStyle.stroke;
 
-    var path = Path()
-      ..moveTo(cornerRadius, 0)
-      ..lineTo(size.width - cornerRadius, 0) // Top line
-      ..arcToPoint(
-        Offset(size.width, cornerRadius),
-        radius: Radius.circular(cornerRadius),
-        clockwise: false,
-      )
-      ..lineTo(size.width, size.height - cornerRadius) // Right line
-      ..arcToPoint(
-        Offset(size.width - cornerRadius, size.height),
-        radius: Radius.circular(cornerRadius),
-        clockwise: false,
-      )
-      ..lineTo(cornerRadius, size.height) // Bottom line
-      ..arcToPoint(
-        Offset(0, size.height - cornerRadius),
-        radius: Radius.circular(cornerRadius),
-        clockwise: false,
-      )
-      ..lineTo(0, cornerRadius) // Left line
-      ..arcToPoint(
-        Offset(cornerRadius, 0),
-        radius: Radius.circular(cornerRadius),
-        clockwise: false,
-      );
+    var path = _createRoundedRectanglePath(size);
+    _drawDashedPath(canvas, path, paint);
+  }
 
-    // Use PathMetrics to draw the dashed path
+  /// Creates a path for a rounded rectangle.
+  Path _createRoundedRectanglePath(Size size) {
+    return Path()
+      ..addRRect(RRect.fromRectAndCorners(
+        Rect.fromLTWH(0, 0, size.width, size.height),
+        topLeft: Radius.circular(cornerRadius),
+        topRight: Radius.circular(cornerRadius),
+        bottomLeft: Radius.circular(cornerRadius),
+        bottomRight: Radius.circular(cornerRadius),
+      ));
+  }
+
+  void _drawDashedPath(Canvas canvas, Path path, Paint paint) {
     final PathMetrics pathMetrics = path.computeMetrics();
     for (final PathMetric pathMetric in pathMetrics) {
-      // final Path extractPath = pathMetric.extractPath(
-      //   0.0,
-      //   pathMetric.length,
-      // );
       final double dashLength = dashWidth + dashSpace;
       double distance = 0.0;
       while (distance < pathMetric.length) {
@@ -75,7 +59,5 @@ class DashedRectPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
-  }
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
