@@ -6,11 +6,12 @@ import 'package:sama/core/constants/assets.dart';
 import 'package:sama/core/shared/custom_button.dart';
 import 'package:sama/core/utils/custom_search.dart';
 
-class SearchWithNewStudent extends StatelessWidget {
-  const SearchWithNewStudent({
+class SearchWithNewUser extends StatelessWidget {
+  const SearchWithNewUser({
     super.key,
+    required this.text,
   });
-
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -36,7 +37,7 @@ class SearchWithNewStudent extends StatelessWidget {
               color: AppColors.primaryPurple,
               iconLeft: true,
               colorText: Colors.white,
-              text: "New Student",
+              text: text,
               svg: SvgPicture.asset(
                 Assets.iconsAdd,
                 width: 20 * getScaleFactor(context),

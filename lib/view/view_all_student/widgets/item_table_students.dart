@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/constants/assets.dart';
-import 'package:sama/view/view_all_student/widgets/contact_student.dart';
+import 'package:sama/core/shared/contacts.dart';
 import 'package:sama/view/view_all_student/widgets/image_with_name_student.dart';
 
 class ItemTableStudents extends StatelessWidget {
@@ -64,7 +64,7 @@ class ItemTableStudents extends StatelessWidget {
           ),
           const Expanded(
             flex: 2,
-            child: ContactStudent(),
+            child: Contacts(),
           ),
           Expanded(
             flex: 1,

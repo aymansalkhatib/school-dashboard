@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sama/core/enum/navigations_enum.dart';
-import 'package:sama/view/new_student/add_new_student.dart';
 import 'package:sama/view/classes/classes_with_trailing.dart';
 import 'package:sama/view/dashboard/dashboard_with_trailing.dart';
-import 'package:sama/view/new_teatcher/add_new_teacher.dart';
-import 'package:sama/view/student_details/student_with_triling.dart';
-import 'package:sama/view/teacher_details/teacher_with_trailing.dart';
 import 'package:sama/view/users_details/users_with_trailing.dart';
 import 'package:sama/view/view_all_student/view_all_student.dart';
+import 'package:sama/view/view_all_teacher/view_all_teacher.dart';
 
 abstract class NavigationController extends GetxController {
   void navigateTo(NavigationEnum destination);
@@ -74,18 +71,11 @@ class NavigationControllerImp extends NavigationController {
       return NavigationEnum.Dashboard;
     } else if (widget is ClassesWithTrailing) {
       return NavigationEnum.Classes;
-    } else if (widget is TeachersWithTrailing) {
+    } else if (widget is ViewAllTeacher) {
       return NavigationEnum.Teachers;
     } else if (widget is ViewAllStudent) {
       return NavigationEnum.Students;
-    } else if (widget is UsersWithTrailing) {
-      return NavigationEnum.Users;
-    } else if (widget is AddNewStudent) {
-      return NavigationEnum.NewStudent;
-    } else if (widget is AddNewTeacher) {
-      return NavigationEnum.NewTeacher;
     }
-
     return null;
   }
 
@@ -99,15 +89,11 @@ class NavigationControllerImp extends NavigationController {
         return const ClassesWithTrailing();
 
       case NavigationEnum.Teachers:
-        return const TeachersWithTrailing();
+        return const ViewAllTeacher();
       case NavigationEnum.Students:
         return const ViewAllStudent();
       case NavigationEnum.Users:
         return const UsersWithTrailing();
-      case NavigationEnum.NewStudent:
-        return const AddNewStudent();
-      case NavigationEnum.NewTeacher:
-        return const AddNewTeacher();
     }
   }
 

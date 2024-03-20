@@ -1,0 +1,129 @@
+# Diff Details
+
+Date : 2024-03-20 18:12:22
+
+Directory c:\\Users\\Ayman_Alkhatib\\Desktop\\Flutter\\sama\\lib
+
+Total : 114 files,  1592 codes, 36 comments, 154 blanks, all 1782 lines
+
+[Summary](results.md) / [Details](details.md) / [Diff Summary](diff.md) / Diff Details
+
+## Files
+| filename | language | code | comment | blank | total |
+| :--- | :--- | ---: | ---: | ---: | ---: |
+| [lib/constants/app_colors.dart](/lib/constants/app_colors.dart) | Dart | -18 | 0 | -2 | -20 |
+| [lib/constants/app_font_style.dart](/lib/constants/app_font_style.dart) | Dart | -182 | -8 | -21 | -211 |
+| [lib/constants/assets.dart](/lib/constants/assets.dart) | Dart | -58 | -110 | -57 | -225 |
+| [lib/controller/add_new_student_controller.dart](/lib/controller/add_new_student_controller.dart) | Dart | 18 | 0 | 5 | 23 |
+| [lib/controller/dashboard_controller.dart](/lib/controller/dashboard_controller.dart) | Dart | 48 | 19 | 14 | 81 |
+| [lib/controller/drawer_controller.dart](/lib/controller/drawer_controller.dart) | Dart | 5 | 0 | 0 | 5 |
+| [lib/controller/navigations_controller.dart](/lib/controller/navigations_controller.dart) | Dart | 89 | 2 | 16 | 107 |
+| [lib/core/constants/app_colors.dart](/lib/core/constants/app_colors.dart) | Dart | 18 | 0 | 2 | 20 |
+| [lib/core/constants/app_font_style.dart](/lib/core/constants/app_font_style.dart) | Dart | 190 | 8 | 25 | 223 |
+| [lib/core/constants/assets.dart](/lib/core/constants/assets.dart) | Dart | 61 | 116 | 60 | 237 |
+| [lib/core/constants/constants.dart](/lib/core/constants/constants.dart) | Dart | 0 | 0 | 3 | 3 |
+| [lib/core/enum/enum_pament.dart](/lib/core/enum/enum_pament.dart) | Dart | 8 | 0 | 0 | 8 |
+| [lib/core/enum/navigations_enum.dart](/lib/core/enum/navigations_enum.dart) | Dart | 1 | 0 | 1 | 2 |
+| [lib/core/helper/color_extention.dart](/lib/core/helper/color_extention.dart) | Dart | 30 | 0 | 4 | 34 |
+| [lib/core/helper/custom_grid_painter.dart](/lib/core/helper/custom_grid_painter.dart) | Dart | 32 | 0 | 8 | 40 |
+| [lib/core/helper/date.dart](/lib/core/helper/date.dart) | Dart | 53 | 0 | 8 | 61 |
+| [lib/core/my_services.dart](/lib/core/my_services.dart) | Dart | 48 | 6 | 16 | 70 |
+| [lib/core/shared/contacts.dart](/lib/core/shared/contacts.dart) | Dart | 43 | 0 | 2 | 45 |
+| [lib/core/shared/container_header_with_radius_and_color_with_text.dart](/lib/core/shared/container_header_with_radius_and_color_with_text.dart) | Dart | 28 | 0 | 2 | 30 |
+| [lib/core/shared/create_column.dart](/lib/core/shared/create_column.dart) | Dart | 35 | 0 | 2 | 37 |
+| [lib/core/shared/custom_button.dart](/lib/core/shared/custom_button.dart) | Dart | 76 | 0 | 3 | 79 |
+| [lib/core/shared/custom_disconnect_contaniar.dart](/lib/core/shared/custom_disconnect_contaniar.dart) | Dart | 55 | 1 | 8 | 64 |
+| [lib/core/shared/custom_text_from_feild.dart](/lib/core/shared/custom_text_from_feild.dart) | Dart | 47 | 0 | 5 | 52 |
+| [lib/core/shared/save_and_submit_button.dart](/lib/core/shared/save_and_submit_button.dart) | Dart | 25 | 0 | 3 | 28 |
+| [lib/core/shared/search_with_new_user.dart](/lib/core/shared/search_with_new_user.dart) | Dart | 51 | 0 | 2 | 53 |
+| [lib/core/shared/title_with_text_field.dart](/lib/core/shared/title_with_text_field.dart) | Dart | 45 | 0 | 2 | 47 |
+| [lib/core/utils/adaptive_layout_widget.dart](/lib/core/utils/adaptive_layout_widget.dart) | Dart | 21 | 0 | 3 | 24 |
+| [lib/core/utils/circle_button_with_border.dart](/lib/core/utils/circle_button_with_border.dart) | Dart | 36 | 0 | 2 | 38 |
+| [lib/core/utils/custom_search.dart](/lib/core/utils/custom_search.dart) | Dart | 42 | 0 | 4 | 46 |
+| [lib/core/utils/header_with_search.dart](/lib/core/utils/header_with_search.dart) | Dart | 54 | 0 | 2 | 56 |
+| [lib/core/utils/pagination.dart](/lib/core/utils/pagination.dart) | Dart | 90 | 0 | 3 | 93 |
+| [lib/core/utils/row_info.dart](/lib/core/utils/row_info.dart) | Dart | 35 | 0 | 4 | 39 |
+| [lib/core/utils/size_config.dart](/lib/core/utils/size_config.dart) | Dart | 10 | 0 | 4 | 14 |
+| [lib/helper/color_extention.dart](/lib/helper/color_extention.dart) | Dart | -30 | 0 | -4 | -34 |
+| [lib/helper/custom_grid_painter.dart](/lib/helper/custom_grid_painter.dart) | Dart | -32 | 0 | -8 | -40 |
+| [lib/main.dart](/lib/main.dart) | Dart | 2 | 0 | 0 | 2 |
+| [lib/model/date_model.dart](/lib/model/date_model.dart) | Dart | 15 | 0 | 2 | 17 |
+| [lib/model/drawer_item_model.dart](/lib/model/drawer_item_model.dart) | Dart | -2 | 5 | -1 | 2 |
+| [lib/model/schedule_details_model.dart](/lib/model/schedule_details_model.dart) | Dart | 0 | 0 | -1 | -1 |
+| [lib/utils/adaptive_layout_widget.dart](/lib/utils/adaptive_layout_widget.dart) | Dart | -21 | 0 | -3 | -24 |
+| [lib/utils/circle_button_with_border.dart](/lib/utils/circle_button_with_border.dart) | Dart | -36 | 0 | -2 | -38 |
+| [lib/utils/custom_search.dart](/lib/utils/custom_search.dart) | Dart | -41 | 0 | -3 | -44 |
+| [lib/utils/header_with_search.dart](/lib/utils/header_with_search.dart) | Dart | -35 | 0 | -2 | -37 |
+| [lib/utils/pagination.dart](/lib/utils/pagination.dart) | Dart | -93 | 0 | -3 | -96 |
+| [lib/utils/row_info.dart](/lib/utils/row_info.dart) | Dart | -35 | 0 | -4 | -39 |
+| [lib/utils/size_config.dart](/lib/utils/size_config.dart) | Dart | -10 | 0 | -4 | -14 |
+| [lib/view/classes/classes_with_trailing.dart](/lib/view/classes/classes_with_trailing.dart) | Dart | 0 | 0 | -1 | -1 |
+| [lib/view/classes/widgets/classes_grid_view.dart](/lib/view/classes/widgets/classes_grid_view.dart) | Dart | 3 | 0 | 0 | 3 |
+| [lib/view/classes/widgets/classes_grid_view_item.dart](/lib/view/classes/widgets/classes_grid_view_item.dart) | Dart | 4 | 0 | 0 | 4 |
+| [lib/view/dashboard/dashboard_view.dart](/lib/view/dashboard/dashboard_view.dart) | Dart | 3 | 0 | 0 | 3 |
+| [lib/view/dashboard/dashboard_with_trailing.dart](/lib/view/dashboard/dashboard_with_trailing.dart) | Dart | -1 | 0 | 0 | -1 |
+| [lib/view/dashboard/widgets/row_days.dart](/lib/view/dashboard/widgets/row_days.dart) | Dart | 6 | 0 | -1 | 5 |
+| [lib/view/dashboard/widgets/table_calander.dart](/lib/view/dashboard/widgets/table_calander.dart) | Dart | 22 | 0 | 0 | 22 |
+| [lib/view/dashboard/widgets/title_with_month.dart](/lib/view/dashboard/widgets/title_with_month.dart) | Dart | 31 | 0 | 0 | 31 |
+| [lib/view/desktop.dart](/lib/view/desktop.dart) | Dart | 3 | 0 | 0 | 3 |
+| [lib/view/drawer/widgets/drawer_item.dart](/lib/view/drawer/widgets/drawer_item.dart) | Dart | -1 | 0 | 0 | -1 |
+| [lib/view/new_student/add_new_student.dart](/lib/view/new_student/add_new_student.dart) | Dart | 30 | 0 | 4 | 34 |
+| [lib/view/new_student/widgets/add_details_student.dart](/lib/view/new_student/widgets/add_details_student.dart) | Dart | 71 | 0 | 6 | 77 |
+| [lib/view/new_student/widgets/parent_datails.dart](/lib/view/new_student/widgets/parent_datails.dart) | Dart | 106 | 0 | 6 | 112 |
+| [lib/view/new_student/widgets/radio_item.dart](/lib/view/new_student/widgets/radio_item.dart) | Dart | 27 | 0 | 2 | 29 |
+| [lib/view/new_teatcher/add_new_teacher.dart](/lib/view/new_teatcher/add_new_teacher.dart) | Dart | 30 | 0 | 4 | 34 |
+| [lib/view/new_teatcher/widgets/add_details_teacher.dart](/lib/view/new_teatcher/widgets/add_details_teacher.dart) | Dart | 82 | 0 | 5 | 87 |
+| [lib/view/new_teatcher/widgets/education_datails.dart](/lib/view/new_teatcher/widgets/education_datails.dart) | Dart | 63 | 0 | 6 | 69 |
+| [lib/view/new_teatcher/widgets/image_with_title_inside_details_student.dart](/lib/view/new_teatcher/widgets/image_with_title_inside_details_student.dart) | Dart | 53 | 0 | 2 | 55 |
+| [lib/view/sama.dart](/lib/view/sama.dart) | Dart | 3 | 0 | 1 | 4 |
+| [lib/view/student/students_view.dart](/lib/view/student/students_view.dart) | Dart | -127 | 0 | -5 | -132 |
+| [lib/view/student/widgets/student_with_triling.dart](/lib/view/student/widgets/student_with_triling.dart) | Dart | -33 | 0 | -2 | -35 |
+| [lib/view/student_details/student_with_triling.dart](/lib/view/student_details/student_with_triling.dart) | Dart | 32 | 0 | 2 | 34 |
+| [lib/view/student_details/students_view.dart](/lib/view/student_details/students_view.dart) | Dart | 27 | 0 | 2 | 29 |
+| [lib/view/student_details/widgets/item_row_payments_student.dart](/lib/view/student_details/widgets/item_row_payments_student.dart) | Dart | 64 | 0 | 5 | 69 |
+| [lib/view/student_details/widgets/student_payments.dart](/lib/view/student_details/widgets/student_payments.dart) | Dart | 42 | 0 | 3 | 45 |
+| [lib/view/teacher/teacher_view.dart](/lib/view/teacher/teacher_view.dart) | Dart | -42 | -41 | -11 | -94 |
+| [lib/view/teacher/teacher_with_trailing.dart](/lib/view/teacher/teacher_with_trailing.dart) | Dart | -35 | 0 | -3 | -38 |
+| [lib/view/teacher/widgets/education_item.dart](/lib/view/teacher/widgets/education_item.dart) | Dart | -41 | 0 | -2 | -43 |
+| [lib/view/teacher/widgets/teachers_info.dart](/lib/view/teacher/widgets/teachers_info.dart) | Dart | -81 | -3 | -7 | -91 |
+| [lib/view/teacher_details/teacher_view.dart](/lib/view/teacher_details/teacher_view.dart) | Dart | 43 | 41 | 12 | 96 |
+| [lib/view/teacher_details/teacher_with_trailing.dart](/lib/view/teacher_details/teacher_with_trailing.dart) | Dart | 34 | 0 | 3 | 37 |
+| [lib/view/teacher_details/widgets/education_item.dart](/lib/view/teacher_details/widgets/education_item.dart) | Dart | 41 | 0 | 2 | 43 |
+| [lib/view/teacher_details/widgets/teachers_info.dart](/lib/view/teacher_details/widgets/teachers_info.dart) | Dart | 84 | 0 | 3 | 87 |
+| [lib/view/trailing_dashboard/trailing_dashboard_view.dart](/lib/view/trailing_dashboard/trailing_dashboard_view.dart) | Dart | 0 | 0 | 1 | 1 |
+| [lib/view/trailing_teacher/trailing_teacher.dart](/lib/view/trailing_teacher/trailing_teacher.dart) | Dart | 3 | 0 | 0 | 3 |
+| [lib/view/trailing_teacher/widgets/item_schedule_details.dart](/lib/view/trailing_teacher/widgets/item_schedule_details.dart) | Dart | -10 | 0 | 0 | -10 |
+| [lib/view/users/users_view.dart](/lib/view/users/users_view.dart) | Dart | -29 | 0 | -3 | -32 |
+| [lib/view/users/users_with_trailing.dart](/lib/view/users/users_with_trailing.dart) | Dart | -24 | 0 | -3 | -27 |
+| [lib/view/users/widgets/avatar_with_background.dart](/lib/view/users/widgets/avatar_with_background.dart) | Dart | -29 | 0 | -2 | -31 |
+| [lib/view/users/widgets/list_user_pagination.dart](/lib/view/users/widgets/list_user_pagination.dart) | Dart | -38 | 0 | -4 | -42 |
+| [lib/view/users/widgets/permissions.dart](/lib/view/users/widgets/permissions.dart) | Dart | -37 | -2 | -5 | -44 |
+| [lib/view/users/widgets/permissions_item.dart](/lib/view/users/widgets/permissions_item.dart) | Dart | -42 | -3 | -4 | -49 |
+| [lib/view/users/widgets/row_active_not_active.dart](/lib/view/users/widgets/row_active_not_active.dart) | Dart | -47 | 0 | -3 | -50 |
+| [lib/view/users/widgets/user_card_info.dart](/lib/view/users/widgets/user_card_info.dart) | Dart | -36 | 0 | -3 | -39 |
+| [lib/view/users/widgets/user_header.dart](/lib/view/users/widgets/user_header.dart) | Dart | -24 | 0 | -3 | -27 |
+| [lib/view/users/widgets/user_info.dart](/lib/view/users/widgets/user_info.dart) | Dart | -63 | 0 | -2 | -65 |
+| [lib/view/users/widgets/user_item_card.dart](/lib/view/users/widgets/user_item_card.dart) | Dart | -45 | 0 | -3 | -48 |
+| [lib/view/users/widgets/user_stack_widget.dart](/lib/view/users/widgets/user_stack_widget.dart) | Dart | -46 | 0 | -3 | -49 |
+| [lib/view/users/widgets/users_and_premissions.dart](/lib/view/users/widgets/users_and_premissions.dart) | Dart | -17 | 0 | -3 | -20 |
+| [lib/view/users_details/users_view.dart](/lib/view/users_details/users_view.dart) | Dart | 29 | 0 | 3 | 32 |
+| [lib/view/users_details/users_with_trailing.dart](/lib/view/users_details/users_with_trailing.dart) | Dart | 24 | 0 | 3 | 27 |
+| [lib/view/users_details/widgets/avatar_with_background.dart](/lib/view/users_details/widgets/avatar_with_background.dart) | Dart | 29 | 0 | 2 | 31 |
+| [lib/view/users_details/widgets/list_user_pagination.dart](/lib/view/users_details/widgets/list_user_pagination.dart) | Dart | 38 | 0 | 3 | 41 |
+| [lib/view/users_details/widgets/permissions.dart](/lib/view/users_details/widgets/permissions.dart) | Dart | 37 | 2 | 5 | 44 |
+| [lib/view/users_details/widgets/permissions_item.dart](/lib/view/users_details/widgets/permissions_item.dart) | Dart | 42 | 3 | 4 | 49 |
+| [lib/view/users_details/widgets/row_active_not_active.dart](/lib/view/users_details/widgets/row_active_not_active.dart) | Dart | 47 | 0 | 3 | 50 |
+| [lib/view/users_details/widgets/user_card_info.dart](/lib/view/users_details/widgets/user_card_info.dart) | Dart | 35 | 0 | 3 | 38 |
+| [lib/view/users_details/widgets/user_header.dart](/lib/view/users_details/widgets/user_header.dart) | Dart | 27 | 0 | 3 | 30 |
+| [lib/view/users_details/widgets/user_info.dart](/lib/view/users_details/widgets/user_info.dart) | Dart | 60 | 0 | 2 | 62 |
+| [lib/view/users_details/widgets/user_item_card.dart](/lib/view/users_details/widgets/user_item_card.dart) | Dart | 46 | 0 | 3 | 49 |
+| [lib/view/users_details/widgets/user_stack_widget.dart](/lib/view/users_details/widgets/user_stack_widget.dart) | Dart | 46 | 0 | 3 | 49 |
+| [lib/view/users_details/widgets/users_and_premissions.dart](/lib/view/users_details/widgets/users_and_premissions.dart) | Dart | 17 | 0 | 3 | 20 |
+| [lib/view/view_all_student/view_all_student.dart](/lib/view/view_all_student/view_all_student.dart) | Dart | 24 | 0 | 2 | 26 |
+| [lib/view/view_all_student/widgets/header_table_students.dart](/lib/view/view_all_student/widgets/header_table_students.dart) | Dart | 44 | 0 | 3 | 47 |
+| [lib/view/view_all_student/widgets/image_with_name_student.dart](/lib/view/view_all_student/widgets/image_with_name_student.dart) | Dart | 41 | 0 | 3 | 44 |
+| [lib/view/view_all_student/widgets/item_table_students.dart](/lib/view/view_all_student/widgets/item_table_students.dart) | Dart | 105 | 0 | 4 | 109 |
+| [lib/view/view_all_student/widgets/list_view_students.dart](/lib/view/view_all_student/widgets/list_view_students.dart) | Dart | 35 | 0 | 2 | 37 |
+| [lib/view/view_all_teacher/view_all_teacher.dart](/lib/view/view_all_teacher/view_all_teacher.dart) | Dart | 89 | 0 | 4 | 93 |
+
+[Summary](results.md) / [Details](details.md) / [Diff Summary](diff.md) / Diff Details

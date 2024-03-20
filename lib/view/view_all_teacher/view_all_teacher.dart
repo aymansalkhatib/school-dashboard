@@ -1,0 +1,39 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:sama/core/shared/search_with_new_user.dart';
+import 'package:sama/core/utils/header_with_search.dart';
+import 'package:sama/view/view_all_teacher/widgets/item_grid_vew_teachers.dart';
+
+class ViewAllTeacher extends StatelessWidget {
+  const ViewAllTeacher({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(40),
+        child: Column(
+          children: [
+            const HeaderWithSearch(title: "Teachers", showSearch: false),
+            const SizedBox(height: 40),
+            const SearchWithNewUser(text: "New Teacher"),
+            const SizedBox(height: 40),
+            GridView.builder(
+              shrinkWrap: true,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 4,
+                mainAxisSpacing: 40,
+                crossAxisSpacing: 40,
+                childAspectRatio: 340 / 360,
+              ),
+              itemCount: 12,
+              itemBuilder: (BuildContext context, int index) {
+                return const ItemGridVewTeachers();
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
