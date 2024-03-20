@@ -22,10 +22,10 @@ class AppFontStyle {
     );
   }
 
-  static TextStyle styleRegular16(BuildContext context) {
+  static TextStyle styleRegular16(BuildContext context, {double? lower}) {
     return TextStyle(
       color: AppColors.textBlack,
-      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontSize: getResponsiveFontSize(context, fontSize: 16, lower: lower),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w400,
     );
@@ -100,6 +100,15 @@ class AppFontStyle {
     return TextStyle(
       color: AppColors.textBlack,
       fontSize: getResponsiveFontSize(context, fontSize: 14),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle styleSemiBold16(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
       fontFamily: 'Poppins',
       fontWeight: FontWeight.w600,
     );

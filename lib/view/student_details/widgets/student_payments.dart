@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/utils/pagination.dart';
 import 'package:sama/model/student_payment_model.dart';
-import 'package:sama/view/student/widgets/item_row_payments_student.dart';
+import 'package:sama/view/student_details/widgets/item_row_payments_student.dart';
 
 class StudentPayments extends StatelessWidget {
   const StudentPayments({

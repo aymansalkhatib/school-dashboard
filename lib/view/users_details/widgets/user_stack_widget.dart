@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sama/model/item_card_user_model.dart';
 import 'package:sama/core/utils/circle_button_with_border.dart';
-import 'package:sama/view/users/widgets/avatar_with_background.dart';
-import 'package:sama/view/users/widgets/user_info.dart';
+import 'package:sama/view/users_details/widgets/avatar_with_background.dart';
+import 'package:sama/view/users_details/widgets/user_info.dart';
 
 class UserStackWidget extends StatelessWidget {
   const UserStackWidget({

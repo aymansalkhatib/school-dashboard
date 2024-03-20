@@ -29,6 +29,10 @@ class Assets {
   /// assets/icons/Activity.svg
   static const String iconsActivity = "assets/icons/Activity.svg";
 
+  /// Assets for iconsAdd
+  /// assets/icons/add.svg
+  static const String iconsAdd = "assets/icons/add.svg";
+
   /// Assets for iconsAttachment
   /// assets/icons/Attachment.svg
   static const String iconsAttachment = "assets/icons/Attachment.svg";

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sama/view/users/widgets/list_user_pagination.dart';
-import 'package:sama/view/users/widgets/permissions.dart';
+import 'package:sama/view/users_details/widgets/list_user_pagination.dart';
+import 'package:sama/view/users_details/widgets/permissions.dart';
 
 class UsersAndPremissions extends StatelessWidget {
   const UsersAndPremissions({super.key});
