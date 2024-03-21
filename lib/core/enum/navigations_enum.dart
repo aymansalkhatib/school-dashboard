@@ -1,1 +1,1 @@
-enum NavigationEnum { Dashboard, Students, Teachers, Users, Classes }
+enum NavigationEnum { Dashboard, Students, Teachers, Users, Classes, AddNewStudent, AddNewTeacher }

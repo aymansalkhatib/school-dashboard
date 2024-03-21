@@ -10,7 +10,9 @@ class SearchWithNewUser extends StatelessWidget {
   const SearchWithNewUser({
     super.key,
     required this.text,
+    this.onPressed,
   });
+  final void Function()? onPressed;
   final String text;
   @override
   Widget build(BuildContext context) {
@@ -42,7 +44,7 @@ class SearchWithNewUser extends StatelessWidget {
                 Assets.iconsAdd,
                 width: 20 * getScaleFactor(context),
               ),
-              onPressed: () {},
+              onPressed: onPressed,
             ),
           ],
         )

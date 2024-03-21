@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:sama/controller/navigations_controller.dart';
+import 'package:sama/core/enum/navigations_enum.dart';
 import 'package:sama/core/shared/search_with_new_user.dart';
 import 'package:sama/core/utils/header_with_search.dart';
 import 'package:sama/view/view_all_teacher/widgets/item_grid_vew_teachers.dart';
@@ -16,7 +19,12 @@ class ViewAllTeacher extends StatelessWidget {
           children: [
             const HeaderWithSearch(title: "Teachers", showSearch: false),
             const SizedBox(height: 40),
-            const SearchWithNewUser(text: "New Teacher"),
+            SearchWithNewUser(
+              text: "New Teacher",
+              onPressed: () {
+                Get.find<NavigationControllerImp>().navigateTo(NavigationEnum.AddNewTeacher);
+              },
+            ),
             const SizedBox(height: 40),
             GridView.builder(
               shrinkWrap: true,

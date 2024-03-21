@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sama/controller/navigations_controller.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/shared/custom_button.dart';
 
@@ -19,7 +21,9 @@ class SaveAndSubmitButton extends StatelessWidget {
           text: "Submit",
           color: AppColors.primaryPurple,
           colorText: Colors.white,
-          onPressed: () {},
+          onPressed: () {
+            Get.find<NavigationControllerImp>().pop();
+          },
         ),
       ],
     );

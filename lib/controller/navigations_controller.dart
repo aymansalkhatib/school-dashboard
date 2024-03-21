@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:sama/core/enum/navigations_enum.dart';
 import 'package:sama/view/classes/classes_with_trailing.dart';
 import 'package:sama/view/dashboard/dashboard_with_trailing.dart';
+import 'package:sama/view/new_student/add_new_student.dart';
+import 'package:sama/view/new_teatcher/add_new_teacher.dart';
 import 'package:sama/view/users_details/users_with_trailing.dart';
 import 'package:sama/view/view_all_student/view_all_student.dart';
 import 'package:sama/view/view_all_teacher/view_all_teacher.dart';
@@ -32,7 +34,7 @@ class NavigationControllerImp extends NavigationController {
 
   @override
   void pop() {
-    if (_navigationStack.length > 2) {
+    if (_navigationStack.length > 1) {
       _navigationStack.removeLast();
       _currentPage = _navigationStack.last;
       update();
@@ -42,12 +44,10 @@ class NavigationControllerImp extends NavigationController {
   }
 
   void replaceLastWidget(NavigationEnum destination) {
-    if (_navigationStack.isNotEmpty) {
-      _currentPage = _getPage(destination) ?? _createPage(destination);
-      _navigationStack.removeLast();
-      _navigationStack.add(_currentPage);
-      update();
-    }
+    _currentPage = _getPage(destination) ?? _createPage(destination);
+    _navigationStack.clear();
+    _navigationStack.add(_currentPage);
+    update();
   }
 
   @override
@@ -73,8 +73,10 @@ class NavigationControllerImp extends NavigationController {
       return NavigationEnum.Classes;
     } else if (widget is ViewAllTeacher) {
       return NavigationEnum.Teachers;
-    } else if (widget is ViewAllStudent) {
-      return NavigationEnum.Students;
+    } else if (widget is AddNewStudent) {
+      return NavigationEnum.AddNewStudent;
+    } else if (widget is AddNewTeacher) {
+      return NavigationEnum.AddNewTeacher;
     }
     return null;
   }
@@ -82,6 +84,7 @@ class NavigationControllerImp extends NavigationController {
 // TODO:  [add NavigationEnum new screen]
 
   Widget _createPage(NavigationEnum destination) {
+    print("Created Widget");
     switch (destination) {
       case NavigationEnum.Dashboard:
         return const DashboardWithTrailing();
@@ -94,6 +97,10 @@ class NavigationControllerImp extends NavigationController {
         return const ViewAllStudent();
       case NavigationEnum.Users:
         return const UsersWithTrailing();
+      case NavigationEnum.AddNewStudent:
+        return const AddNewStudent();
+      case NavigationEnum.AddNewTeacher:
+        return const AddNewTeacher();
     }
   }
 

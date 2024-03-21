@@ -154,22 +154,36 @@ bool Win32Window::Show() {
 }
 
 // static
+ 
 LRESULT CALLBACK Win32Window::WndProc(HWND const window,
                                       UINT const message,
                                       WPARAM const wparam,
                                       LPARAM const lparam) noexcept {
-  if (message == WM_NCCREATE) {
-    auto window_struct = reinterpret_cast<CREATESTRUCT*>(lparam);
-    SetWindowLongPtr(window, GWLP_USERDATA,
-                     reinterpret_cast<LONG_PTR>(window_struct->lpCreateParams));
+  switch (message) {
+    case WM_NCCREATE: {
+      auto window_struct = reinterpret_cast<CREATESTRUCT*>(lparam);
+      SetWindowLongPtr(window, GWLP_USERDATA,
+                       reinterpret_cast<LONG_PTR>(window_struct->lpCreateParams));
 
-    auto that = static_cast<Win32Window*>(window_struct->lpCreateParams);
-    EnableFullDpiSupportIfAvailable(window);
-    that->window_handle_ = window;
-  } else if (Win32Window* that = GetThisFromHandle(window)) {
-    return that->MessageHandler(window, message, wparam, lparam);
+      auto that = static_cast<Win32Window*>(window_struct->lpCreateParams);
+      EnableFullDpiSupportIfAvailable(window);
+      that->window_handle_ = window;
+      break;
+    }
+    case WM_GETMINMAXINFO: {
+      MINMAXINFO* mmi = reinterpret_cast<MINMAXINFO*>(lparam);
+      mmi->ptMinTrackSize.x = 1000; // Minimum width
+      // Set the minimum height as appropriate for your application
+      mmi->ptMinTrackSize.y = 400; 
+      break;
+    }
+    default: {
+      if (Win32Window* that = GetThisFromHandle(window)) {
+        return that->MessageHandler(window, message, wparam, lparam);
+      }
+      break;
+    }
   }
-
   return DefWindowProc(window, message, wparam, lparam);
 }
 
