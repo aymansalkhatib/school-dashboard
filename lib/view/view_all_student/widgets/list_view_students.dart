@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:sama/controller/view_student_controller.dart';
 import 'package:sama/core/utils/pagination.dart';
 import 'package:sama/view/view_all_student/widgets/header_table_students.dart';
 import 'package:sama/view/view_all_student/widgets/item_table_students.dart';
@@ -13,24 +15,31 @@ class ListViewStudents extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Column(
-        children: [
-          const HeaderTableStudents(),
-          ...List.generate(
-            12,
-            (index) => const Column(
-              children: [
-                Divider(height: 32),
-                ItemTableStudents(),
-              ],
-            ),
+      child: GetBuilder<ViewStudentControllerImp>(builder: (controller) {
+        return SingleChildScrollView(
+          child: Column(
+            children: [
+              const HeaderTableStudents(),
+              ...List.generate(
+                controller.students.length,
+                (index) => Column(
+                  children: [
+                    const Divider(height: 32),
+                    ItemTableStudents(
+                      studentModel: controller.students[index],
+                      index:index
+                    ),
+                  ],
+                ),
+              ),
+              // const Padding(
+              //   padding: EdgeInsets.only(left: 40, right: 40, top: 40),
+              //   child: MyPaginations(),
+              // )
+            ],
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 40, right: 40, top: 40),
-            child: MyPaginations(),
-          )
-        ],
-      ),
+        );
+      }),
     );
   }
 }

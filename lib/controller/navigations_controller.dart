@@ -10,43 +10,31 @@ import 'package:sama/view/view_all_student/view_all_student.dart';
 import 'package:sama/view/view_all_teacher/view_all_teacher.dart';
 
 abstract class NavigationController extends GetxController {
-  void navigateTo(NavigationEnum destination);
-  void pop();
   Widget getCurrentPage();
 }
 
 class NavigationControllerImp extends NavigationController {
-  late List<Widget> _navigationStack;
   late Widget _currentPage;
 
-  @override
-  void navigateTo(NavigationEnum destination) {
-    if (destination == _getNavigationFromWidget(_currentPage)) {
-      return;
+  void replaceLastWidget(NavigationEnum destination, {Map<String, dynamic>? info}) {
+    switch (destination) {
+      case NavigationEnum.Dashboard:
+        _currentPage = const DashboardWithTrailing();
+      case NavigationEnum.Classes:
+        _currentPage = ClassesWithTrailing(info: info);
+
+      case NavigationEnum.Teachers:
+        _currentPage = const ViewAllTeacher();
+      case NavigationEnum.Students:
+        _currentPage = const ViewAllStudent();
+      case NavigationEnum.Users:
+        _currentPage = const UsersWithTrailing();
+      case NavigationEnum.AddNewStudent:
+        _currentPage = const AddNewStudent();
+      case NavigationEnum.AddNewTeacher:
+        _currentPage = const AddNewTeacher();
     }
 
-    Widget page = _getPage(destination) ?? _createPage(destination);
-
-    _navigationStack.add(page);
-    _currentPage = page;
-    update();
-  }
-
-  @override
-  void pop() {
-    if (_navigationStack.length > 1) {
-      _navigationStack.removeLast();
-      _currentPage = _navigationStack.last;
-      update();
-    } else {
-      debugPrint("one screen in stack");
-    }
-  }
-
-  void replaceLastWidget(NavigationEnum destination) {
-    _currentPage = _getPage(destination) ?? _createPage(destination);
-    _navigationStack.clear();
-    _navigationStack.add(_currentPage);
     update();
   }
 
@@ -55,59 +43,9 @@ class NavigationControllerImp extends NavigationController {
     return _currentPage;
   }
 
-  Widget? _getPage(NavigationEnum destination) {
-    for (var page in _navigationStack.reversed) {
-      if (_getNavigationFromWidget(page) == destination) {
-        return page;
-      }
-    }
-    return null;
-  }
-
-// TODO:  [add NavigationEnum new screen]
-
-  NavigationEnum? _getNavigationFromWidget(Widget widget) {
-    if (widget is DashboardWithTrailing) {
-      return NavigationEnum.Dashboard;
-    } else if (widget is ClassesWithTrailing) {
-      return NavigationEnum.Classes;
-    } else if (widget is ViewAllTeacher) {
-      return NavigationEnum.Teachers;
-    } else if (widget is AddNewStudent) {
-      return NavigationEnum.AddNewStudent;
-    } else if (widget is AddNewTeacher) {
-      return NavigationEnum.AddNewTeacher;
-    }
-    return null;
-  }
-
-// TODO:  [add NavigationEnum new screen]
-
-  Widget _createPage(NavigationEnum destination) {
-    print("Created Widget");
-    switch (destination) {
-      case NavigationEnum.Dashboard:
-        return const DashboardWithTrailing();
-      case NavigationEnum.Classes:
-        return const ClassesWithTrailing();
-
-      case NavigationEnum.Teachers:
-        return const ViewAllTeacher();
-      case NavigationEnum.Students:
-        return const ViewAllStudent();
-      case NavigationEnum.Users:
-        return const UsersWithTrailing();
-      case NavigationEnum.AddNewStudent:
-        return const AddNewStudent();
-      case NavigationEnum.AddNewTeacher:
-        return const AddNewTeacher();
-    }
-  }
-
   @override
   void onInit() {
     _currentPage = const DashboardWithTrailing();
-    _navigationStack = [_currentPage];
     super.onInit();
   }
 }

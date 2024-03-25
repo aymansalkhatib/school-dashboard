@@ -8,10 +8,13 @@ class TitleWithTextField extends StatelessWidget {
     required this.hint,
     required this.title,
     this.maxLines = 1,
+    this.controller,   this.validators,
   });
   final List<String> hint;
   final String title;
   final int maxLines;
+  final List<TextEditingController>? controller;
+  final List<String? Function(String?)?>? validators;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,7 +37,9 @@ class TitleWithTextField extends StatelessWidget {
                             right: index != hint.length - 1 ? 24 * getScaleFactor(context) : 0),
                         child: CustomTextFromFeild(
                           hint: hint[index],
+                          controller: controller?[index],
                           maxLines: maxLines,
+                          validator: validators?[index],
                         ),
                       ),
                     ))

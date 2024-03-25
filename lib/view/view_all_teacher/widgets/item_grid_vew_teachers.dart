@@ -3,14 +3,16 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/constants/assets.dart';
 import 'package:sama/core/shared/contacts.dart';
+import 'package:sama/model/teacher_model.dart';
 
 import '../../../core/constants/app_colors.dart';
 
 class ItemGridVewTeachers extends StatelessWidget {
   const ItemGridVewTeachers({
     super.key,
+    required this.teacherModel,
   });
-
+  final TeacherModel teacherModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,10 +50,13 @@ class ItemGridVewTeachers extends StatelessWidget {
           Text("Science",
               style: AppFontStyle.styleRegular18(context, lower: 0.6).copyWith(color: AppColors.darkGray)),
           const Spacer(),
-          const Center(
-              child: Contacts(
-            isStudent: false,
-          ))
+          Center(
+            child: Contacts(
+              isStudent: false,
+              email: teacherModel.email,
+              phone: teacherModel.phone,
+            ),
+          )
         ],
       ),
     );

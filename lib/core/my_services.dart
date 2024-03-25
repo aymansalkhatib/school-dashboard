@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:path/path.dart' as path;
+import 'package:sama/model/section_model.dart';
+import 'package:sama/model/student_model.dart';
+import 'package:sama/model/teacher_model.dart';
 
 class MyAppServices extends GetxService {
-  late Box<String?> _information;
+  late Box _information;
 
   // Singleton pattern
   static final MyAppServices _instance = MyAppServices._internal();
@@ -16,7 +19,7 @@ class MyAppServices extends GetxService {
 
   MyAppServices._internal();
 
-  Future<Box<String?>> get information async {
+  Future<Box> get information async {
     if (_information.isOpen) {
       return _information;
     } else {
@@ -65,5 +68,8 @@ class MyAppServices extends GetxService {
 
 Future<void> initializeServices() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Hive.registerAdapter(StudentModelAdapter());
+  Hive.registerAdapter(TeacherModelAdapter());
+  Hive.registerAdapter(SectionModelAdapter());
   await MyAppServices().initialize();
 }

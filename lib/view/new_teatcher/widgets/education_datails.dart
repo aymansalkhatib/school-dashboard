@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sama/controller/add_new_teacher_controller.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/shared/container_header_with_radius_and_color_with_text.dart';
 import 'package:sama/core/shared/create_column.dart';
 
-  
-class EducationDatails extends StatelessWidget {
+class EducationDatails extends GetView<AddNewTeacherControllerImp> {
   const EducationDatails({super.key});
 
   @override
@@ -27,8 +28,9 @@ class EducationDatails extends StatelessWidget {
                 Expanded(
                   flex: 42,
                   child: CreateColumn(
-                    title: titleC1,
-                    hint: hintC1,
+                    title: controller.titleEducationTeacherColumn1,
+                    hint: controller.hintEducationTeacherColumn1,
+                    textController: controller.textControllerEducationTeacherColumn1,
                     maxLinesForField: 4,
                     maxLinesIndexField: 2,
                   ),
@@ -38,7 +40,11 @@ class EducationDatails extends StatelessWidget {
                 ),
                 Expanded(
                   flex: 42,
-                  child: CreateColumn(title: titleC2, hint: hintC2),
+                  child: CreateColumn(
+                    title: controller.titleEducationTeacherColumn2,
+                    hint: controller.hintEducationTeacherColumn2,
+                    textController: controller.textControllerEducationTeacherColumn2,
+                  ),
                 ),
                 const Expanded(
                   flex: 16,

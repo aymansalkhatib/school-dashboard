@@ -117,6 +117,10 @@ class Assets {
   /// assets/icons/marks2.png
   static const String iconsMarks2 = "assets/icons/marks2.png";
 
+  /// Assets for iconsMinus
+  /// assets/icons/minus.svg
+  static const String iconsMinus = "assets/icons/minus.svg";
+
   /// Assets for iconsPrint
   /// assets/icons/print.svg
   static const String iconsPrint = "assets/icons/print.svg";

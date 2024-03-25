@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sama/controller/add_new_teacher_controller.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/shared/create_column.dart';
 import 'package:sama/core/shared/container_header_with_radius_and_color_with_text.dart';
-import 'package:sama/view/new_teatcher/widgets/image_with_title_inside_details_student.dart';
+import 'package:sama/view/new_teatcher/widgets/image_with_title_inside_details_teacher.dart';
 
-class AddDetailsTeacher extends StatelessWidget {
+class AddDetailsTeacher extends GetView<AddNewTeacherControllerImp> {
   const AddDetailsTeacher({super.key});
 
   @override
@@ -27,8 +29,9 @@ class AddDetailsTeacher extends StatelessWidget {
                 Expanded(
                   flex: 42,
                   child: CreateColumn(
-                    title: titleC1,
-                    hint: hintC1,
+                    title: controller.titleTeacherColumn1,
+                    hint: controller.hintTeacherColumn1,
+                    textController: controller.textControllerTeacherColumn1,
                     maxLinesForField: 5,
                     maxLinesIndexField: 2,
                   ),
@@ -41,8 +44,12 @@ class AddDetailsTeacher extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CreateColumn(title: titleC2, hint: hintC2),
-                      const ImageWithTitleInsideDetailsStudent(
+                      CreateColumn(
+                        title: controller.titleTeacherColumn2,
+                        hint: controller.hintTeacherColumn2,
+                        textController: controller.textControllerTeacherColumn2,
+                      ),
+                      const ImageWithTitleInsideDetailsTeacher(
                         height: 127,
                       ),
                       SizedBox(height: 32 * getScaleFactor(context)),
@@ -68,19 +75,3 @@ class AddDetailsTeacher extends StatelessWidget {
     );
   }
 }
-
-List<String> titleC1 = ["First Name *", "Email *", "Address *", "Date of Birth *"];
-List<List<String>> hintC1 = [
-  ["First Name"],
-  ["Email"],
-  [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  ],
-  ["24 Februari 1997"]
-];
-
-List<String> titleC2 = ["Last Name *", "Phone *"];
-List<List<String>> hintC2 = [
-  ["Last Name"],
-  ["+1234567890"],
-];

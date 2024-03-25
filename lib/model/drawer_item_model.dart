@@ -5,18 +5,22 @@ class DrawerItemModel {
   final String title;
   final String icon;
   final NavigationEnum destination;
-  DrawerItemModel(this.destination, {required this.title, required this.icon});
+  DrawerItemModel({
+    required this.title,
+    required this.icon,
+    required this.destination,
+  });
 }
 
 List<DrawerItemModel> drawerItem = [
-  DrawerItemModel(title: 'Dashboard', icon: Assets.iconsHome, NavigationEnum.Dashboard),
-  DrawerItemModel(title: 'Students', icon: Assets.iconsStudent, NavigationEnum.Students),
-  DrawerItemModel(title: 'Teachers', icon: Assets.iconsTeacher, NavigationEnum.Teachers),
+  DrawerItemModel(title: 'Dashboard', icon: Assets.iconsHome, destination: NavigationEnum.Dashboard),
+  DrawerItemModel(title: 'Students', icon: Assets.iconsStudent, destination: NavigationEnum.Students),
+  DrawerItemModel(title: 'Teachers', icon: Assets.iconsTeacher, destination: NavigationEnum.Teachers),
   // DrawerItemModel(title: 'Event', icon: Assets.iconsCalendar, NavigationEnum.Event),
   // DrawerItemModel(title: 'Finance', icon: Assets.iconsFinance, NavigationEnum.Finance),
   // DrawerItemModel(title: 'Teacher', icon: Assets.iconsTeacher, NavigationEnum.NewTeacher),
-  DrawerItemModel(title: 'Classes', icon: Assets.iconsClasses, NavigationEnum.Classes),
-  DrawerItemModel(title: 'Users', icon: Assets.iconsUser, NavigationEnum.Users),
+  DrawerItemModel(title: 'Classes', icon: Assets.iconsClasses, destination: NavigationEnum.Classes),
+  DrawerItemModel(title: 'Users', icon: Assets.iconsUser, destination: NavigationEnum.Users),
   // DrawerItemModel(title: 'Chat', icon: Assets.iconsChat, NavigationEnum.NewStudent),
   // DrawerItemModel(title: 'Lastest Activity', icon: Assets.iconsActivity, NavigationEnum.Lastest),
 ];

@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:get/get.dart';
+import 'package:sama/controller/add_new_student_controller.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/shared/custom_disconnect_contaniar.dart';
@@ -30,53 +32,43 @@ class ImageWithTitleInsideDetailsStudent extends StatelessWidget {
           height: height,
           child: AspectRatio(
             aspectRatio: 1,
-            child: GestureDetector(
-              onTap: () async {
-                print("object");
-                final picker = ImagePicker();
-
-                final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-
-                if (pickedFile != null) {
-                  // _list.add(await pickedFile.readAsBytes());
-                  // setState(() {});
-                  print(pickedFile.path);
-                } else {}
-              },
-              child: DropTarget(
-                onDragDone: (detail) async {
-                  for (final file in detail.files) {
-                    String extension = file.path.split('.').last.toLowerCase();
-                    if (extension == 'png' || extension == 'jpg') {
-                      // _list.add(await file.readAsBytes());
-                      // _saveFileToLocal(file);
-                    } else {}
-                  }
-                  // setState(() {});
-
-                  debugPrint('onDragDone:');
-                },
-                child: CustomPaint(
-                  painter: DashedRectPainter(
-                    color: AppColors.darkGray,
-                    dashSpace: 7,
-                    dashWidth: 10,
-                    strokeWidth: 1,
-                    cornerRadius: 5,
-                  ),
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: Text(
-                        textAlign: TextAlign.center,
-                        'Drag and drop or\nclick here to\nselect file',
-                        style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray),
-                      ),
-                    ),
-                  ),
+            child: GetBuilder<AddNewStudentControllerImp>(builder: (controller) {
+              return GestureDetector(
+                onTap: controller.pickImage,
+                onDoubleTap: controller.removeImage,
+                child: DropTarget(
+                  onDragDone: controller.dropImage,
+                  child: controller.image != null
+                      ? ClipRRect(
+                          borderRadius: BorderRadius.circular(6),
+                          child: Image.file(
+                            File(controller.image!.path),
+                            fit: BoxFit.cover,
+                          ),
+                        )
+                      : CustomPaint(
+                          painter: DashedRectPainter(
+                            color: AppColors.darkGray,
+                            dashSpace: 7,
+                            dashWidth: 10,
+                            strokeWidth: 1,
+                            cornerRadius: 5,
+                          ),
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8),
+                              child: Text(
+                                textAlign: TextAlign.center,
+                                'Drag and drop or\nclick here to\nselect file',
+                                style:
+                                    AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray),
+                              ),
+                            ),
+                          ),
+                        ),
                 ),
-              ),
-            ),
+              );
+            }),
           ),
         ),
       ],
@@ -87,10 +79,7 @@ class ImageWithTitleInsideDetailsStudent extends StatelessWidget {
  
  
 
-  //  final List<Uint8List> _list = [];
-  // Future<void> _saveFileToLocal(XFile file) async {
-  //   file.saveTo("C:/Users/Ayman_Alkhatib/Desktop/${file.name}");
-  // }
+ 
 
 //   @override
 //   Widget build(BuildContext context) {

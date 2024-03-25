@@ -12,20 +12,30 @@ class AddNewStudent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(AddNewStudentControllerImp());
-    return const SingleChildScrollView(
+    Get.lazyReplace(() => AddNewStudentControllerImp());
+    return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.all(40),
-        child: Column(
-          children: [
-            HeaderWithSearch(title: "Add New Student", showSearch: false),
-            SizedBox(height: 28),
-            AddDetailsStudnet(),
-            SizedBox(height: 40),
-            ParentDatails(),
-            SizedBox(height: 40),
-            SaveAndSubmitButton(),
-          ],
+        padding: const EdgeInsets.all(40),
+        child: Form(
+          key: Get.find<AddNewStudentControllerImp>().globalKey,
+          child: Column(
+            children: [
+              const HeaderWithSearch(title: "Add New Student", showSearch: false),
+              const SizedBox(height: 28),
+              const AddDetailsStudnet(),
+              const SizedBox(height: 40),
+              const ParentDatails(),
+              const SizedBox(height: 40),
+              SaveAndSubmitButton(
+                onPressedSubbmit: () async {
+                  await Get.find<AddNewStudentControllerImp>().addNewStudent();
+                },
+                onPressedCancel: () {
+                  Get.find<AddNewStudentControllerImp>().pop();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

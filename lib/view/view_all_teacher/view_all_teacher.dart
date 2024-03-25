@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:sama/controller/navigations_controller.dart';
+import 'package:sama/controller/view_teacher_controller.dart';
 import 'package:sama/core/enum/navigations_enum.dart';
 import 'package:sama/core/shared/search_with_new_user.dart';
 import 'package:sama/core/utils/header_with_search.dart';
@@ -12,6 +13,8 @@ class ViewAllTeacher extends StatelessWidget {
   const ViewAllTeacher({super.key});
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(() => ViewTeacherControllerImp());
+
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(40),
@@ -22,23 +25,28 @@ class ViewAllTeacher extends StatelessWidget {
             SearchWithNewUser(
               text: "New Teacher",
               onPressed: () {
-                Get.find<NavigationControllerImp>().navigateTo(NavigationEnum.AddNewTeacher);
+                Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.AddNewTeacher);
               },
             ),
             const SizedBox(height: 40),
-            GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 4,
-                mainAxisSpacing: 40,
-                crossAxisSpacing: 40,
-                childAspectRatio: 340 / 360,
-              ),
-              itemCount: 12,
-              itemBuilder: (BuildContext context, int index) {
-                return const ItemGridVewTeachers();
-              },
-            ),
+            GetBuilder<ViewTeacherControllerImp>(builder: (controller) {
+              return GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  mainAxisSpacing: 40,
+                  crossAxisSpacing: 40,
+                  childAspectRatio: 340 / 360,
+                ),
+                itemCount: controller.teachers.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ItemGridVewTeachers(
+                    teacherModel: controller.teachers[index],
+                  );
+                },
+              );
+            }),
           ],
         ),
       ),

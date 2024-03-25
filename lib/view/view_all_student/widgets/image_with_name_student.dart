@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sama/core/constants/app_colors.dart';
@@ -6,20 +8,27 @@ import 'package:sama/core/constants/app_font_style.dart';
 class ImageWithNameStudent extends StatelessWidget {
   const ImageWithNameStudent({
     super.key,
+    this.path,
   });
-
+  final String? path;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Flexible(
           flex: 1,
-          child: Container(
-            width: 55 * getScaleFactor(context),
-            height: 55 * getScaleFactor(context),
-            decoration: const BoxDecoration(
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(100),
+            child: Container(
+              width: 55 * getScaleFactor(context),
+              height: 55 * getScaleFactor(context),
               color: AppColors.lightPurple,
-              shape: BoxShape.circle,
+              child: path != null && (path ?? '').isNotEmpty
+                  ? Image.file(
+                      File(path!),
+                      fit: BoxFit.cover,
+                    )
+                  : const SizedBox(),
             ),
           ),
         ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:get/get.dart';
 import 'package:sama/controller/add_new_student_controller.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/enum/enum_pament.dart';
 import 'package:sama/core/shared/container_header_with_radius_and_color_with_text.dart';
 import 'package:sama/core/shared/create_column.dart';
 
- import 'package:sama/view/new_student/widgets/radio_item.dart';
+import 'package:sama/view/new_student/widgets/radio_item.dart';
 
-class ParentDatails extends StatelessWidget {
+class ParentDatails extends GetView<AddNewStudentControllerImp> {
   const ParentDatails({super.key});
 
   @override
@@ -31,10 +31,12 @@ class ParentDatails extends StatelessWidget {
                 Expanded(
                   flex: 42,
                   child: CreateColumn(
-                    title: titleC1,
-                    hint: hintC1,
+                    title: controller.titleParentStudentColumn1,
+                    hint: controller.hintParentStudentColumn1,
                     maxLinesForField: 4,
                     maxLinesIndexField: 2,
+                    textController: controller.textControllerParentStudentColumn1,
+                    validators: controller.validationParentStudentColumn1,
                   ),
                 ),
                 SizedBox(
@@ -45,7 +47,12 @@ class ParentDatails extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CreateColumn(title: titleC2, hint: hintC2),
+                      CreateColumn(
+                        title: controller.titleParentStudentColumn2,
+                        hint: controller.hintParentStudentColumn2,
+                        textController: controller.textControllerParentStudentColumn2,
+                        validators: controller.validationParentStudentColumn2,
+                      ),
                       Text(
                         "Payment*",
                         style: AppFontStyle.styleBold18(context),
@@ -88,24 +95,9 @@ class ParentDatails extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 40),
         ],
       ),
     );
   }
 }
-
-List<String> titleC1 = ["First Name *", "Email *", "Address *"];
-List<List<String>> hintC1 = [
-  ["First Name"],
-  ["Email"],
-  [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  ]
-];
-
-List<String> titleC2 = ["Last Name *", "Phone"];
-List<List<String>> hintC2 = [
-  ["Last Name"],
-  ["Phone"],
-];

@@ -12,6 +12,7 @@ class CustomButton extends StatelessWidget {
     this.iconData,
     this.svg,
     this.iconLeft = false,
+    this.iconRight = false,
   });
 
   final String text;
@@ -21,6 +22,7 @@ class CustomButton extends StatelessWidget {
   final IconData? iconData;
   final Widget? svg;
   final bool iconLeft;
+  final bool iconRight;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
@@ -32,7 +34,7 @@ class CustomButton extends StatelessWidget {
       color: color ?? Colors.white,
       child: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: 10 * getScaleFactor(context), vertical: 18 * getScaleFactor(context)),
+            horizontal: 18 * getScaleFactor(context), vertical: 18 * getScaleFactor(context)),
         child: Row(
           children: [
             iconLeft
@@ -55,7 +57,7 @@ class CustomButton extends StatelessWidget {
               textAlign: TextAlign.center,
               style: AppFontStyle.styleRegular18(context).copyWith(color: colorText ?? AppColors.textBlack),
             ),
-            !iconLeft
+            iconRight
                 ? iconData != null && !iconLeft
                     ? Padding(
                         padding: EdgeInsets.only(

@@ -1,15 +1,20 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/constants/assets.dart';
+import 'package:sama/core/helper/new_line.dart';
 import 'package:sama/core/shared/contacts.dart';
+import 'package:sama/model/student_model.dart';
 import 'package:sama/view/view_all_student/widgets/image_with_name_student.dart';
 
 class ItemTableStudents extends StatelessWidget {
-  const ItemTableStudents({super.key});
-
+  const ItemTableStudents({super.key, required this.studentModel, required this.index});
+  final StudentModel studentModel;
+  final int index;
   Widget fittedText(String text, {TextStyle? style}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -34,21 +39,23 @@ class ItemTableStudents extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Row(
         children: [
-          const Expanded(
-            flex: 3,
-            child: ImageWithNameStudent(),
+          Expanded(
+            flex: 1,
+            child: fittedText(
+              "${index + 1}",
+              style: AppFontStyle.styleSemiBold18(Get.context!).copyWith(color: AppColors.primaryPurple),
+            ),
           ),
           Expanded(
-            flex: 2,
-            child: fittedText(
-              "#123456789",
-              style: AppFontStyle.styleSemiBold18(Get.context!).copyWith(color: AppColors.primaryPurple),
+            flex: 3,
+            child: ImageWithNameStudent(
+              path: studentModel.image,
             ),
           ),
           Expanded(
             flex: 2,
             child: fittedText(
-              "March 25, 2021",
+              studentModel.dateOfBirth,
               style: AppFontStyle.styleRegular14(Get.context!).copyWith(
                 color: AppColors.darkGray,
               ),
@@ -56,15 +63,34 @@ class ItemTableStudents extends StatelessWidget {
           ),
           Expanded(
             flex: 2,
-            child: fittedText("Mana William"),
+            child: fittedText(
+              studentModel.parentName,
+            ),
           ),
           Expanded(
             flex: 2,
-            child: fittedText("Jakarta Jakarta"),
+            child: Tooltip(
+              preferBelow: true,
+              verticalOffset: 20,
+              margin: const EdgeInsets.only(right: 50), //here you change the margin
+              padding: const EdgeInsets.all(5),
+              height: 16,
+              message: studentModel.address.length > 12 ? addNewlines(studentModel.address, 50) : null,
+              child: fittedText(
+                studentModel.address.substring(
+                      0,
+                      min(12, studentModel.address.length),
+                    ) +
+                    ((studentModel.address.length > 12) ? ".." : ""),
+              ),
+            ),
           ),
-          const Expanded(
+          Expanded(
             flex: 2,
-            child: Contacts(),
+            child: Contacts(
+              email: studentModel.email,
+              phone: studentModel.phone,
+            ),
           ),
           Expanded(
             flex: 1,
@@ -106,3 +132,5 @@ class ItemTableStudents extends StatelessWidget {
     );
   }
 }
+
+// tooltip

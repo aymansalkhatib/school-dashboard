@@ -32,6 +32,7 @@ class SearchWithNewUser extends StatelessWidget {
                 Assets.iconsDropdown,
                 width: 20,
               ),
+              iconRight: true,
               onPressed: () {},
             ),
             const SizedBox(width: 24),
