@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sama/core/constants/app_font_style.dart';
@@ -31,7 +29,8 @@ class ItemRowPaymentsStudent extends StatelessWidget {
                   padding: EdgeInsets.all(12.0 * width / 1900),
                   child: SvgPicture.asset(
                     Assets.iconsTrending,
-                    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                   ),
                 ),
               ),
@@ -44,7 +43,8 @@ class ItemRowPaymentsStudent extends StatelessWidget {
           ),
           Text(
             studentPaymentModel.date,
-            style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray),
+            style: AppFontStyle.styleRegular14(context)
+                .copyWith(color: AppColors.darkGray),
           ),
           Text(
             studentPaymentModel.price,

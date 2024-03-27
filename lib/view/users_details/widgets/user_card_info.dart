@@ -6,10 +6,12 @@ class UserCardInfo extends StatelessWidget {
   const UserCardInfo({
     super.key,
     required this.name,
+    this.image,
     required this.mask,
     required this.informations,
   });
   final String name;
+  final String? image;
   final String mask;
   final List<ItemCardUserModel> informations;
 
@@ -24,12 +26,12 @@ class UserCardInfo extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
           child: UserStackWidget(
-            constraints: constraints,
-            mask: mask,
-            inforations: informations,
-            name: name,
-            subtitle: "admin",
-          ),
+              constraints: constraints,
+              mask: mask,
+              inforations: informations,
+              name: name,
+              subtitle: "admin",
+              image: image),
         );
       }),
     );

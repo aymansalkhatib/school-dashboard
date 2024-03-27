@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:sama/core/constants/assets.dart';
 import 'package:sama/core/utils/circle_button_with_border.dart';
+import 'package:sama/model/teacher_model.dart';
 import 'package:sama/view/teacher_details/widgets/teachers_info.dart';
 import 'package:sama/view/users_details/widgets/avatar_with_background.dart';
 
 class Teachers extends StatelessWidget {
-  const Teachers({super.key});
-
+  const Teachers({
+    super.key,
+    required this.teacherModel,
+  });
+  final TeacherModel teacherModel;
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.sizeOf(context).width * (1180 / 1920) - 80;
@@ -31,26 +35,22 @@ class Teachers extends StatelessWidget {
                 Positioned(
                   top: top,
                   left: top,
-                  child: const CircleButtonWithBorder(
+                  child: CircleButtonWithBorder(
                     icon: Icons.assignment_ind_rounded,
+                    image: teacherModel.image,
                   ),
                 ),
               ],
             ),
-            const TeachersInfo(),
+            TeachersInfo(
+              teacherModel: teacherModel,
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
 
 /*
 

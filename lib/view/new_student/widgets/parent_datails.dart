@@ -21,10 +21,12 @@ class ParentDatails extends GetView<AddNewStudentControllerImp> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const ContainerHeaderWithRadiusAndColorWithText(title: "Parent Details"),
+          const ContainerHeaderWithRadiusAndColorWithText(
+              title: "Parent Details"),
           SizedBox(height: 30 * getScaleFactor(context)),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40 * getScaleFactor(context)),
+            padding:
+                EdgeInsets.symmetric(horizontal: 40 * getScaleFactor(context)),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -35,7 +37,8 @@ class ParentDatails extends GetView<AddNewStudentControllerImp> {
                     hint: controller.hintParentStudentColumn1,
                     maxLinesForField: 4,
                     maxLinesIndexField: 2,
-                    textController: controller.textControllerParentStudentColumn1,
+                    textController:
+                        controller.textControllerParentStudentColumn1,
                     validators: controller.validationParentStudentColumn1,
                   ),
                 ),
@@ -50,7 +53,8 @@ class ParentDatails extends GetView<AddNewStudentControllerImp> {
                       CreateColumn(
                         title: controller.titleParentStudentColumn2,
                         hint: controller.hintParentStudentColumn2,
-                        textController: controller.textControllerParentStudentColumn2,
+                        textController:
+                            controller.textControllerParentStudentColumn2,
                         validators: controller.validationParentStudentColumn2,
                       ),
                       Text(
@@ -58,7 +62,8 @@ class ParentDatails extends GetView<AddNewStudentControllerImp> {
                         style: AppFontStyle.styleBold18(context),
                       ),
                       const SizedBox(height: 8),
-                      GetBuilder<AddNewStudentControllerImp>(builder: (controllerImp) {
+                      GetBuilder<AddNewStudentControllerImp>(
+                          builder: (controllerImp) {
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [

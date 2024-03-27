@@ -22,7 +22,7 @@ class ClassesGridView extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return Container(
           padding: const EdgeInsets.all(4.0),
-          child: ClassesGridViewItem(index:index),
+          child: ClassesGridViewItem(index: index),
         );
       },
     );

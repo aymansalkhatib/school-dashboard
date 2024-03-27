@@ -21,10 +21,12 @@ class AddDetailsStudnet extends GetView<AddNewStudentControllerImp> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const ContainerHeaderWithRadiusAndColorWithText(title: "Student Details"),
+          const ContainerHeaderWithRadiusAndColorWithText(
+              title: "Student Details"),
           SizedBox(height: 30 * getScaleFactor(context)),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40 * getScaleFactor(context)),
+            padding:
+                EdgeInsets.symmetric(horizontal: 40 * getScaleFactor(context)),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -60,10 +62,15 @@ class AddDetailsStudnet extends GetView<AddNewStudentControllerImp> {
                       ),
                       Row(
                         children: [
-                          Expanded(flex: 6, child: Text("Grade *", style: AppFontStyle.styleBold18(context))),
+                          Expanded(
+                              flex: 6,
+                              child: Text("Grade *",
+                                  style: AppFontStyle.styleBold18(context))),
                           const SizedBox(width: 16),
                           Expanded(
-                              flex: 4, child: Text("Section *", style: AppFontStyle.styleBold18(context))),
+                              flex: 4,
+                              child: Text("Section *",
+                                  style: AppFontStyle.styleBold18(context))),
                         ],
                       ),
                       SizedBox(
@@ -71,9 +78,15 @@ class AddDetailsStudnet extends GetView<AddNewStudentControllerImp> {
                       ),
                       const Row(
                         children: [
-                          Expanded(flex: 6, child: PopMenuItemsSectionOrClass(menuClass: true)),
+                          Expanded(
+                              flex: 6,
+                              child:
+                                  PopMenuItemsSectionOrClass(menuClass: true)),
                           SizedBox(width: 16),
-                          Expanded(flex: 4, child: PopMenuItemsSectionOrClass(menuClass: false)),
+                          Expanded(
+                              flex: 4,
+                              child:
+                                  PopMenuItemsSectionOrClass(menuClass: false)),
                         ],
                       )
                     ],

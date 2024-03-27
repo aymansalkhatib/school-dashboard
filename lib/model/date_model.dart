@@ -5,12 +5,11 @@ class DateTableModel {
   final String year;
   final String month;
 
-  DateTableModel(
-    {
+  DateTableModel({
     required this.titleTable,
     required this.fillGrid,
     required this.today,
-   required  this.year,
-   required this.month,
+    required this.year,
+    required this.month,
   });
 }

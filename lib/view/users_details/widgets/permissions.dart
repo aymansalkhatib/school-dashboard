@@ -27,11 +27,20 @@ class Permissions extends StatelessWidget {
 
           //! Handle after connect DB
           const SizedBox(height: 18),
-          const PermissionsItem(icon: Assets.iconsStudent2, title: 'Controlling students', isActive: true),
+          const PermissionsItem(
+              icon: Assets.iconsStudent2,
+              title: 'Controlling students',
+              isActive: true),
           const SizedBox(height: 18),
-          const PermissionsItem(icon: Assets.iconsSell, title: 'Payment and receipt', isActive: false),
+          const PermissionsItem(
+              icon: Assets.iconsSell,
+              title: 'Payment and receipt',
+              isActive: false),
           const SizedBox(height: 18),
-          const PermissionsItem(icon: Assets.iconsMarks, title: 'Add and update marks', isActive: true),
+          const PermissionsItem(
+              icon: Assets.iconsMarks,
+              title: 'Add and update marks',
+              isActive: true),
           //!,
 
           const SizedBox(height: 30),

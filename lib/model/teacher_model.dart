@@ -15,6 +15,8 @@ class TeacherModel {
   late String startDate;
   late String endDate;
   late String city;
+  late String about;
+  late String expiration;
   late DateTime createdAt;
 
   TeacherModel({
@@ -31,6 +33,8 @@ class TeacherModel {
     required this.startDate,
     required this.endDate,
     required this.city,
+    required this.about,
+    required this.expiration,
     this.image,
     DateTime? createdAt,
   }) : createdAt = createdAt ?? DateTime.now(); // Set default value
@@ -56,6 +60,8 @@ class TeacherModelAdapter extends TypeAdapter<TeacherModel> {
       startDate: reader.readString(),
       endDate: reader.readString(),
       city: reader.readString(),
+      about: reader.readString(),
+      expiration: reader.readString(),
       image: reader.readString(),
       createdAt: DateTime.parse(reader.readString()),
     );
@@ -76,6 +82,8 @@ class TeacherModelAdapter extends TypeAdapter<TeacherModel> {
     writer.writeString(obj.startDate);
     writer.writeString(obj.endDate);
     writer.writeString(obj.city);
+    writer.writeString(obj.about);
+    writer.writeString(obj.expiration);
     writer.writeString(obj.image ?? "");
     writer.writeString(obj.createdAt.toIso8601String());
   }

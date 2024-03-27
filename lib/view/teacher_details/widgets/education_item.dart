@@ -17,7 +17,8 @@ class EducationItem extends StatelessWidget {
         Row(
           children: [
             const SizedBox(width: 12),
-            const CircleAvatar(radius: radius, backgroundColor: AppColors.primaryPurple),
+            const CircleAvatar(
+                radius: radius, backgroundColor: AppColors.primaryPurple),
             const SizedBox(width: 10),
             Text(
               title,

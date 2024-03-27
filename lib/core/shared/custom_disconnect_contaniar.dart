@@ -14,7 +14,8 @@ class DashedRectPainter extends CustomPainter {
     required this.dashSpace,
     required this.strokeWidth,
     this.cornerRadius = 8.0,
-  }) : assert(dashWidth > 0 && dashSpace > 0 && strokeWidth > 0, 'Values must be greater than 0');
+  }) : assert(dashWidth > 0 && dashSpace > 0 && strokeWidth > 0,
+            'Values must be greater than 0');
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -46,8 +47,9 @@ class DashedRectPainter extends CustomPainter {
       double distance = 0.0;
       while (distance < pathMetric.length) {
         final double remainingLength = pathMetric.length - distance;
-        final double currentDashWidth =
-            remainingLength < dashLength ? remainingLength - dashSpace : dashWidth;
+        final double currentDashWidth = remainingLength < dashLength
+            ? remainingLength - dashSpace
+            : dashWidth;
         final Path dashPath = pathMetric.extractPath(
           distance,
           distance + currentDashWidth,

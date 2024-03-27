@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:sama/controller/navigations_controller.dart';
+import 'package:sama/core/enum/navigations_enum.dart';
 import 'package:sama/core/helper/random_id.dart';
 import 'package:sama/core/my_services.dart';
+import 'package:sama/core/utils/validation.dart';
 import 'package:sama/model/teacher_model.dart';
 
 abstract class AddNewTeacherController extends GetxController {}
@@ -13,9 +16,9 @@ class AddNewTeacherControllerImp extends AddNewTeacherController {
   late Box box;
 
   late TextEditingController firstName;
-  late TextEditingController lastname;
-  late TextEditingController dateOfBrith;
-  late TextEditingController placeOfBrith;
+  late TextEditingController lastName;
+  late TextEditingController dateOfBirth;
+  late TextEditingController placeOfBirth;
   late TextEditingController email;
   late TextEditingController phone;
   late TextEditingController address;
@@ -24,7 +27,9 @@ class AddNewTeacherControllerImp extends AddNewTeacherController {
   late TextEditingController startDate;
   late TextEditingController endDate;
   late TextEditingController city;
-
+  late TextEditingController about;
+  late TextEditingController expiration;
+  GlobalKey<FormState> key = GlobalKey<FormState>();
   List<String> titleTeacherColumn1 = [];
   List<String> titleTeacherColumn2 = [];
   List<String> titleEducationTeacherColumn1 = [];
@@ -40,31 +45,57 @@ class AddNewTeacherControllerImp extends AddNewTeacherController {
   List<List<TextEditingController>> textControllerEducationTeacherColumn2 = [];
   List<List<TextEditingController>> textControllerEducationTeacherColumn1 = [];
 
+  List<List<String? Function(String?)?>> validationTeacherColumn1 = [];
+  List<List<String? Function(String?)?>> validationTeacherColumn2 = [];
+  List<List<String? Function(String?)?>> validationEducationTeacherColumn1 = [];
+  List<List<String? Function(String?)?>> validationEducationTeacherColumn2 = [];
+  final TeacherModel? teacher;
+
+  AddNewTeacherControllerImp({this.teacher});
+
   Future<void> saveFileToLocal(XFile file) async {
     file.saveTo("C:/Users/Ayman_Alkhatib/Desktop/${file.name}");
   }
 
   Future addNewTeacher() async {
-    TeacherModel teacher = TeacherModel(
-      id: generateUniqueNumber(),
-      firstName: 'John',
-      lastName: 'Doe',
-      dateOfBirth: '2000-01-01',
-      placeOfBirth: 'New York',
-      email: 'john.doe@example.com',
-      phone: '123-456-7890',
-      address: '123 Main St, New York, USA',
-      university: 'New York University',
-      degree: 'Bachelor of Science',
-      startDate: '2000-01-01',
-      endDate: '2000-01-01',
-      city: 'New York',
-      image: 'C:/Users/Ayman_Alkhatib/Desktop/goals-habits-tracking-app_52683-44673.jpg',
+    // if (key.currentState!.validate()) {
+
+    TeacherModel teacherModel = TeacherModel(
+      id: teacher?.id ?? generateUniqueNumber(),
+      firstName: firstName.text,
+      lastName: lastName.text,
+      dateOfBirth: dateOfBirth.text,
+      placeOfBirth: placeOfBirth.text,
+      email: email.text,
+      phone: phone.text,
+      address: address.text,
+      university: university.text,
+      degree: degree.text,
+      startDate: startDate.text,
+      endDate: endDate.text,
+      city: city.text,
+      about: about.text,
+      expiration: expiration.text,
+      image: image?.path,
     );
 
-    await box.add(teacher);
+    if (teacher != null) {
+      final items = box.values.toList();
+      for (int i = 0; i < items.length; i++) {
+        if (items[i] is TeacherModel && items[i].id == teacher!.id) {
+          await box.putAt(i, teacherModel);
+        }
+      }
+    } else {
+      await box.add(teacherModel);
+    }
+
+    Get.find<NavigationControllerImp>()
+        .replaceLastWidget(NavigationEnum.Teachers);
+
     // await box.clear();
     // print(box.values.whereType<StudentModel>());
+    // }
   }
 
   void pickImage() async {
@@ -94,20 +125,35 @@ class AddNewTeacherControllerImp extends AddNewTeacherController {
 
   @override
   void onInit() async {
-    firstName = TextEditingController();
-    lastname = TextEditingController();
-    dateOfBrith = TextEditingController();
-    placeOfBrith = TextEditingController();
-    email = TextEditingController();
-    phone = TextEditingController();
-    address = TextEditingController();
-    university = TextEditingController();
-    degree = TextEditingController();
-    startDate = TextEditingController();
-    endDate = TextEditingController();
-    city = TextEditingController();
+    firstName = TextEditingController(text: teacher?.firstName ?? "Ayman");
+    lastName = TextEditingController(text: teacher?.lastName ?? "Smith");
+    dateOfBirth =
+        TextEditingController(text: teacher?.dateOfBirth ?? "1990-01-01");
+    placeOfBirth = TextEditingController(text: teacher?.placeOfBirth ?? "City");
+    email =
+        TextEditingController(text: teacher?.email ?? "example@example.com");
+    phone = TextEditingController(text: teacher?.phone ?? "123-456-7890");
+    address =
+        TextEditingController(text: teacher?.address ?? "123 Main Street");
+    university = TextEditingController(
+        text: teacher?.university ?? "Example University");
+    degree = TextEditingController(text: teacher?.degree ?? "Bachelor's");
+    startDate = TextEditingController(text: teacher?.startDate ?? "2010-09-01");
+    endDate = TextEditingController(text: teacher?.endDate ?? "2014-06-01");
+    city = TextEditingController(text: teacher?.city ?? "New York");
+    about = TextEditingController(text: teacher?.about ?? "No thing");
+    expiration = TextEditingController(text: teacher?.expiration ?? "No thing");
 
-    titleTeacherColumn1 = ["First Name *", "Email *", "Address *", "Date of Birth *"];
+    image = teacher?.image != null && teacher!.image!.isNotEmpty
+        ? XFile(teacher!.image!)
+        : null;
+
+    titleTeacherColumn1 = [
+      "First Name *",
+      "Email *",
+      "Address *",
+      "Date of Birth *"
+    ];
     titleTeacherColumn2 = ["Last Name *", "Phone *"];
     titleEducationTeacherColumn1 = ["University *", "Start & End Date *"];
     titleEducationTeacherColumn2 = ["Degree *", "City *"];
@@ -133,15 +179,33 @@ class AddNewTeacherControllerImp extends AddNewTeacherController {
       ["Yogyakarta, Indonesia"],
     ];
 
+    validationTeacherColumn1 = [
+      [Validation.length],
+      [Validation.validateEmail],
+      [Validation.length],
+      [Validation.dateFormat]
+    ];
+    validationTeacherColumn2 = [
+      [Validation.length],
+      [Validation.isPhoneNumberValid],
+    ];
+    validationEducationTeacherColumn1 = [
+      [Validation.length],
+      [Validation.dateFormat, Validation.dateFormat]
+    ];
+    validationEducationTeacherColumn2 = [
+      [Validation.length],
+      [Validation.isPhoneNumberValid],
+    ];
+
     textControllerTeacherColumn1 = [
       [firstName],
       [email],
       [address],
-      [dateOfBrith]
+      [dateOfBirth]
     ];
-
     textControllerTeacherColumn2 = [
-      [lastname],
+      [lastName],
       [phone],
     ];
     textControllerEducationTeacherColumn1 = [
@@ -152,6 +216,7 @@ class AddNewTeacherControllerImp extends AddNewTeacherController {
       [degree],
       [city],
     ];
+
     box = await MyAppServices().information;
 
     super.onInit();

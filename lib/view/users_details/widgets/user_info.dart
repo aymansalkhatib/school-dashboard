@@ -44,13 +44,14 @@ class UserInfo extends StatelessWidget {
           ),
           Text(
             name,
-            style: AppFontStyle.styleBold32(context)
-                .copyWith(fontSize: 30 * MediaQuery.sizeOf(context).width / 1700),
+            style: AppFontStyle.styleBold32(context).copyWith(
+                fontSize: 30 * MediaQuery.sizeOf(context).width / 1700),
           ),
           Text(
             "Student",
-            style: AppFontStyle.styleSemiBold15_5(context)
-                .copyWith(fontSize: 15 * MediaQuery.sizeOf(context).width / 1700, color: AppColors.darkGray),
+            style: AppFontStyle.styleSemiBold15_5(context).copyWith(
+                fontSize: 15 * MediaQuery.sizeOf(context).width / 1700,
+                color: AppColors.darkGray),
           ),
           const Spacer(flex: 5),
           RowInfo(inforamtions: inforamtions)

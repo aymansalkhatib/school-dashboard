@@ -10,7 +10,8 @@ class DrawerItem extends StatelessWidget {
   final DrawerItemModel drawerItemModel;
   final bool isActive;
 
-  const DrawerItem({super.key, required this.drawerItemModel, required this.isActive});
+  const DrawerItem(
+      {super.key, required this.drawerItemModel, required this.isActive});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,8 +28,9 @@ class DrawerItem extends StatelessWidget {
           SvgPicture.asset(
             width: max(28, 38 * getScaleFactor(context)),
             drawerItemModel.icon,
-            colorFilter:
-                ColorFilter.mode(isActive ? AppColors.primaryPurple : AppColors.lightBlue, BlendMode.srcIn),
+            colorFilter: ColorFilter.mode(
+                isActive ? AppColors.primaryPurple : AppColors.lightBlue,
+                BlendMode.srcIn),
           ),
           const SizedBox(
             width: 24,
@@ -38,8 +40,10 @@ class DrawerItem extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 drawerItemModel.title,
-                style: AppFontStyle.styleMedium18(context)
-                    .copyWith(color: isActive ? AppColors.primaryPurple : AppColors.lightBlue),
+                style: AppFontStyle.styleMedium18(context).copyWith(
+                    color: isActive
+                        ? AppColors.primaryPurple
+                        : AppColors.lightBlue),
               ),
             ),
           ),

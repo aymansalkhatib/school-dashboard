@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:desktop_drop/desktop_drop.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
- import 'package:sama/controller/add_new_teacher_controller.dart';
+import 'package:sama/controller/add_new_teacher_controller.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/shared/custom_disconnect_contaniar.dart';
@@ -33,7 +33,8 @@ class ImageWithTitleInsideDetailsTeacher extends StatelessWidget {
           height: height,
           child: AspectRatio(
             aspectRatio: 1,
-            child: GetBuilder<AddNewTeacherControllerImp>(builder: (controller) {
+            child:
+                GetBuilder<AddNewTeacherControllerImp>(builder: (controller) {
               return GestureDetector(
                 onTap: controller.pickImage,
                 onDoubleTap: controller.removeImage,
@@ -57,12 +58,13 @@ class ImageWithTitleInsideDetailsTeacher extends StatelessWidget {
                           ),
                           child: Center(
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 8),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8),
                               child: Text(
                                 textAlign: TextAlign.center,
                                 'Drag and drop or\nclick here to\nselect file',
-                                style:
-                                    AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray),
+                                style: AppFontStyle.styleRegular14(context)
+                                    .copyWith(color: AppColors.darkGray),
                               ),
                             ),
                           ),
@@ -76,11 +78,6 @@ class ImageWithTitleInsideDetailsTeacher extends StatelessWidget {
     );
   }
 }
- 
- 
- 
-
- 
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -135,7 +132,7 @@ class ImageWithTitleInsideDetailsTeacher extends StatelessWidget {
 // import 'dart:developer';
 // import 'dart:io';
 // import 'package:flutter/material.dart';
- 
+
 // void main() {
 //   runApp(MaterialApp(
 //     title: 'Flutter Demo',

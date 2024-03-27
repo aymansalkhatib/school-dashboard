@@ -59,11 +59,11 @@ class StudentModelAdapter extends TypeAdapter<StudentModel> {
       parentAddress: reader.readString(),
       parentEmail: reader.readString(),
       parentPhone: reader.readString(),
-      section: reader.readString(),  
-      grade: reader.readString(),  
-      typeapid: reader.readString(),  
+      section: reader.readString(),
+      grade: reader.readString(),
+      typeapid: reader.readString(),
       image: reader.readString(),
-      createdAt: DateTime.parse(reader.readString()),  
+      createdAt: DateTime.parse(reader.readString()),
     );
   }
 
@@ -81,9 +81,9 @@ class StudentModelAdapter extends TypeAdapter<StudentModel> {
     writer.writeString(obj.parentAddress);
     writer.writeString(obj.parentEmail);
     writer.writeString(obj.parentPhone);
-    writer.writeString(obj.section); 
-    writer.writeString(obj.grade);  
-    writer.writeString(obj.typeapid);  
+    writer.writeString(obj.section);
+    writer.writeString(obj.grade);
+    writer.writeString(obj.typeapid);
     writer.writeString(obj.image ?? "");
     writer.writeString(obj.createdAt.toIso8601String());
   }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sama/controller/view_student_controller.dart';
 import 'package:sama/model/item_card_user_model.dart';
 import 'package:sama/core/utils/circle_button_with_border.dart';
 import 'package:sama/view/users_details/widgets/avatar_with_background.dart';
 import 'package:sama/view/users_details/widgets/user_info.dart';
 
-class UserStackWidget extends StatelessWidget {
+class UserStackWidget extends GetView<ViewStudentController> {
   const UserStackWidget({
     super.key,
     required this.mask,
@@ -12,12 +14,14 @@ class UserStackWidget extends StatelessWidget {
     required this.name,
     required this.subtitle,
     required this.constraints,
+    this.image,
   });
   final BoxConstraints constraints;
   final String mask;
   final List<ItemCardUserModel> inforations;
   final String name;
   final String subtitle;
+  final String? image;
   @override
   Widget build(BuildContext context) {
     double top = 32 * MediaQuery.sizeOf(context).width / 1700;
@@ -38,7 +42,8 @@ class UserStackWidget extends StatelessWidget {
         Positioned(
           top: top,
           left: top,
-          child: const CircleButtonWithBorder(
+          child: CircleButtonWithBorder(
+            image: image,
             icon: Icons.admin_panel_settings_outlined,
           ),
         ),

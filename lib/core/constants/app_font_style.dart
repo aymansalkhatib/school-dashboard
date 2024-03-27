@@ -197,7 +197,8 @@ class AppFontStyle {
   }
 }
 
-double getResponsiveFontSize(context, {required double fontSize, double? lower, double? upper}) {
+double getResponsiveFontSize(context,
+    {required double fontSize, double? lower, double? upper}) {
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = fontSize * scaleFactor;
   double lowerLimit = lower != null ? fontSize * lower : fontSize * .8;

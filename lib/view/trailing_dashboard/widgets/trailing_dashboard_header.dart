@@ -22,7 +22,8 @@ class TrailingDashboardHeader extends StatelessWidget {
           ),
           child: SvgPicture.asset(
             Assets.iconsBell,
-            colorFilter: const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
+            colorFilter:
+                const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
           ),
         ),
         SizedBox(width: 14 * getScaleFactor(context)),
@@ -36,7 +37,8 @@ class TrailingDashboardHeader extends StatelessWidget {
           ),
           child: SvgPicture.asset(
             Assets.iconsGear,
-            colorFilter: const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
+            colorFilter:
+                const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
           ),
         ),
         // SizedBox(width: 20 * getScaleFactor(context)),

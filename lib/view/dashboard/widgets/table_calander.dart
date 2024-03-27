@@ -23,8 +23,8 @@ class TableCalander extends StatelessWidget {
             children: [
               for (int j = 0; j < 7; j++)
                 GetBuilder<DashboardControllerImp>(builder: (controller) {
-                  bool isToday =
-                      controller.dateTableModel.today == controller.dateTableModel.fillGrid[j + 7 * i];
+                  bool isToday = controller.dateTableModel.today ==
+                      controller.dateTableModel.fillGrid[j + 7 * i];
                   return TableCell(
                     child: AspectRatio(
                       aspectRatio: 65 / 74,
@@ -34,13 +34,19 @@ class TableCalander extends StatelessWidget {
                           width: double.infinity,
                           height: double.infinity,
                           decoration: BoxDecoration(
-                              color: isToday ? AppColors.primaryPurple : Colors.transparent,
+                              color: isToday
+                                  ? AppColors.primaryPurple
+                                  : Colors.transparent,
                               shape: BoxShape.circle),
                           child: Center(
                             child: Text(
-                              controller.dateTableModel.fillGrid[j + 7 * i].toString(),
-                              style: AppFontStyle.styleRegular18(context, lower: 0.6)
-                                  .copyWith(color: isToday ? Colors.white : null, height: 1),
+                              controller.dateTableModel.fillGrid[j + 7 * i]
+                                  .toString(),
+                              style: AppFontStyle.styleRegular18(context,
+                                      lower: 0.6)
+                                  .copyWith(
+                                      color: isToday ? Colors.white : null,
+                                      height: 1),
                             ),
                           ),
                         ),

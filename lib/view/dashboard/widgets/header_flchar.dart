@@ -16,7 +16,8 @@ class HeaderFlChar extends StatelessWidget {
       children: [
         Text(
           "School Finance",
-          style: AppFontStyle.styleBold24(context).copyWith(fontSize: 24 * getScaleFactor(context)),
+          style: AppFontStyle.styleBold24(context)
+              .copyWith(fontSize: 24 * getScaleFactor(context)),
         ),
         SizedBox(width: 20 * getScaleFactor(context)),
         const Row(

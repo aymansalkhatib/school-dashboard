@@ -32,7 +32,8 @@ class ImageWithTitleInsideDetailsStudent extends StatelessWidget {
           height: height,
           child: AspectRatio(
             aspectRatio: 1,
-            child: GetBuilder<AddNewStudentControllerImp>(builder: (controller) {
+            child:
+                GetBuilder<AddNewStudentControllerImp>(builder: (controller) {
               return GestureDetector(
                 onTap: controller.pickImage,
                 onDoubleTap: controller.removeImage,
@@ -56,12 +57,13 @@ class ImageWithTitleInsideDetailsStudent extends StatelessWidget {
                           ),
                           child: Center(
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 8),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8),
                               child: Text(
                                 textAlign: TextAlign.center,
                                 'Drag and drop or\nclick here to\nselect file',
-                                style:
-                                    AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray),
+                                style: AppFontStyle.styleRegular14(context)
+                                    .copyWith(color: AppColors.darkGray),
                               ),
                             ),
                           ),
@@ -75,11 +77,6 @@ class ImageWithTitleInsideDetailsStudent extends StatelessWidget {
     );
   }
 }
- 
- 
- 
-
- 
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -134,7 +131,7 @@ class ImageWithTitleInsideDetailsStudent extends StatelessWidget {
 // import 'dart:developer';
 // import 'dart:io';
 // import 'package:flutter/material.dart';
- 
+
 // void main() {
 //   runApp(MaterialApp(
 //     title: 'Flutter Demo',

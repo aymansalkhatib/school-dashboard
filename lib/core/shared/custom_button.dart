@@ -30,11 +30,13 @@ class CustomButton extends StatelessWidget {
       elevation: 0,
       shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(40),
-          borderSide: const BorderSide(color: AppColors.primaryPurple, width: 2)),
+          borderSide:
+              const BorderSide(color: AppColors.primaryPurple, width: 2)),
       color: color ?? Colors.white,
       child: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: 18 * getScaleFactor(context), vertical: 18 * getScaleFactor(context)),
+            horizontal: 18 * getScaleFactor(context),
+            vertical: 18 * getScaleFactor(context)),
         child: Row(
           children: [
             iconLeft
@@ -55,7 +57,8 @@ class CustomButton extends StatelessWidget {
             Text(
               text,
               textAlign: TextAlign.center,
-              style: AppFontStyle.styleRegular18(context).copyWith(color: colorText ?? AppColors.textBlack),
+              style: AppFontStyle.styleRegular18(context)
+                  .copyWith(color: colorText ?? AppColors.textBlack),
             ),
             iconRight
                 ? iconData != null && !iconLeft

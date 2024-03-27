@@ -8,7 +8,8 @@ class TitleWithTextField extends StatelessWidget {
     required this.hint,
     required this.title,
     this.maxLines = 1,
-    this.controller,   this.validators,
+    this.controller,
+    this.validators,
   });
   final List<String> hint;
   final String title;
@@ -24,8 +25,12 @@ class TitleWithTextField extends StatelessWidget {
           title,
           style: AppFontStyle.styleBold18(context),
         ),
-        SizedBox(
-          height: 16 * getScaleFactor(context),
+        Container(
+          color: Colors.red,
+          child: SizedBox(
+            height: 16 * getScaleFactor(context),
+            child: const CircleAvatar(),
+          ),
         ),
         Row(
           children: [
@@ -34,7 +39,10 @@ class TitleWithTextField extends StatelessWidget {
                 (index) => Expanded(
                       child: Padding(
                         padding: EdgeInsets.only(
-                            right: index != hint.length - 1 ? 24 * getScaleFactor(context) : 0),
+                            right: index != hint.length - 1
+                                ? 24 * getScaleFactor(context)
+                                : 0,
+                            bottom: 16),
                         child: CustomTextFromFeild(
                           hint: hint[index],
                           controller: controller?[index],

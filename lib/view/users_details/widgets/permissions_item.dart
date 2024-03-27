@@ -27,7 +27,8 @@ class PermissionsItem extends StatelessWidget {
         const Spacer(),
         CircleAvatar(
           radius: 15,
-          backgroundColor: isActive ? AppColors.primaryPurple : AppColors.errorRed,
+          backgroundColor:
+              isActive ? AppColors.primaryPurple : AppColors.errorRed,
           child: CircleAvatar(
             backgroundColor: Colors.white,
             radius: 13,
@@ -44,5 +45,5 @@ class PermissionsItem extends StatelessWidget {
 }
 
 //* 1 add and change mark
-//* 2 add student and change 
+//* 2 add student and change
 //* 3 add selling and change

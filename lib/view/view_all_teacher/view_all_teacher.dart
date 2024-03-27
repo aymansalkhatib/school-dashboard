@@ -25,7 +25,8 @@ class ViewAllTeacher extends StatelessWidget {
             SearchWithNewUser(
               text: "New Teacher",
               onPressed: () {
-                Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.AddNewTeacher);
+                Get.find<NavigationControllerImp>()
+                    .replaceLastWidget(NavigationEnum.AddNewTeacher);
               },
             ),
             const SizedBox(height: 40),
@@ -42,8 +43,7 @@ class ViewAllTeacher extends StatelessWidget {
                 itemCount: controller.teachers.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ItemGridVewTeachers(
-                    teacherModel: controller.teachers[index],
-                  );
+                      teacherModel: controller.teachers[index], index: index);
                 },
               );
             }),

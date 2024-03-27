@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sama/core/constants/assets.dart';
 import 'package:sama/model/item_card_user_model.dart';
+import 'package:sama/model/student_model.dart';
 import 'package:sama/view/student_details/widgets/student_payments.dart';
 import 'package:sama/view/users_details/widgets/user_card_info.dart';
 
 class Students extends StatelessWidget {
-  const Students({super.key});
+  const Students({super.key, required this.studentModel});
+  final StudentModel studentModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,9 +17,14 @@ class Students extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           UserCardInfo(
-            name: "Maria Historia",
+            name: "${studentModel.firstName} ${studentModel.lastName}",
             mask: Assets.imagesMaskingStudent,
-            informations: itemCardUserModel,
+            informations: retListItemCardUserModel(
+              email: studentModel.email,
+              location: studentModel.address,
+              phone: studentModel.phone,
+            ),
+            image: studentModel.image,
           ),
           const SizedBox(height: 40),
           const StudentPayments(),

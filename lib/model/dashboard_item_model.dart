@@ -8,7 +8,11 @@ class DashboardItemModel {
   final String icon;
   final Color color;
 
-  DashboardItemModel({required this.text, required this.number, required this.icon, required this.color});
+  DashboardItemModel(
+      {required this.text,
+      required this.number,
+      required this.icon,
+      required this.color});
 }
 
 List<DashboardItemModel> dashboardItemsModel = [

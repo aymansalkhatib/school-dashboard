@@ -12,7 +12,8 @@ class Validation {
     return null;
   }
 
-  static String? checkPasswordStrength(String? password, {bool isLogin = false}) {
+  static String? checkPasswordStrength(String? password,
+      {bool isLogin = false}) {
     if (password == null || password == '') {
       return "This field is required";
     }
@@ -79,7 +80,8 @@ class Validation {
       return "This field is required";
     }
 
-    final RegExp dateRegExp = RegExp(r'^\d{4}-\d{2}-\d{2}$'); // Regular expression to match YYYY-MM-DD format
+    final RegExp dateRegExp = RegExp(
+        r'^\d{4}-\d{2}-\d{2}$'); // Regular expression to match YYYY-MM-DD format
 
     if (!dateRegExp.hasMatch(text)) {
       return 'Please use YYYY-MM-DD';

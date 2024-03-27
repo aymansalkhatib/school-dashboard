@@ -4,7 +4,7 @@ List<String> levels = [
   'Primary School - Grade 3',
   'Primary School - Grade 4',
   'Primary School - Grade 5',
-  'Intermediate School - Grade 6',
+  'Primary School - Grade 6',
   'Intermediate School - Grade 7',
   'Intermediate School - Grade 8',
   'Intermediate School - Grade 9',

@@ -17,7 +17,8 @@ class DashboardWithTrailing extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 40, right: 40, top: 40, bottom: 28),
+                padding:
+                    EdgeInsets.only(left: 40, right: 40, top: 40, bottom: 28),
                 child: HeaderWithSearch(title: "Dashboard"),
               ),
               Row(

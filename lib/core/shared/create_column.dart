@@ -10,7 +10,7 @@ class CreateColumn extends StatelessWidget {
     this.maxLinesForField = 1,
     this.maxLinesIndexField = 0,
     this.textController,
-      this.validators,
+    this.validators,
   });
   final List<String> title;
   final List<List<String>> hint;

@@ -3,7 +3,7 @@ import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/utils/pagination.dart';
 import 'package:sama/view/trailing_dashboard/widgets/item_recent_students.dart';
- 
+
 class ListUserPagination extends StatelessWidget {
   const ListUserPagination({
     super.key,
@@ -27,12 +27,14 @@ class ListUserPagination extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             "You have 741 user",
-            style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray),
+            style: AppFontStyle.styleRegular16(context)
+                .copyWith(color: AppColors.darkGray),
           ),
           const SizedBox(height: 8),
           ...List.generate(3, (index) => const ItemRecentStudents()),
           const SizedBox(height: 24),
-          const FittedBox(fit: BoxFit.scaleDown, child: MyPaginations(length: 3))
+          const FittedBox(
+              fit: BoxFit.scaleDown, child: MyPaginations(length: 3))
         ],
       ),
     );

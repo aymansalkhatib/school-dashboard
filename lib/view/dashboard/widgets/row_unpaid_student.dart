@@ -11,7 +11,11 @@ class RowUnpaidStudent extends StatelessWidget {
   final double price;
 
   const RowUnpaidStudent(
-      {super.key, required this.name, required this.id, required this.className, required this.price});
+      {super.key,
+      required this.name,
+      required this.id,
+      required this.className,
+      required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,8 @@ class RowUnpaidStudent extends StatelessWidget {
                   padding: EdgeInsets.all(12.0 * getScaleFactor(context)),
                   child: SvgPicture.asset(
                     Assets.iconsStudent,
-                    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                   ),
                 ),
               ),
@@ -56,7 +61,8 @@ class RowUnpaidStudent extends StatelessWidget {
               fit: BoxFit.scaleDown,
               child: Text(
                 "ID $id",
-                style: AppFontStyle.styleSemiBold18(context).copyWith(color: AppColors.primaryPurple),
+                style: AppFontStyle.styleSemiBold18(context)
+                    .copyWith(color: AppColors.primaryPurple),
               ),
             ),
           ),
@@ -74,7 +80,8 @@ class RowUnpaidStudent extends StatelessWidget {
                   padding: EdgeInsets.all(12.0 * getScaleFactor(context)),
                   child: SvgPicture.asset(
                     Assets.iconsUser,
-                    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    colorFilter:
+                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                   ),
                 ),
               ),
@@ -83,7 +90,8 @@ class RowUnpaidStudent extends StatelessWidget {
                 children: [
                   Text(
                     "Class",
-                    style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray),
+                    style: AppFontStyle.styleRegular14(context)
+                        .copyWith(color: AppColors.darkGray),
                   ),
                   Text(
                     className,

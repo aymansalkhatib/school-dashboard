@@ -41,14 +41,17 @@ class PopMenuItemsSectionOrClass extends StatelessWidget {
           ),
         ),
         itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-          for (int i = 0; i < (menuClass ? levels.length : controller.sections.length); i++)
+          for (int i = 0;
+              i < (menuClass ? levels.length : controller.sections.length);
+              i++)
             PopupMenuItem<String>(
               padding: const EdgeInsets.only(right: 20, left: 15),
               height: 45 * getScaleFactor(context),
               value: menuClass ? levels[i] : controller.sections[i].name,
               child: Text(
                 menuClass ? levels[i] : controller.sections[i].name,
-                style: AppFontStyle.styleRegular18(context).copyWith(fontSize: 18 * getScaleFactor(context)),
+                style: AppFontStyle.styleRegular18(context)
+                    .copyWith(fontSize: 18 * getScaleFactor(context)),
               ),
             ),
         ],

@@ -32,14 +32,15 @@ class UserItemCard extends StatelessWidget {
               child: SvgPicture.asset(
                 itemCardUserModel.icon,
                 width: 20,
-                colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                colorFilter:
+                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
               ),
             ),
             const SizedBox(width: 12),
             FittedBox(
                 fit: BoxFit.scaleDown,
-                child:
-                    Text(itemCardUserModel.body, style: AppFontStyle.styleSemiBold18(context, lower: 0.7))),
+                child: Text(itemCardUserModel.body,
+                    style: AppFontStyle.styleSemiBold18(context, lower: 0.7))),
           ],
         )
       ],

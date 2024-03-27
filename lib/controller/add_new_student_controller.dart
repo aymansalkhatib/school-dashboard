@@ -18,10 +18,14 @@ abstract class AddNewStudentController extends GetxController {
 }
 
 class AddNewStudentControllerImp extends AddNewStudentController {
+  AddNewStudentControllerImp({this.student});
+
   late Box box;
   late PaymentEnum statePayment;
   String grade = levels[levels.length - 1];
   XFile? image;
+  final StudentModel? student;
+
   GlobalKey<FormState> globalKey = GlobalKey<FormState>();
   late TextEditingController firstName;
   late TextEditingController lastName;
@@ -59,7 +63,8 @@ class AddNewStudentControllerImp extends AddNewStudentController {
   }
 
   void pop() {
-    Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.Students);
+    Get.find<NavigationControllerImp>()
+        .replaceLastWidget(NavigationEnum.Students);
   }
 
   Future addNewStudent() async {
@@ -76,15 +81,20 @@ class AddNewStudentControllerImp extends AddNewStudentController {
               label: 'Create Section',
               textColor: AppColors.lightPurple,
               onPressed: () {
-                Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.Classes,
-                    info: {"isActive": (int.tryParse(grade.substring(grade.length - 2).trim()) ?? 1) - 1});
+                Get.find<NavigationControllerImp>()
+                    .replaceLastWidget(NavigationEnum.Classes, info: {
+                  "isActive":
+                      (int.tryParse(grade.substring(grade.length - 2).trim()) ??
+                              1) -
+                          1
+                });
               },
             ),
           ),
         );
       } else {
-        StudentModel student = StudentModel(
-          id: generateUniqueNumber(),
+        StudentModel studentModel = StudentModel(
+          id: student?.id ?? generateUniqueNumber(),
           firstName: firstName.text,
           lastName: lastName.text,
           dateOfBirth: dateOfBirth.text,
@@ -101,11 +111,18 @@ class AddNewStudentControllerImp extends AddNewStudentController {
           section: activeSection!,
           typeapid: statePayment.name,
         );
-
-        await box.add(student);
-        // await box.clear();
-        // print(box.values.whereType<StudentModel>());
-        Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.Students);
+        if (student != null) {
+          final items = box.values.toList();
+          for (int i = 0; i < items.length; i++) {
+            if (items[i] is StudentModel && items[i].id == student!.id) {
+              await box.putAt(i, studentModel);
+            }
+          }
+        } else {
+          await box.add(studentModel);
+        }
+        Get.find<NavigationControllerImp>()
+            .replaceLastWidget(NavigationEnum.Students);
       }
     }
   }
@@ -140,10 +157,9 @@ class AddNewStudentControllerImp extends AddNewStudentController {
 
   void setGrade(String value) {
     grade = value;
-    sections = box.values
-        .whereType<SectionModel>()
-        .where((e) => value.contains(e.level) && value.contains(e.grade))
-        .toList();
+    sections = box.values.whereType<SectionModel>().where((e) {
+      return value.contains(e.level) && value.contains(e.grade);
+    }).toList();
     if (sections.isNotEmpty) {
       activeSection = sections.last.name;
     } else {
@@ -159,28 +175,54 @@ class AddNewStudentControllerImp extends AddNewStudentController {
 
   @override
   void onInit() async {
-    initListAndController();
     statePayment = PaymentEnum.cache;
+    initListAndController();
     box = await MyAppServices().information;
-    setGrade(levels[levels.length - 1]);
-
+    if (student == null) {
+      setGrade(levels[levels.length - 1]);
+    }
     super.onInit();
   }
 
   void initListAndController() {
-    firstName = TextEditingController(text: 'John');
-    lastName = TextEditingController(text: 'Doe');
-    dateOfBirth = TextEditingController(text: '2000-01-01');
-    placeOfBirth = TextEditingController(text: 'New York');
-    parentName = TextEditingController(text: 'Jane Doe');
-    email = TextEditingController(text: 'john@example.com');
-    phone = TextEditingController(text: '0968381625');
-    address = TextEditingController(text: '123 Main St, City');
-    parentEmail = TextEditingController(text: 'jane@example.com');
-    parentPhone = TextEditingController(text: '0968381625');
-    parentAddress = TextEditingController(text: '456 Oak St, Town');
+    firstName = TextEditingController(text: student?.firstName ?? 'Ayman');
+    lastName = TextEditingController(text: student?.lastName ?? 'Smith');
+    dateOfBirth =
+        TextEditingController(text: student?.dateOfBirth ?? '2000-01-01');
+    placeOfBirth =
+        TextEditingController(text: student?.placeOfBirth ?? 'New York');
+    parentName = TextEditingController(text: student?.parentName ?? 'John Doe');
+    email =
+        TextEditingController(text: student?.email ?? 'example@example.com');
+    phone = TextEditingController(text: student?.phone ?? '0968381625');
+    address = TextEditingController(text: student?.address ?? '123 Main St');
+    parentEmail = TextEditingController(
+        text: student?.parentEmail ?? 'parent@example.com');
+    parentPhone =
+        TextEditingController(text: student?.parentPhone ?? '0968381625');
+    parentAddress =
+        TextEditingController(text: student?.parentAddress ?? '456 Elm St');
 
-    titleStudentColumn1 = ["First Name *", "Date & Place of Brith*", "Email *", "Address *"];
+    image = student?.image != null && student!.image!.isNotEmpty
+        ? XFile(student!.image!)
+        : null;
+    grade = student?.grade ?? grade;
+    activeSection = student?.section ?? activeSection;
+
+    // if (student != null) {
+    //   if (student!.typeapid == PaymentEnum.cache.name) {
+    //     statePayment = PaymentEnum.cache;
+    //   } else {
+    //     statePayment = PaymentEnum.debit;
+    //   }
+    // }
+
+    titleStudentColumn1 = [
+      "First Name *",
+      "Date & Place of Brith*",
+      "Email *",
+      "Address *"
+    ];
     titleStudentColumn2 = ["Last Name *", "Parent Name *", "Phone"];
     titleParentStudentColumn1 = ["First Name *", "Email *", "Address *"];
     titleParentStudentColumn2 = ["Last Name *", "Phone"];

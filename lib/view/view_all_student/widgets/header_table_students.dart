@@ -9,7 +9,7 @@ class HeaderTableStudents extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Row(children: [
-        text("ID",flex: 1),
+        text("ID", flex: 1),
         text("Name", align: Alignment.centerLeft, flex: 3),
         text("Date"),
         text("Parent Name"),

@@ -22,7 +22,8 @@ class ViewAllStudent extends StatelessWidget {
           SearchWithNewUser(
             text: "New Student",
             onPressed: () {
-              Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.AddNewStudent);
+              Get.find<NavigationControllerImp>()
+                  .replaceLastWidget(NavigationEnum.AddNewStudent);
             },
           ),
           const SizedBox(height: 40),

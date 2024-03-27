@@ -19,7 +19,8 @@ class TitleWithMonth extends StatelessWidget {
       children: [
         Text(
           "School Calendar",
-          style: AppFontStyle.styleBold24(context).copyWith(fontSize: 24 * getScaleFactor(context)),
+          style: AppFontStyle.styleBold24(context)
+              .copyWith(fontSize: 24 * getScaleFactor(context)),
         ),
         SizedBox(width: 20 * getScaleFactor(context)),
         Row(
@@ -31,14 +32,16 @@ class TitleWithMonth extends StatelessWidget {
                   elevation: 0,
                   tooltip: "Change Month",
                   onSelected: (value) {
-                    controller.fillTableDate(DateTime.now().year, getMonthNumber(value));
+                    controller.fillTableDate(
+                        DateTime.now().year, getMonthNumber(value));
                   },
                   child: Text(
                     "${controller.dateTableModel.month} ${controller.dateTableModel.year}",
-                    style:
-                        AppFontStyle.styleRegular18(context).copyWith(fontSize: 18 * getScaleFactor(context)),
+                    style: AppFontStyle.styleRegular18(context)
+                        .copyWith(fontSize: 18 * getScaleFactor(context)),
                   ),
-                  itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                  itemBuilder: (BuildContext context) =>
+                      <PopupMenuEntry<String>>[
                     for (int i = 1; i <= 12; i++)
                       PopupMenuItem<String>(
                         padding: const EdgeInsets.only(right: 20, left: 15),
@@ -60,7 +63,8 @@ class TitleWithMonth extends StatelessWidget {
                 child: SvgPicture.asset(
                   Assets.iconsDropdown,
                   width: 26 * getScaleFactor(context),
-                  colorFilter: const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
+                  colorFilter: const ColorFilter.mode(
+                      AppColors.darkGray, BlendMode.srcIn),
                 ))
           ],
         ),

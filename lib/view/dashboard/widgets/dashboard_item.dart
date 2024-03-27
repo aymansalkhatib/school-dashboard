@@ -19,7 +19,8 @@ class DashboardItem extends StatelessWidget {
               padding: EdgeInsets.all(16 * getScaleFactor(context)),
               child: SvgPicture.asset(
                 dashboardItemModel.icon,
-                colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                colorFilter:
+                    const ColorFilter.mode(Colors.white, BlendMode.srcIn),
               )),
         ),
         SizedBox(width: 18 * getScaleFactor(context)),
@@ -28,12 +29,14 @@ class DashboardItem extends StatelessWidget {
           children: [
             Text(
               dashboardItemModel.text,
-              style: AppFontStyle.styleMedium18(context)
-                  .copyWith(color: AppColors.darkGray, fontSize: 16 * getScaleFactor(context)),
+              style: AppFontStyle.styleMedium18(context).copyWith(
+                  color: AppColors.darkGray,
+                  fontSize: 16 * getScaleFactor(context)),
             ),
             Text(
               dashboardItemModel.number.toString(),
-              style: AppFontStyle.styleBold36(context).copyWith(fontSize: 30 * getScaleFactor(context)),
+              style: AppFontStyle.styleBold36(context)
+                  .copyWith(fontSize: 30 * getScaleFactor(context)),
             ),
           ],
         ),

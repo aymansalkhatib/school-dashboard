@@ -25,12 +25,16 @@ class Contacts extends StatelessWidget {
               width: 44 * getScaleFactor(context),
               height: 44 * getScaleFactor(context),
               decoration: BoxDecoration(
-                  color: isStudent ? AppColors.lightPurple : AppColors.primaryPurple, shape: BoxShape.circle),
+                  color: isStudent
+                      ? AppColors.lightPurple
+                      : AppColors.primaryPurple,
+                  shape: BoxShape.circle),
               child: Padding(
                 padding: EdgeInsets.all(9 * getScaleFactor(context)),
                 child: SvgPicture.asset(
-                    colorFilter:
-                        ColorFilter.mode(isStudent ? AppColors.primaryPurple : Colors.white, BlendMode.srcIn),
+                    colorFilter: ColorFilter.mode(
+                        isStudent ? AppColors.primaryPurple : Colors.white,
+                        BlendMode.srcIn),
                     Assets.iconsCall),
               ),
             ),
@@ -42,12 +46,16 @@ class Contacts extends StatelessWidget {
               width: 44 * getScaleFactor(context),
               height: 44 * getScaleFactor(context),
               decoration: BoxDecoration(
-                  color: isStudent ? AppColors.lightPurple : AppColors.primaryPurple, shape: BoxShape.circle),
+                  color: isStudent
+                      ? AppColors.lightPurple
+                      : AppColors.primaryPurple,
+                  shape: BoxShape.circle),
               child: Padding(
                 padding: EdgeInsets.all(9 * getScaleFactor(context)),
                 child: SvgPicture.asset(
-                    colorFilter:
-                        ColorFilter.mode(isStudent ? AppColors.primaryPurple : Colors.white, BlendMode.srcIn),
+                    colorFilter: ColorFilter.mode(
+                        isStudent ? AppColors.primaryPurple : Colors.white,
+                        BlendMode.srcIn),
                     Assets.iconsEmail),
               ),
             ),

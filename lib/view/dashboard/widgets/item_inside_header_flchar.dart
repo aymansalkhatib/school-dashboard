@@ -39,14 +39,16 @@ class ItemInsideHeaderFlchar extends StatelessWidget {
             SizedBox(width: 8 * getScaleFactor(context)),
             Text(
               text,
-              style: AppFontStyle.styleRegular14(context)
-                  .copyWith(color: AppColors.darkGray, fontSize: 14 * getScaleFactor(context)),
+              style: AppFontStyle.styleRegular14(context).copyWith(
+                  color: AppColors.darkGray,
+                  fontSize: 14 * getScaleFactor(context)),
             ),
           ],
         ),
         Text(
           number.toString(),
-          style: AppFontStyle.styleBold18(context).copyWith(fontSize: 18 * getScaleFactor(context)),
+          style: AppFontStyle.styleBold18(context)
+              .copyWith(fontSize: 18 * getScaleFactor(context)),
         ),
       ],
     );

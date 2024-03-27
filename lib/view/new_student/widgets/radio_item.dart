@@ -8,7 +8,12 @@ class RadioItem extends StatelessWidget {
   final void Function(PaymentEnum?)? onChanged;
   final String title;
   final PaymentEnum value;
-  const RadioItem({super.key, this.groupValue, this.onChanged, required this.title, required this.value});
+  const RadioItem(
+      {super.key,
+      this.groupValue,
+      this.onChanged,
+      required this.title,
+      required this.value});
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,7 +25,8 @@ class RadioItem extends StatelessWidget {
         ),
         Text(
           title,
-          style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray),
+          style: AppFontStyle.styleRegular16(context)
+              .copyWith(color: AppColors.darkGray),
         ),
       ],
     );

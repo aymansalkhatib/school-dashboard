@@ -68,7 +68,8 @@ class FlCharState extends State<FlChar> {
             child: Stack(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 37 - scale, bottom: 20, right: 10 - scale),
+                  padding: EdgeInsets.only(
+                      left: 37 - scale, bottom: 20, right: 10 - scale),
                   child: CustomPaint(
                     painter: CustomGridLinePainter(
                       numberHorizontalLines: 6,
@@ -108,15 +109,23 @@ class FlCharState extends State<FlChar> {
                           showingBarGroups = List.of(rawBarGroups);
                           if (touchedGroupIndex != -1) {
                             var sum = 0.0;
-                            for (final rod in showingBarGroups[touchedGroupIndex].barRods) {
+                            for (final rod
+                                in showingBarGroups[touchedGroupIndex]
+                                    .barRods) {
                               sum += rod.toY;
                             }
-                            final avg = sum / showingBarGroups[touchedGroupIndex].barRods.length;
+                            final avg = sum /
+                                showingBarGroups[touchedGroupIndex]
+                                    .barRods
+                                    .length;
 
                             showingBarGroups[touchedGroupIndex] =
                                 showingBarGroups[touchedGroupIndex].copyWith(
-                              barRods: showingBarGroups[touchedGroupIndex].barRods.map((rod) {
-                                return rod.copyWith(toY: avg, color: widget.avgColor);
+                              barRods: showingBarGroups[touchedGroupIndex]
+                                  .barRods
+                                  .map((rod) {
+                                return rod.copyWith(
+                                    toY: avg, color: widget.avgColor);
                               }).toList(),
                             );
                           }
@@ -187,7 +196,8 @@ class FlCharState extends State<FlChar> {
         space: 0,
         child: Text(
           text,
-          style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray),
+          style: AppFontStyle.styleRegular16(context)
+              .copyWith(color: AppColors.darkGray),
         ));
   }
 
@@ -196,7 +206,8 @@ class FlCharState extends State<FlChar> {
 
     final Widget text = Text(
       titles[value.toInt()],
-      style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray),
+      style: AppFontStyle.styleRegular16(context)
+          .copyWith(color: AppColors.darkGray),
     );
 
     return SideTitleWidget(

@@ -41,7 +41,8 @@ class TrailingClasses extends StatelessWidget {
                           width: 16,
                           height: 16,
                           Assets.iconsMinus,
-                          colorFilter: const ColorFilter.mode(AppColors.backgroundWhite, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(
+                              AppColors.backgroundWhite, BlendMode.srcIn),
                         ),
                       ),
                     ),
@@ -53,7 +54,7 @@ class TrailingClasses extends StatelessWidget {
                       child: Container(
                         padding: EdgeInsets.all(12 * getScaleFactor(context)),
                         decoration: BoxDecoration(
-                          color: controller.activeSections.length<10
+                          color: controller.activeSections.length < 10
                               ? AppColors.primaryPurple
                               : AppColors.darkGray,
                           borderRadius: BorderRadius.circular(20),
@@ -62,7 +63,8 @@ class TrailingClasses extends StatelessWidget {
                           Assets.iconsAdd,
                           width: 16,
                           height: 16,
-                          colorFilter: const ColorFilter.mode(AppColors.backgroundWhite, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(
+                              AppColors.backgroundWhite, BlendMode.srcIn),
                         ),
                       ),
                     ),
@@ -75,7 +77,9 @@ class TrailingClasses extends StatelessWidget {
               controller.activeSections.length,
               (index) => Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
-                child: DetailsSections(sectionModel: controller.activeSections[index], index: index),
+                child: DetailsSections(
+                    sectionModel: controller.activeSections[index],
+                    index: index),
               ),
             ),
           ],

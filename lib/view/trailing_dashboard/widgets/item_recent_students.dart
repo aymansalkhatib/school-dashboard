@@ -27,7 +27,9 @@ class _ItemRecentStudentsState extends State<ItemRecentStudents> {
         height: 48 * getScaleFactor(context),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          border: Border.all(width: 1.5, color: isHovering ? AppColors.primaryPurple : AppColors.darkGray),
+          border: Border.all(
+              width: 1.5,
+              color: isHovering ? AppColors.primaryPurple : AppColors.darkGray),
         ),
         child: SvgPicture.asset(
           Assets.iconsEmail,

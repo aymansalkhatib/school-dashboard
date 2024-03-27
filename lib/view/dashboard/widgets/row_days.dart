@@ -17,8 +17,8 @@ class RowDays extends StatelessWidget {
                 message: controller.dateTableModel.titleTable[i],
                 child: Text(
                   controller.dateTableModel.titleTable[i].substring(0, 3),
-                  style:
-                      AppFontStyle.styleRegular18(context).copyWith(fontSize: 18 * getScaleFactor(context)),
+                  style: AppFontStyle.styleRegular18(context)
+                      .copyWith(fontSize: 18 * getScaleFactor(context)),
                 ),
               ),
             ),

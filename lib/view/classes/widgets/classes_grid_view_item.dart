@@ -31,7 +31,9 @@ class ClassesGridViewItem extends StatelessWidget {
         hoverColor: Colors.white,
         child: Container(
           decoration: BoxDecoration(
-            color: controller.isActive == index ? AppColors.primaryPurple : Colors.transparent,
+            color: controller.isActive == index
+                ? AppColors.primaryPurple
+                : Colors.transparent,
             borderRadius: BorderRadius.circular(22.5),
           ),
           padding: const EdgeInsets.all(3.0),
@@ -40,7 +42,8 @@ class ClassesGridViewItem extends StatelessWidget {
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
             ),
-            padding: EdgeInsets.symmetric(vertical: 70.0 * getScaleFactor(context)),
+            padding:
+                EdgeInsets.symmetric(vertical: 70.0 * getScaleFactor(context)),
             child: ShaderMask(
               shaderCallback: (bounds) => gradient.createShader(Rect.fromLTWH(
                 0,

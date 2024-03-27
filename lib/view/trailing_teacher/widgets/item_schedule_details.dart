@@ -40,11 +40,12 @@ class ItemScheduleDetails extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(scheduleDetailsModel.title, style: AppFontStyle.styleSemiBold18(context, lower: 0.7)),
+                  Text(scheduleDetailsModel.title,
+                      style: AppFontStyle.styleSemiBold18(context, lower: 0.7)),
                   Text(
                     scheduleDetailsModel.subtitle,
-                    style:
-                        AppFontStyle.styleRegular14(context, lower: 0.7).copyWith(color: AppColors.darkGray),
+                    style: AppFontStyle.styleRegular14(context, lower: 0.7)
+                        .copyWith(color: AppColors.darkGray),
                   ),
                   const Spacer(),
                   IconWithTextInsideItemScheduleDetails(

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:sama/core/my_services.dart';
@@ -12,6 +14,22 @@ class ViewStudentControllerImp extends ViewStudentController {
   fillListStudent() {
     students = box.values.whereType<StudentModel>().toList();
     update();
+  }
+
+  removeStudent(int index) async {
+    List items = box.values.toList();
+    for (int i = 0; i < items.length; i++) {
+      if (items[i] is StudentModel && items[i].id == students[index].id) {
+        if (items[i].image != null) {
+          File imageFile = File(items[i].image);
+          if (imageFile.existsSync()) imageFile.deleteSync();
+        }
+        await box.deleteAt(i);
+        students.removeAt(index);
+        update();
+        return;
+      }
+    }
   }
 
   @override

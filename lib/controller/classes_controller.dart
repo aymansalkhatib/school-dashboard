@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:sama/core/constants/classes.dart';
 import 'package:sama/core/my_services.dart';
 import 'package:sama/model/class_model.dart';
 import 'package:sama/model/section_model.dart';
+import 'package:sama/model/student_model.dart';
 
 abstract class ClassesController extends GetxController {}
 
@@ -53,17 +55,35 @@ class ClassesControllerImp extends ClassesController {
 
     if (sectionsToDelete.isNotEmpty) {
       SectionModel sectionToDelete = sectionsToDelete.last;
-      allSections.remove(sectionToDelete);
-      activeSections.remove(sectionToDelete);
+
       final items = box.values.toList();
       int index = 0;
 
+      List<int> listRemoveIndexSections = [];
+
       for (var i = 0; i < items.length; i++) {
-        if (items[i] is SectionModel && items[i].grade == sectionToDelete.grade) {
+        if (items[i] is SectionModel &&
+            items[i].grade == sectionToDelete.grade) {
           index = i;
         }
       }
-      await box.deleteAt(index);
+      for (var i = 0; i < items.length; i++) {
+        if (items[i] is StudentModel) {
+          StudentModel student = items[i] as StudentModel;
+          if (student.grade == levels[isActive]) {
+            if (student.section == (items[index] as SectionModel).name) {
+              listRemoveIndexSections.add(i);
+            }
+          }
+        }
+      }
+      listRemoveIndexSections.sort((a, b) => b.compareTo(a));
+      for (var i = 0; i < listRemoveIndexSections.length; i++) {
+        box.deleteAt(listRemoveIndexSections[i]);
+      }
+
+      allSections.remove(sectionToDelete);
+      activeSections.remove(sectionToDelete);
       update();
     }
   }

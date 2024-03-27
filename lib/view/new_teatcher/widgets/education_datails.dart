@@ -21,7 +21,8 @@ class EducationDatails extends GetView<AddNewTeacherControllerImp> {
           const ContainerHeaderWithRadiusAndColorWithText(title: "Education"),
           SizedBox(height: 30 * getScaleFactor(context)),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40 * getScaleFactor(context)),
+            padding:
+                EdgeInsets.symmetric(horizontal: 40 * getScaleFactor(context)),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -30,8 +31,10 @@ class EducationDatails extends GetView<AddNewTeacherControllerImp> {
                   child: CreateColumn(
                     title: controller.titleEducationTeacherColumn1,
                     hint: controller.hintEducationTeacherColumn1,
-                    textController: controller.textControllerEducationTeacherColumn1,
+                    textController:
+                        controller.textControllerEducationTeacherColumn1,
                     maxLinesForField: 4,
+                    validators: controller.validationEducationTeacherColumn1,
                     maxLinesIndexField: 2,
                   ),
                 ),
@@ -43,7 +46,9 @@ class EducationDatails extends GetView<AddNewTeacherControllerImp> {
                   child: CreateColumn(
                     title: controller.titleEducationTeacherColumn2,
                     hint: controller.hintEducationTeacherColumn2,
-                    textController: controller.textControllerEducationTeacherColumn2,
+                    textController:
+                        controller.textControllerEducationTeacherColumn2,
+                    validators: controller.validationEducationTeacherColumn2,
                   ),
                 ),
                 const Expanded(

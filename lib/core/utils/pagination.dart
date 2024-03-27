@@ -21,15 +21,20 @@ class MyPaginations extends StatelessWidget {
             children: [
               TextSpan(
                   text: 'Showing ',
-                  style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray)),
-              TextSpan(text: '1-5 ', style: AppFontStyle.styleRegular16(context)),
+                  style: AppFontStyle.styleRegular16(context)
+                      .copyWith(color: AppColors.darkGray)),
+              TextSpan(
+                  text: '1-5 ', style: AppFontStyle.styleRegular16(context)),
               TextSpan(
                   text: 'from ',
-                  style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray)),
-              TextSpan(text: '100 ', style: AppFontStyle.styleRegular16(context)),
+                  style: AppFontStyle.styleRegular16(context)
+                      .copyWith(color: AppColors.darkGray)),
+              TextSpan(
+                  text: '100 ', style: AppFontStyle.styleRegular16(context)),
               TextSpan(
                   text: 'data',
-                  style: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray)),
+                  style: AppFontStyle.styleRegular16(context)
+                      .copyWith(color: AppColors.darkGray)),
             ],
           ),
         ),
@@ -43,10 +48,12 @@ class MyPaginations extends StatelessWidget {
                 padding: EdgeInsets.only(right: index + 1 < length ? 6 : 0),
                 child: CircleAvatar(
                   radius: 24 * getScaleFactor(context),
-                  backgroundColor: !isActive ? AppColors.darkGray : AppColors.primaryPurple,
+                  backgroundColor:
+                      !isActive ? AppColors.darkGray : AppColors.primaryPurple,
                   child: CircleAvatar(
                     radius: 24 * getScaleFactor(context) - 1.7,
-                    backgroundColor: isActive ? AppColors.primaryPurple : Colors.white,
+                    backgroundColor:
+                        isActive ? AppColors.primaryPurple : Colors.white,
                     child: Center(
                       child: Text(
                         "${index + 1}",
@@ -84,7 +91,8 @@ class Dropdown extends StatelessWidget {
         child: SvgPicture.asset(
           Assets.iconsDropdown,
           height: 32 * getScaleFactor(context),
-          colorFilter: const ColorFilter.mode(AppColors.primaryPurple, BlendMode.srcIn),
+          colorFilter:
+              const ColorFilter.mode(AppColors.primaryPurple, BlendMode.srcIn),
         ),
       ),
     );

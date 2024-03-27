@@ -14,14 +14,16 @@ class ContainerHeaderWithRadiusAndColorWithText extends StatelessWidget {
       height: 50,
       padding: EdgeInsets.only(left: 40 * getScaleFactor(context)),
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(topRight: Radius.circular(20), topLeft: Radius.circular(20)),
+        borderRadius: BorderRadius.only(
+            topRight: Radius.circular(20), topLeft: Radius.circular(20)),
         color: AppColors.primaryPurple,
       ),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Text(
           title,
-          style: AppFontStyle.styleBold24(context).copyWith(color: Colors.white),
+          style:
+              AppFontStyle.styleBold24(context).copyWith(color: Colors.white),
         ),
       ),
     );
