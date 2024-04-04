@@ -1,16 +1,15 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 
 class CircleButtonWithBorder extends StatelessWidget {
   const CircleButtonWithBorder({
     super.key,
-    required this.icon,
+    required this.imageDefault,
     this.image,
   });
-  final IconData icon;
+  final String imageDefault;
   final String? image;
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,6 @@ class CircleButtonWithBorder extends StatelessWidget {
       child: Container(
           margin: const EdgeInsets.all(6),
           decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 221, 223, 248),
             shape: BoxShape.circle,
           ),
           child: ClipRRect(
@@ -34,10 +32,9 @@ class CircleButtonWithBorder extends StatelessWidget {
                     File(image!),
                     fit: BoxFit.cover,
                   )
-                : Icon(
-                    icon,
-                    color: AppColors.primaryPurple,
-                    size: 80 * getScaleFactor(context),
+                : Image.asset(
+                    imageDefault,
+                    fit: BoxFit.cover,
                   ),
           )),
     );

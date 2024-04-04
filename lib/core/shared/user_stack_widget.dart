@@ -13,6 +13,7 @@ class UserStackWidget extends GetView<ViewStudentController> {
     required this.inforations,
     required this.name,
     required this.subtitle,
+    required this.imageDefault,
     required this.constraints,
     this.image,
   });
@@ -20,6 +21,7 @@ class UserStackWidget extends GetView<ViewStudentController> {
   final String mask;
   final List<ItemCardUserModel> inforations;
   final String name;
+  final String imageDefault;
   final String subtitle;
   final String? image;
   @override
@@ -44,7 +46,7 @@ class UserStackWidget extends GetView<ViewStudentController> {
           left: top,
           child: CircleButtonWithBorder(
             image: image,
-            icon: Icons.admin_panel_settings_outlined,
+            imageDefault: imageDefault,
           ),
         ),
       ],

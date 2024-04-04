@@ -1,35 +1,29 @@
 class Assets {
   Assets._();
-
+  
   /// Assets for fontsCairoCairoRegular
   /// assets/fonts/Cairo/Cairo-Regular.ttf
-  static const String fontsCairoCairoRegular =
-      "assets/fonts/Cairo/Cairo-Regular.ttf";
+  static const String fontsCairoCairoRegular = "assets/fonts/Cairo/Cairo-Regular.ttf";
 
   /// Assets for fontsDMSansDMSansRegular
   /// assets/fonts/DM_Sans/DMSans-Regular.ttf
-  static const String fontsDMSansDMSansRegular =
-      "assets/fonts/DM_Sans/DMSans-Regular.ttf";
+  static const String fontsDMSansDMSansRegular = "assets/fonts/DM_Sans/DMSans-Regular.ttf";
 
   /// Assets for fontsPoppinsPoppinsBold
   /// assets/fonts/Poppins/Poppins-Bold.ttf
-  static const String fontsPoppinsPoppinsBold =
-      "assets/fonts/Poppins/Poppins-Bold.ttf";
+  static const String fontsPoppinsPoppinsBold = "assets/fonts/Poppins/Poppins-Bold.ttf";
 
   /// Assets for fontsPoppinsPoppinsMedium
   /// assets/fonts/Poppins/Poppins-Medium.ttf
-  static const String fontsPoppinsPoppinsMedium =
-      "assets/fonts/Poppins/Poppins-Medium.ttf";
+  static const String fontsPoppinsPoppinsMedium = "assets/fonts/Poppins/Poppins-Medium.ttf";
 
   /// Assets for fontsPoppinsPoppinsRegular
   /// assets/fonts/Poppins/Poppins-Regular.ttf
-  static const String fontsPoppinsPoppinsRegular =
-      "assets/fonts/Poppins/Poppins-Regular.ttf";
+  static const String fontsPoppinsPoppinsRegular = "assets/fonts/Poppins/Poppins-Regular.ttf";
 
   /// Assets for fontsPoppinsPoppinsSemiBold
   /// assets/fonts/Poppins/Poppins-SemiBold.ttf
-  static const String fontsPoppinsPoppinsSemiBold =
-      "assets/fonts/Poppins/Poppins-SemiBold.ttf";
+  static const String fontsPoppinsPoppinsSemiBold = "assets/fonts/Poppins/Poppins-SemiBold.ttf";
 
   /// Assets for iconsActivity
   /// assets/icons/Activity.svg
@@ -77,8 +71,7 @@ class Assets {
 
   /// Assets for iconsDotsWithoutSpace
   /// assets/icons/dotsWithoutSpace.svg
-  static const String iconsDotsWithoutSpace =
-      "assets/icons/dotsWithoutSpace.svg";
+  static const String iconsDotsWithoutSpace = "assets/icons/dotsWithoutSpace.svg";
 
   /// Assets for iconsDropdown
   /// assets/icons/dropdown.svg
@@ -164,6 +157,10 @@ class Assets {
   /// assets/icons/teacher.svg
   static const String iconsTeacher = "assets/icons/teacher.svg";
 
+  /// Assets for iconsTransaction
+  /// assets/icons/transaction.svg
+  static const String iconsTransaction = "assets/icons/transaction.svg";
+
   /// Assets for iconsTrending
   /// assets/icons/trending.svg
   static const String iconsTrending = "assets/icons/trending.svg";
@@ -197,9 +194,16 @@ class Assets {
   static const String imagesMaskingTeacher = "assets/images/MaskingTeacher.png";
 
   /// Assets for imagesStudentDefault
-  /// assets/images/student_default.png
-  static const String imagesStudentDefault =
-      "assets/images/student_default.png";
+  /// assets/images/student_default.jpg
+  static const String imagesStudentDefault = "assets/images/student_default.jpg";
+
+  /// Assets for imagesTeacherDefault
+  /// assets/images/teacher_default.jpg
+  static const String imagesTeacherDefault = "assets/images/teacher_default.jpg";
+
+  /// Assets for imagesUserDefault
+  /// assets/images/user_default.jpg
+  static const String imagesUserDefault = "assets/images/user_default.jpg";
 
   /// Assets for numbers1
   /// assets/numbers/1.png
@@ -249,3 +253,4 @@ class Assets {
   /// assets/numbers/9.png
   static const String numbers9 = "assets/numbers/9.png";
 }
+

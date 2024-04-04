@@ -103,7 +103,7 @@ class ClassesControllerImp extends ClassesController {
   @override
   void onInit() async {
     isActive = 0;
-    box = await MyAppServices().information;
+    box =   MyAppServices().box;
     getAllSections();
     getSections(isActive);
 

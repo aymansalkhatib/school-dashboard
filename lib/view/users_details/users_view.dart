@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sama/core/constants/assets.dart';
 import 'package:sama/model/item_card_user_model.dart';
 import 'package:sama/view/users_details/widgets/user_header.dart';
-import 'package:sama/view/users_details/widgets/user_card_info.dart';
+import 'package:sama/core/shared/user_card_info.dart';
 import 'package:sama/view/users_details/widgets/users_and_premissions.dart';
 
 class Users extends StatelessWidget {
@@ -17,6 +17,7 @@ class Users extends StatelessWidget {
           const UsersHeader(),
           const SizedBox(height: 28),
           UserCardInfo(
+            imageDefault: Assets.imagesUserDefault,
             informations: itemCardUserModel,
             mask: Assets.imagesMasking,
             name: "Nabila Azalea",

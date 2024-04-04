@@ -34,7 +34,7 @@ class ViewTeacherControllerImp extends ViewTeacherController {
 
   @override
   void onInit() async {
-    box = await MyAppServices().information;
+    box = MyAppServices().box;
     await fillListTeachers();
     super.onInit();
   }

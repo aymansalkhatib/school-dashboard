@@ -1,48 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:sama/controller/finance_controller.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/constants/assets.dart';
 
-class TrailingDashboardHeader extends StatelessWidget {
-  const TrailingDashboardHeader({super.key, this.colorCircle});
+class TrailingHeader extends StatelessWidget {
+  const TrailingHeader({super.key, this.colorCircle});
   final Color? colorCircle;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        Container(
-          width: 60 * getScaleFactor(context),
-          height: 60 * getScaleFactor(context),
-          padding: EdgeInsets.all(13 * getScaleFactor(context)),
-          decoration: BoxDecoration(
-            color: colorCircle ?? AppColors.backgroundWhite,
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: SvgPicture.asset(
-            Assets.iconsBell,
-            colorFilter:
-                const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
-          ),
+        CustomIconButton(
+          colorCircle: colorCircle,
+          icon: Assets.iconsTransaction,
+          onTap: () {
+            Get.replace(FinanceControllerImp());
+            final controller = Get.find<FinanceControllerImp>();
+            controller.dialogTransaction();
+          },
         ),
         SizedBox(width: 14 * getScaleFactor(context)),
-        Container(
-          width: 60 * getScaleFactor(context),
-          height: 60 * getScaleFactor(context),
-          padding: EdgeInsets.all(12 * getScaleFactor(context)),
-          decoration: BoxDecoration(
-            color: colorCircle ?? AppColors.backgroundWhite,
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: SvgPicture.asset(
-            Assets.iconsGear,
-            colorFilter:
-                const ColorFilter.mode(AppColors.darkGray, BlendMode.srcIn),
-          ),
+        CustomIconButton(
+          colorCircle: colorCircle,
+          icon: Assets.iconsGear,
+          onTap: () {},
         ),
-        // SizedBox(width: 20 * getScaleFactor(context)),
-        const Spacer(flex: 1),
+         const Spacer(flex: 1),
         Flexible(
           flex: 3,
           child: Column(
@@ -84,6 +71,38 @@ class TrailingDashboardHeader extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class CustomIconButton extends StatelessWidget {
+  const CustomIconButton({
+    super.key,
+    required this.colorCircle,
+    required this.icon,
+    this.onTap,
+  });
+
+  final Color? colorCircle;
+  final String icon;
+  final void Function()? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 60 * getScaleFactor(context),
+        height: 60 * getScaleFactor(context),
+        padding: EdgeInsets.all(13 * getScaleFactor(context)),
+        decoration: BoxDecoration(
+          color: colorCircle ?? AppColors.backgroundWhite,
+          borderRadius: BorderRadius.circular(100),
+        ),
+        child: SvgPicture.asset(
+          icon,
+          colorFilter: const ColorFilter.mode(AppColors.textBlack, BlendMode.srcIn),
+        ),
+      ),
     );
   }
 }

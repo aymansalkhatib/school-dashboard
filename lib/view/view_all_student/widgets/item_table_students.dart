@@ -58,7 +58,7 @@ class ItemTableStudents extends StatelessWidget {
             Expanded(
               flex: 1,
               child: fittedText(
-                "${index + 1}",
+                "#${index + 1}",
                 style: AppFontStyle.styleSemiBold18(Get.context!)
                     .copyWith(color: AppColors.primaryPurple),
               ),

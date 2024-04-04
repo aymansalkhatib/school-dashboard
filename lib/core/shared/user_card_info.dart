@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sama/core/constants/assets.dart';
+import 'package:sama/core/shared/user_stack_widget.dart';
 import 'package:sama/model/item_card_user_model.dart';
-import 'package:sama/view/users_details/widgets/user_stack_widget.dart';
 
 class UserCardInfo extends StatelessWidget {
   const UserCardInfo({
@@ -9,8 +10,10 @@ class UserCardInfo extends StatelessWidget {
     this.image,
     required this.mask,
     required this.informations,
+    required this.imageDefault,
   });
   final String name;
+  final String imageDefault;
   final String? image;
   final String mask;
   final List<ItemCardUserModel> informations;
@@ -26,6 +29,7 @@ class UserCardInfo extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
           child: UserStackWidget(
+              imageDefault: imageDefault,
               constraints: constraints,
               mask: mask,
               inforations: informations,

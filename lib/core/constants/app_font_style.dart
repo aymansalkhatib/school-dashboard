@@ -123,6 +123,33 @@ class AppFontStyle {
     );
   }
 
+  static TextStyle styleSemiBold32(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 32),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle styleSemiBold28(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 28),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600,
+    );
+  }
+
+  static TextStyle styleSemiBold24(BuildContext context) {
+    return TextStyle(
+      color: AppColors.textBlack,
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontFamily: 'Poppins',
+      fontWeight: FontWeight.w600,
+    );
+  }
+
   static TextStyle styleSemiBold15_5(BuildContext context) {
     return TextStyle(
       color: AppColors.textBlack,
@@ -197,8 +224,7 @@ class AppFontStyle {
   }
 }
 
-double getResponsiveFontSize(context,
-    {required double fontSize, double? lower, double? upper}) {
+double getResponsiveFontSize(context, {required double fontSize, double? lower, double? upper}) {
   double scaleFactor = getScaleFactor(context);
   double responsiveFontSize = fontSize * scaleFactor;
   double lowerLimit = lower != null ? fontSize * lower : fontSize * .8;

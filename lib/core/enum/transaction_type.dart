@@ -1,0 +1,1 @@
+enum TransactionType { WITHDRAWAL, PURCHASE, REFUND, PAYMENT }

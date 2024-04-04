@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:path/path.dart' as path;
+import 'package:sama/model/finance_model.dart';
 import 'package:sama/model/section_model.dart';
 import 'package:sama/model/student_model.dart';
 import 'package:sama/model/teacher_model.dart';
 
 class MyAppServices extends GetxService {
-  late Box _information;
+  late Box box;
 
-  // Singleton pattern
   static final MyAppServices _instance = MyAppServices._internal();
 
   factory MyAppServices() {
@@ -19,14 +19,7 @@ class MyAppServices extends GetxService {
 
   MyAppServices._internal();
 
-  Future<Box> get information async {
-    if (_information.isOpen) {
-      return _information;
-    } else {
-      await initialize();
-      return _information;
-    }
-  }
+ 
 
   Future<void> initialize() async {
     String? homeDir = Platform.environment['USERPROFILE'] ?? // Windows
@@ -45,30 +38,27 @@ class MyAppServices extends GetxService {
     if (!hiveDirectory.existsSync()) {
       hiveDirectory.createSync(recursive: true);
     }
-
-    // Initialize Hive with the specified directory
     Hive.init(hiveDataDir);
-
-    // Open the Hive box
-    _information = await Hive.openBox('SAMA');
+    box = await Hive.openBox('SAMA');
   }
 
   Future<void> putValue(String key, String? value) async {
-    await _information.put(key, value);
+    await box.put(key, value);
   }
 
   String getValue(String key, {String defaultValue = ''}) {
-    return _information.get(key, defaultValue: defaultValue) ?? '';
+    return box.get(key, defaultValue: defaultValue) ?? '';
   }
 
   Future<void> removeValue(String key) async {
-    await _information.delete(key);
+    await box.delete(key);
   }
 }
 
 Future<void> initializeServices() async {
   WidgetsFlutterBinding.ensureInitialized();
   Hive.registerAdapter(StudentModelAdapter());
+  Hive.registerAdapter(FinanceModelAdapter());
   Hive.registerAdapter(TeacherModelAdapter());
   Hive.registerAdapter(SectionModelAdapter());
   await MyAppServices().initialize();

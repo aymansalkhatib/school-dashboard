@@ -36,8 +36,8 @@ class Teachers extends StatelessWidget {
                   top: top,
                   left: top,
                   child: CircleButtonWithBorder(
-                    icon: Icons.assignment_ind_rounded,
                     image: teacherModel.image,
+                    imageDefault: Assets.imagesTeacherDefault,
                   ),
                 ),
               ],

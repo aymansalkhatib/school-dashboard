@@ -217,7 +217,7 @@ class AddNewTeacherControllerImp extends AddNewTeacherController {
       [city],
     ];
 
-    box = await MyAppServices().information;
+    box =   MyAppServices().box;
 
     super.onInit();
   }

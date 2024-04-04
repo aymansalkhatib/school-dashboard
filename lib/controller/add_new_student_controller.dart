@@ -177,7 +177,7 @@ class AddNewStudentControllerImp extends AddNewStudentController {
   void onInit() async {
     statePayment = PaymentEnum.cache;
     initListAndController();
-    box = await MyAppServices().information;
+    box =   MyAppServices().box;
     if (student == null) {
       setGrade(levels[levels.length - 1]);
     }
@@ -209,13 +209,13 @@ class AddNewStudentControllerImp extends AddNewStudentController {
     grade = student?.grade ?? grade;
     activeSection = student?.section ?? activeSection;
 
-    // if (student != null) {
-    //   if (student!.typeapid == PaymentEnum.cache.name) {
-    //     statePayment = PaymentEnum.cache;
-    //   } else {
-    //     statePayment = PaymentEnum.debit;
-    //   }
-    // }
+    if (student != null) {
+      if (student!.typeapid == PaymentEnum.cache.name) {
+        statePayment = PaymentEnum.cache;
+      } else {
+        statePayment = PaymentEnum.debit;
+      }
+    }
 
     titleStudentColumn1 = [
       "First Name *",
