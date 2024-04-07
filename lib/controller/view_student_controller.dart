@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:sama/controller/finance_controller.dart';
 import 'package:sama/core/my_services.dart';
 import 'package:sama/model/student_model.dart';
 
@@ -26,6 +27,7 @@ class ViewStudentControllerImp extends ViewStudentController {
         }
         await box.deleteAt(i);
         students.removeAt(index);
+        Get.find<FinanceControllerImp>().resetController();
         update();
         return;
       }
@@ -34,7 +36,7 @@ class ViewStudentControllerImp extends ViewStudentController {
 
   @override
   void onInit() async {
-    box =   MyAppServices().box;
+    box = MyAppServices().box;
     await fillListStudent();
     super.onInit();
   }

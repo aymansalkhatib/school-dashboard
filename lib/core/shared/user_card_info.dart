@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sama/core/constants/assets.dart';
 import 'package:sama/core/shared/user_stack_widget.dart';
 import 'package:sama/model/item_card_user_model.dart';
 

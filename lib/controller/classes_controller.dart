@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:sama/core/constants/classes.dart';
@@ -9,31 +12,33 @@ import 'package:sama/model/student_model.dart';
 abstract class ClassesController extends GetxController {}
 
 class ClassesControllerImp extends ClassesController {
+  int paginationIndex = 0;
+  int spilt = 2;
+  List<SectionModel> paginationViewSection = [];
+
   late Box box;
   late int isActive;
   List<SectionModel> allSections = [];
   List<SectionModel> activeSections = [];
   changeIndex(int index) {
     isActive = index;
+    paginationIndex = 0;
     getSections(isActive);
+    update();
+  }
+
+  changeIndexPagination(int newPaginationIndex) {
+    int skip = newPaginationIndex * spilt;
+    if (newPaginationIndex < 0 || skip >= activeSections.length) return;
+    paginationIndex = newPaginationIndex;
+    paginationViewSection = activeSections.sublist(skip, min(activeSections.length, skip + spilt));
     update();
   }
 
   addSection() async {
     int length = activeSections.length;
     if (length >= 10) return;
-    List<String> ordinalNames = [
-      'The First',
-      'The Second',
-      'The Third',
-      'The Fourth',
-      'The Fifth',
-      'The Sixth',
-      'The Seventh',
-      'The Eighth',
-      'The Ninth',
-      'The Tenth'
-    ];
+
     SectionModel sectionModel = SectionModel(
       name: ordinalNames[length],
       level: classesModel[isActive].educationLevel,
@@ -43,11 +48,37 @@ class ClassesControllerImp extends ClassesController {
     await box.add(sectionModel);
     allSections.add(sectionModel);
     activeSections.add(sectionModel);
+    changeIndexPagination(paginationIndex);
+
     update();
   }
 
   deleteSection() async {
-    if (activeSections.isEmpty) return;
+    bool? confirmDelete = await showDialog(
+      context: Get.context!,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Confirm Deletion'),
+          content: const Text('Are you sure you want to delete this section and all associated students?'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(true);
+              },
+              child: const Text('Yes'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(false);
+              },
+              child: const Text('No'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (activeSections.isEmpty || confirmDelete == null || !confirmDelete) return;
     List<SectionModel> sectionsToDelete = allSections
         .whereType<SectionModel>()
         .where((element) => element.grade == "Grade ${isActive + 1}")
@@ -62,8 +93,7 @@ class ClassesControllerImp extends ClassesController {
       List<int> listRemoveIndexSections = [];
 
       for (var i = 0; i < items.length; i++) {
-        if (items[i] is SectionModel &&
-            items[i].grade == sectionToDelete.grade) {
+        if (items[i] is SectionModel && items[i].grade == sectionToDelete.grade) {
           index = i;
         }
       }
@@ -81,9 +111,11 @@ class ClassesControllerImp extends ClassesController {
       for (var i = 0; i < listRemoveIndexSections.length; i++) {
         box.deleteAt(listRemoveIndexSections[i]);
       }
-
+      box.deleteAt(index);
       allSections.remove(sectionToDelete);
       activeSections.remove(sectionToDelete);
+      changeIndexPagination(paginationIndex);
+
       update();
     }
   }
@@ -92,6 +124,7 @@ class ClassesControllerImp extends ClassesController {
     activeSections = allSections.where((element) {
       return element.grade == "Grade ${index + 1}";
     }).toList();
+    changeIndexPagination(paginationIndex);
     update();
   }
 
@@ -103,7 +136,7 @@ class ClassesControllerImp extends ClassesController {
   @override
   void onInit() async {
     isActive = 0;
-    box =   MyAppServices().box;
+    box = MyAppServices().box;
     getAllSections();
     getSections(isActive);
 

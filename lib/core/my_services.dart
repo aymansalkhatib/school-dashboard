@@ -19,8 +19,6 @@ class MyAppServices extends GetxService {
 
   MyAppServices._internal();
 
- 
-
   Future<void> initialize() async {
     String? homeDir = Platform.environment['USERPROFILE'] ?? // Windows
         Platform.environment['HOME']; // Linux and Mac
@@ -40,6 +38,7 @@ class MyAppServices extends GetxService {
     }
     Hive.init(hiveDataDir);
     box = await Hive.openBox('SAMA');
+    print("init service");
   }
 
   Future<void> putValue(String key, String? value) async {

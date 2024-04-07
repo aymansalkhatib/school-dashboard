@@ -18,8 +18,8 @@ class TrailingHeader extends StatelessWidget {
           colorCircle: colorCircle,
           icon: Assets.iconsTransaction,
           onTap: () {
-            Get.replace(FinanceControllerImp());
             final controller = Get.find<FinanceControllerImp>();
+            controller.resetController();
             controller.dialogTransaction();
           },
         ),
@@ -29,7 +29,7 @@ class TrailingHeader extends StatelessWidget {
           icon: Assets.iconsGear,
           onTap: () {},
         ),
-         const Spacer(flex: 1),
+        const Spacer(flex: 1),
         Flexible(
           flex: 3,
           child: Column(

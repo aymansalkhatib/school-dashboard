@@ -26,3 +26,17 @@ List<String> romanNumerals = [
   'XI',
   'XII',
 ];
+List<String> ordinalNames = [
+  'The First',
+  'The Second',
+  'The Third',
+  'The Fourth',
+  'The Fifth',
+  'The Sixth',
+  'The Seventh',
+  'The Eighth',
+  'The Ninth',
+  'The Tenth'
+];
+
+List<String> letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "G"];

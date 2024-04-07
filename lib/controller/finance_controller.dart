@@ -17,14 +17,27 @@ class FinanceControllerImp extends FinanceController {
   String? selectedTransactionType;
   String? selectedStudent;
   List<StudentModel> students = [];
+  List<StudentModel> unPaidStudent = [];
+  List<double> remainingBalance = [];
+  late TextEditingController textEditControllerQuantity;
+  late TextEditingController textEditControllerNote;
+  resetController() async {
+    selectedTransactionType = null;
+    selectedStudent = null;
+    students = [];
+    unPaidStudent = [];
+    remainingBalance = [];
+    textEditControllerQuantity = TextEditingController();
+    textEditControllerNote = TextEditingController();
+    await fillListStudent();
+    fillUnPaid();
+  }
 
   fillListStudent() {
     students = box.values.whereType<StudentModel>().toList();
     update();
   }
 
-  final TextEditingController textEditControllerQuantity = TextEditingController();
-  final TextEditingController textEditControllerNote = TextEditingController();
   void dialogTransaction() {
     showDialog(
       context: Get.context!,
@@ -34,13 +47,12 @@ class FinanceControllerImp extends FinanceController {
     );
   }
 
-  addTransaction() {
+  addTransaction() async {
     StudentModel? student;
     if (selectedStudent != null) {
-      student =
-          students.where((e) => "${e.firstName} ${e.parentName} ${e.lastName}" == selectedStudent).first;
+      student = students.firstWhere((e) => "${e.firstName} ${e.parentName} ${e.lastName}" == selectedStudent);
     }
-    box.add(
+    await box.add(
       FinanceModel(
           id: generateUniqueNumber(),
           date: DateTime.now(),
@@ -48,18 +60,35 @@ class FinanceControllerImp extends FinanceController {
           quantity: textEditControllerQuantity.text,
           transactionType: selectedTransactionType!),
     );
-    print("object");
+    fillUnPaid();
+    Get.back();
+    update();
+  }
+
+  fillUnPaid() {
+    unPaidStudent = [];
+    remainingBalance = [];
+    List<FinanceModel> transaction = box.values.whereType<FinanceModel>().toList();
+    for (int i = 0; i < students.length; i++) {
+      double amount = 0;
+      for (int j = 0; j < transaction.length; j++) {
+        if (transaction[j].studentModel?.id == students[i].id) {
+          amount += double.tryParse(transaction[j].quantity) ?? 0;
+        }
+      }
+      if (amount < 1000) {
+        remainingBalance.add(1000 - amount);
+        unPaidStudent.add(students[i]);
+      }
+    }
+    update();
+    print("up");
   }
 
   @override
   void onInit() async {
-    await Future.delayed(
-      const Duration(seconds: 1),
-      () {
-        box = MyAppServices().box;
-      },
-    );
-    fillListStudent();
+    box = MyAppServices().box;
+    await resetController();
     super.onInit();
   }
 }
@@ -84,6 +113,7 @@ class TransactionDialog extends StatelessWidget {
                   SizedBox(
                     height: 48,
                     child: CustomDropDownSearch(
+                      title: 'select transaction type',
                       list: TransactionType.values.map((e) => e.name).toList(),
                       onChanged: (p0) {
                         controller.selectedTransactionType = p0;
@@ -97,6 +127,7 @@ class TransactionDialog extends StatelessWidget {
                       : SizedBox(
                           height: 48,
                           child: CustomDropDownSearch(
+                            title: "Choose a new student",
                             list: controller.students
                                 .map((e) => "${e.firstName} ${e.parentName} ${e.lastName}")
                                 .toList(),
@@ -136,7 +167,7 @@ class TransactionDialog extends StatelessWidget {
           ),
           TextButton(
             child: const Text('Submit', style: TextStyle(color: AppColors.secondaryGreen)),
-            onPressed: () {
+            onPressed: () async {
               if (controller.selectedTransactionType == null) {
                 Get.snackbar(
                   'Error',
@@ -170,7 +201,7 @@ class TransactionDialog extends StatelessWidget {
                 );
                 return;
               }
-              controller.addTransaction();
+              await controller.addTransaction();
             },
           ),
         ],
@@ -212,8 +243,8 @@ class CustomTextFormDialog extends StatelessWidget {
 class CustomDropDownSearch extends StatefulWidget {
   final List<String> list;
   final void Function(String?)? onChanged;
-  final String? title;
-  const CustomDropDownSearch({super.key, required this.list, this.onChanged, this.title});
+  final String title;
+  const CustomDropDownSearch({super.key, required this.list, this.onChanged, required this.title});
 
   @override
   State<CustomDropDownSearch> createState() => _CustomDropDownSearchState();
@@ -246,8 +277,7 @@ class _CustomDropDownSearchState extends State<CustomDropDownSearch> {
       dropdownButtonProps: const DropdownButtonProps(color: AppColors.primaryPurple),
       onChanged: widget.onChanged,
       dropdownDecoratorProps: DropDownDecoratorProps(
-        baseStyle: AppFontStyle.styleRegular16(context)
-            .copyWith(color: widget.title != null ? null : AppColors.darkGray),
+        baseStyle: AppFontStyle.styleRegular16(context).copyWith(color: AppColors.darkGray),
         dropdownSearchDecoration: const InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: AppColors.textBlack, width: 1.2),
@@ -257,7 +287,7 @@ class _CustomDropDownSearchState extends State<CustomDropDownSearch> {
           ),
         ),
       ),
-      selectedItem: widget.title ?? "Choose a new student",
+      selectedItem: widget.title,
     );
   }
 }

@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sama/core/constants/app_colors.dart';
+ import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/constants/assets.dart';
+import 'package:sama/core/constants/classes.dart';
+import 'package:sama/model/student_model.dart';
 
 class RowUnpaidStudent extends StatelessWidget {
-  final String name;
-  final String id;
-  final String className;
-  final double price;
-
-  const RowUnpaidStudent(
-      {super.key,
-      required this.name,
-      required this.id,
-      required this.className,
-      required this.price});
+  final StudentModel studentModel;
+  final double remainingBalance;
+  const RowUnpaidStudent({
+    super.key,
+    required this.studentModel,
+    required this.remainingBalance,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +32,7 @@ class RowUnpaidStudent extends StatelessWidget {
                   padding: EdgeInsets.all(12.0 * getScaleFactor(context)),
                   child: SvgPicture.asset(
                     Assets.iconsStudent,
-                    colorFilter:
-                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                   ),
                 ),
               ),
@@ -44,7 +41,7 @@ class RowUnpaidStudent extends StatelessWidget {
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    name,
+                    "${studentModel.firstName} ${studentModel.lastName}",
                     style: AppFontStyle.styleSemiBold18(context),
                   ),
                 ),
@@ -60,9 +57,8 @@ class RowUnpaidStudent extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
-                "ID $id",
-                style: AppFontStyle.styleSemiBold18(context)
-                    .copyWith(color: AppColors.primaryPurple),
+                "ID ${studentModel.id}",
+                style: AppFontStyle.styleSemiBold18(context).copyWith(color: AppColors.primaryPurple),
               ),
             ),
           ),
@@ -80,21 +76,20 @@ class RowUnpaidStudent extends StatelessWidget {
                   padding: EdgeInsets.all(12.0 * getScaleFactor(context)),
                   child: SvgPicture.asset(
                     Assets.iconsUser,
-                    colorFilter:
-                        const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+                    colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
                   ),
                 ),
               ),
               const SizedBox(width: 12),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Class",
-                    style: AppFontStyle.styleRegular14(context)
-                        .copyWith(color: AppColors.darkGray),
+                    style: AppFontStyle.styleRegular14(context).copyWith(color: AppColors.darkGray),
                   ),
                   Text(
-                    className,
+                    "${romanNumerals[levels.indexOf(studentModel.grade)]} ${letters[ordinalNames.indexOf(studentModel.section)]}",
                     style: AppFontStyle.styleSemiBold18(context),
                   ),
                 ],
@@ -110,7 +105,7 @@ class RowUnpaidStudent extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.scaleDown,
               child: Text(
-                "\$ $price",
+                "\$ $remainingBalance",
                 style: AppFontStyle.styleSemiBold18(context),
               ),
             ),

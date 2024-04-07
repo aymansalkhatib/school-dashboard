@@ -5,7 +5,7 @@ import 'package:sama/core/my_services.dart';
 import 'package:sama/view/sama.dart';
 
 void main() async {
-  initializeServices();
+  await initializeServices();
   runApp(const MyApp());
 }
 

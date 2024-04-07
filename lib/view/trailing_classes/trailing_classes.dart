@@ -5,6 +5,7 @@ import 'package:sama/controller/classes_controller.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/app_font_style.dart';
 import 'package:sama/core/constants/assets.dart';
+import 'package:sama/core/utils/pagination.dart';
 import 'package:sama/view/trailing_classes/widgets/details_sections.dart';
 
 class TrailingClasses extends StatelessWidget {
@@ -41,8 +42,7 @@ class TrailingClasses extends StatelessWidget {
                           width: 16,
                           height: 16,
                           Assets.iconsMinus,
-                          colorFilter: const ColorFilter.mode(
-                              AppColors.backgroundWhite, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(AppColors.backgroundWhite, BlendMode.srcIn),
                         ),
                       ),
                     ),
@@ -63,8 +63,7 @@ class TrailingClasses extends StatelessWidget {
                           Assets.iconsAdd,
                           width: 16,
                           height: 16,
-                          colorFilter: const ColorFilter.mode(
-                              AppColors.backgroundWhite, BlendMode.srcIn),
+                          colorFilter: const ColorFilter.mode(AppColors.backgroundWhite, BlendMode.srcIn),
                         ),
                       ),
                     ),
@@ -74,14 +73,23 @@ class TrailingClasses extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             ...List.generate(
-              controller.activeSections.length,
+              controller.paginationViewSection.length,
               (index) => Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
-                child: DetailsSections(
-                    sectionModel: controller.activeSections[index],
-                    index: index),
+                child: DetailsSections(sectionModel: controller.paginationViewSection[index], index: index),
               ),
             ),
+            if (controller.activeSections.length > 2)
+              Padding(
+                padding: const EdgeInsets.only(top: 32),
+                child: MyPaginations(
+                  index: controller.paginationIndex,
+                  maxIndex: (controller.activeSections.length / controller.spilt).ceil() - 1,
+                  showLength: false,
+                  next: () => controller.changeIndexPagination(controller.paginationIndex - 1),
+                  previous: () => controller.changeIndexPagination(controller.paginationIndex + 1),
+                ),
+              )
           ],
         ),
       );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:sama/controller/finance_controller.dart';
 import 'package:sama/controller/navigations_controller.dart';
 import 'package:sama/core/constants/app_colors.dart';
 import 'package:sama/core/constants/classes.dart';
@@ -63,8 +64,7 @@ class AddNewStudentControllerImp extends AddNewStudentController {
   }
 
   void pop() {
-    Get.find<NavigationControllerImp>()
-        .replaceLastWidget(NavigationEnum.Students);
+    Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.Students);
   }
 
   Future addNewStudent() async {
@@ -81,13 +81,8 @@ class AddNewStudentControllerImp extends AddNewStudentController {
               label: 'Create Section',
               textColor: AppColors.lightPurple,
               onPressed: () {
-                Get.find<NavigationControllerImp>()
-                    .replaceLastWidget(NavigationEnum.Classes, info: {
-                  "isActive":
-                      (int.tryParse(grade.substring(grade.length - 2).trim()) ??
-                              1) -
-                          1
-                });
+                Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.Classes,
+                    info: {"isActive": (int.tryParse(grade.substring(grade.length - 2).trim()) ?? 1) - 1});
               },
             ),
           ),
@@ -121,10 +116,10 @@ class AddNewStudentControllerImp extends AddNewStudentController {
         } else {
           await box.add(studentModel);
         }
-        Get.find<NavigationControllerImp>()
-            .replaceLastWidget(NavigationEnum.Students);
+        Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.Students);
       }
     }
+    Get.find<FinanceControllerImp>().resetController();
   }
 
   void pickImage() async {
@@ -177,7 +172,7 @@ class AddNewStudentControllerImp extends AddNewStudentController {
   void onInit() async {
     statePayment = PaymentEnum.cache;
     initListAndController();
-    box =   MyAppServices().box;
+    box = MyAppServices().box;
     if (student == null) {
       setGrade(levels[levels.length - 1]);
     }
@@ -187,25 +182,17 @@ class AddNewStudentControllerImp extends AddNewStudentController {
   void initListAndController() {
     firstName = TextEditingController(text: student?.firstName ?? 'Ayman');
     lastName = TextEditingController(text: student?.lastName ?? 'Smith');
-    dateOfBirth =
-        TextEditingController(text: student?.dateOfBirth ?? '2000-01-01');
-    placeOfBirth =
-        TextEditingController(text: student?.placeOfBirth ?? 'New York');
+    dateOfBirth = TextEditingController(text: student?.dateOfBirth ?? '2000-01-01');
+    placeOfBirth = TextEditingController(text: student?.placeOfBirth ?? 'New York');
     parentName = TextEditingController(text: student?.parentName ?? 'John Doe');
-    email =
-        TextEditingController(text: student?.email ?? 'example@example.com');
+    email = TextEditingController(text: student?.email ?? 'example@example.com');
     phone = TextEditingController(text: student?.phone ?? '0968381625');
     address = TextEditingController(text: student?.address ?? '123 Main St');
-    parentEmail = TextEditingController(
-        text: student?.parentEmail ?? 'parent@example.com');
-    parentPhone =
-        TextEditingController(text: student?.parentPhone ?? '0968381625');
-    parentAddress =
-        TextEditingController(text: student?.parentAddress ?? '456 Elm St');
+    parentEmail = TextEditingController(text: student?.parentEmail ?? 'parent@example.com');
+    parentPhone = TextEditingController(text: student?.parentPhone ?? '0968381625');
+    parentAddress = TextEditingController(text: student?.parentAddress ?? '456 Elm St');
 
-    image = student?.image != null && student!.image!.isNotEmpty
-        ? XFile(student!.image!)
-        : null;
+    image = student?.image != null && student!.image!.isNotEmpty ? XFile(student!.image!) : null;
     grade = student?.grade ?? grade;
     activeSection = student?.section ?? activeSection;
 
@@ -217,12 +204,7 @@ class AddNewStudentControllerImp extends AddNewStudentController {
       }
     }
 
-    titleStudentColumn1 = [
-      "First Name *",
-      "Date & Place of Brith*",
-      "Email *",
-      "Address *"
-    ];
+    titleStudentColumn1 = ["First Name *", "Date & Place of Brith*", "Email *", "Address *"];
     titleStudentColumn2 = ["Last Name *", "Parent Name *", "Phone"];
     titleParentStudentColumn1 = ["First Name *", "Email *", "Address *"];
     titleParentStudentColumn2 = ["Last Name *", "Phone"];
