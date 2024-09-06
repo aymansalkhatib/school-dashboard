@@ -44,7 +44,6 @@ dependencies:
   desktop_drop: ^0.4.4
   path_provider: ^2.1.2
   dropdown_search: ^5.0.6
-  dio: ^5.4.2+1
  
 dev_dependencies:
   flutter_test:
