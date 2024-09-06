@@ -81,8 +81,10 @@ class AddNewStudentControllerImp extends AddNewStudentController {
               label: 'Create Section',
               textColor: AppColors.lightPurple,
               onPressed: () {
-                Get.find<NavigationControllerImp>().replaceLastWidget(NavigationEnum.Classes,
-                    info: {"isActive": (int.tryParse(grade.substring(grade.length - 2).trim()) ?? 1) - 1});
+                Get.find<NavigationControllerImp>()
+                    .replaceLastWidget(NavigationEnum.Classes, info: {
+                  "isActive": (int.tryParse(grade.substring(grade.length - 2).trim()) ?? 1) - 1
+                });
               },
             ),
           ),
@@ -186,13 +188,14 @@ class AddNewStudentControllerImp extends AddNewStudentController {
     placeOfBirth = TextEditingController(text: student?.placeOfBirth ?? 'New York');
     parentName = TextEditingController(text: student?.parentName ?? 'John Doe');
     email = TextEditingController(text: student?.email ?? 'example@example.com');
-    phone = TextEditingController(text: student?.phone ?? '0968381625');
+    phone = TextEditingController(text: student?.phone ?? '0968381111');
     address = TextEditingController(text: student?.address ?? '123 Main St');
     parentEmail = TextEditingController(text: student?.parentEmail ?? 'parent@example.com');
-    parentPhone = TextEditingController(text: student?.parentPhone ?? '0968381625');
+    parentPhone = TextEditingController(text: student?.parentPhone ?? '0968381111');
     parentAddress = TextEditingController(text: student?.parentAddress ?? '456 Elm St');
 
-    image = student?.image != null && student!.image!.isNotEmpty ? XFile(student!.image!) : null;
+    image =
+        student?.image != null && student!.image!.isNotEmpty ? XFile(student!.image!) : null;
     grade = student?.grade ?? grade;
     activeSection = student?.section ?? activeSection;
 
