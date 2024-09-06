@@ -13,7 +13,7 @@ abstract class ClassesController extends GetxController {}
 
 class ClassesControllerImp extends ClassesController {
   int paginationIndex = 0;
-  int spilt = 2;
+  int spilt = 4;
   List<SectionModel> paginationViewSection = [];
 
   late Box box;
@@ -29,7 +29,11 @@ class ClassesControllerImp extends ClassesController {
 
   changeIndexPagination(int newPaginationIndex) {
     int skip = newPaginationIndex * spilt;
-    if (newPaginationIndex < 0 || skip >= activeSections.length) return;
+    if (newPaginationIndex < 0 || skip >= activeSections.length) {
+      paginationViewSection = [];
+      update();
+      return;
+    }
     paginationIndex = newPaginationIndex;
     paginationViewSection = activeSections.sublist(skip, min(activeSections.length, skip + spilt));
     update();
@@ -79,6 +83,7 @@ class ClassesControllerImp extends ClassesController {
     );
 
     if (activeSections.isEmpty || confirmDelete == null || !confirmDelete) return;
+
     List<SectionModel> sectionsToDelete = allSections
         .whereType<SectionModel>()
         .where((element) => element.grade == "Grade ${isActive + 1}")
@@ -97,6 +102,7 @@ class ClassesControllerImp extends ClassesController {
           index = i;
         }
       }
+
       for (var i = 0; i < items.length; i++) {
         if (items[i] is StudentModel) {
           StudentModel student = items[i] as StudentModel;

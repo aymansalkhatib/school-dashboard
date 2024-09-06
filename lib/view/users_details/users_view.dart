@@ -24,7 +24,7 @@ class Users extends StatelessWidget {
           ),
           const SizedBox(height: 40),
           const Spacer(),
-          const UsersAndPremissions(),
+          UsersAndPremissions(),
         ],
       ),
     );

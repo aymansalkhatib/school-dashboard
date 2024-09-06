@@ -79,7 +79,7 @@ class TrailingClasses extends StatelessWidget {
                 child: DetailsSections(sectionModel: controller.paginationViewSection[index], index: index),
               ),
             ),
-            if (controller.activeSections.length > 2)
+            if (controller.activeSections.length > 4)
               Padding(
                 padding: const EdgeInsets.only(top: 32),
                 child: MyPaginations(

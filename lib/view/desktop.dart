@@ -11,7 +11,8 @@ class Desktop extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Expanded(flex: 345, child: CustomDrawer()),
+        const Expanded(flex
+        : 345, child: CustomDrawer()),
         Expanded(
           flex: 1180 + 395,
           child: GetBuilder<NavigationControllerImp>(builder: (controller) {

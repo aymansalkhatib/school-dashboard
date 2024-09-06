@@ -25,13 +25,13 @@ class TitleWithTextField extends StatelessWidget {
           title,
           style: AppFontStyle.styleBold18(context),
         ),
-        Container(
-          color: Colors.red,
-          child: SizedBox(
-            height: 16 * getScaleFactor(context),
-            child: const CircleAvatar(),
-          ),
-        ),
+        // Container(
+        //   color: Colors.red,
+        //   child: SizedBox(
+        //     height: 16 * getScaleFactor(context),
+        //     child: const CircleAvatar(),
+        //   ),
+        // ),
         Row(
           children: [
             ...List.generate(
@@ -39,10 +39,7 @@ class TitleWithTextField extends StatelessWidget {
                 (index) => Expanded(
                       child: Padding(
                         padding: EdgeInsets.only(
-                            right: index != hint.length - 1
-                                ? 24 * getScaleFactor(context)
-                                : 0,
-                            bottom: 16),
+                            right: index != hint.length - 1 ? 24 * getScaleFactor(context) : 0, bottom: 16),
                         child: CustomTextFromFeild(
                           hint: hint[index],
                           controller: controller?[index],
