@@ -1,0 +1,29 @@
+School Dashboard
+
+Copyright (c) 2024-2026 Ayman Al-Khatib. All rights reserved.
+
+This repository and everything in it, including the source code,
+documentation, images, configuration and any other files (together, the
+"Software"), is proprietary.
+
+No license is granted. Without the prior written permission of the
+copyright holder, you may not use, run, copy, modify, merge, publish,
+distribute, sublicense, sell or create derivative works of the Software,
+in whole or in part, for any purpose, commercial or non-commercial.
+
+The repository is public for viewing only. Other GitHub users may view and
+fork it on GitHub because GitHub's Terms of Service allow that. This
+notice grants no rights beyond those terms.
+
+Third-party material included in the repository, such as the font files
+in assets/fonts/, remains under its own license. Packages listed in
+pubspec.yaml are distributed by their authors under their own licenses.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+To request permission, contact the copyright holder through GitHub:
+https://github.com/aymansalkhatib
